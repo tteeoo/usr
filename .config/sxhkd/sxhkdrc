@@ -1,0 +1,15 @@
+#screenshots
+alt + s
+	maim -s ~/media/images/scrot/$(date +%s).png
+alt + f
+	maim ~/media/images/scrot/$(date +%s).png
+
+# chromium
+super + c
+    firefox
+super + z
+    slock 
+
+#reload sxhkd
+super + Escape
+    pkill -USR1 -x sxhkd
