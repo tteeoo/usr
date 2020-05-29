@@ -4,11 +4,21 @@ alt + s
 alt + f
 	maim ~/media/images/scrot/$(date +%s).png
 
-# chromium
+# firefox
 super + c
     firefox
+
+# slock
 super + z
     slock 
+
+# terminal
+super + Return
+    st
+
+# python shell
+super + p 
+    st -e python
 
 #reload sxhkd
 super + Escape
