@@ -13,13 +13,18 @@ RPS1='$GITSTATUS_PROMPT'
 # History in cache directory:
 HISTSIZE=10000
 SAVEHIST=10000
-HISTFILE=~/.zsh_history
+HISTFILE=~/.cache/zsh/history
 
 #export path
 export PATH=$PATH:/home/theo/Exec/:/home/theo/.local/bin:/home/theo/dev/go/bin/:/home/theo/.cargo/bin/
 
 # neovim
 export VISUAL="nvim"
+
+# subs
+export XDG_CACHE_HOME="/home/theo/.cache"
+export SUBS_FILE=/home/theo/media/documents/subs
+export SUBS_MENU_PROG="dmenu -l 24 -nf #ebdbb2 -nb #282828 -sb #b16286 -sf #282828 -p subs:"
 
 #export go
 export GOPATH=/home/theo/dev/go
