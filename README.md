@@ -8,7 +8,7 @@ Includes config files for:
 * sxhkd
 * picom
 * neovim
-* spectrwm
 * xdg directories
 
+See [tteeoo/dwm](https://github.com/tteeoo/st) for my window manager.
 See [tteeoo/st](https://github.com/tteeoo/st) for my terminal emulator.
