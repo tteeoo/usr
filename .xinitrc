@@ -4,4 +4,5 @@ feh --bg-scale $(find /home/theo/media/images/wall -type f -name "*" | shuf -n 1
 dunst &
 sxhkd &
 picom -b --config /home/theo/.config/picom/picom.conf &
+dwmblocks &
 dwm
