@@ -2,7 +2,7 @@
 call plug#begin('~/.vim/plugged')
 "Plug 'itchyny/lightline.vim'	"Fancy bottom bar
 Plug 'itchyny/vim-cursorword'	"Fancy underlines
-Plug 'scrooloose/nerdtree'	"Fancy file explorer
+"Plug 'scrooloose/nerdtree'	"Fancy file explorer
 Plug 'joshdick/onedark.vim' 	"Fancy C O L O R S
 Plug 'tpope/vim-fugitive' 	"Noice git stuff
 Plug 'tpope/vim-commentary'     "For 'debugging'
@@ -22,7 +22,6 @@ cnoremap Q<CR> q<CR>
 
 "Ex mode is icky
 nnoremap Q <Nop>
-nnoremap <F1> :NERDTreeToggle<CR>
 "Simple snippet stuff
 nnoremap ,{ a<Space>{<Enter>}<Esc>ko
 nnoremap ,( a()<Esc>
@@ -53,16 +52,16 @@ filetype plugin indent on
 "let g:lightline = {'colorscheme': 'onedark', 'separator': {'left': '', 'right': ''}}
 "let g:onedark_termcolors = 16
 let g:gruvbox_italic = 1
-"let g:gruvbox_termcolors=16
+let g:gruvbox_termcolors=16
 let g:airline_theme = 'gruvbox'
 colorscheme gruvbox
 syntax on
 
 " open tree with no files or with dir
-autocmd StdinReadPre * let s:std_in=1
-autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
-autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | exe 'NERDTree' argv()[0] | wincmd p | ene | exe 'cd '.argv()[0] | endif
+" autocmd StdinReadPre * let s:std_in=1
+" autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+" autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | exe 'NERDTree' argv()[0] | wincmd p | ene | exe 'cd '.argv()[0] | endif
 " kill nerd if only left
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+" autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 "nerd gitt
-let g:NERDTreeShowIgnoredStatus = 1
+" let g:NERDTreeShowIgnoredStatus = 1
