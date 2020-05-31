@@ -12,3 +12,4 @@ Includes config files for:
 
 See [tteeoo/dwm](https://github.com/tteeoo/st) for my window manager.
 See [tteeoo/st](https://github.com/tteeoo/st) for my terminal emulator.
+See [bennetthardwick/gruvbox-gtk](https://github.com/bennetthardwick/gruvbox-gtk) for my gtk themes.
