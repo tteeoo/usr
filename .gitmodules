@@ -1,0 +1,12 @@
+[submodule "dwm"]
+	path = dwm
+	url = ./dwm
+[submodule "dwmblocks"]
+	path = dwmblocks
+	url = ./dwmblocks
+[submodule "slock"]
+	path = slock
+	url = ./slock
+[submodule "st"]
+	path = st
+	url = ./st
