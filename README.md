@@ -14,4 +14,4 @@ See [tteeoo/dwm](https://github.com/tteeoo/st) for my window manager.
 
 See [tteeoo/st](https://github.com/tteeoo/st) for my terminal emulator.
 
-See [bennetthardwick/gruvbox-gtk](https://github.com/bennetthardwick/gruvbox-gtk) for my gtk themes.
+See [3ximus/gruvbox-gtk](https://github.com/3ximus/gruvbox-gtk) for my gtk themes.
