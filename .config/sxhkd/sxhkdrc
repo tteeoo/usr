@@ -1,8 +1,14 @@
 #screenshots
 alt + s
-	maim -s ~/media/images/scrot/$(date +%s).png
+    maim -s ~/media/images/scrot/$(date +%s).png
 alt + f
-	maim ~/media/images/scrot/$(date +%s).png
+    maim ~/media/images/scrot/$(date +%s).png
+
+# volume
+alt + j
+   amixer -q sset Master 5%- && pkill -RTMIN+10  dwmblocks
+alt + k
+   amixer -q sset Master 5%+ && pkill -RTMIN+10 dwmblocks
 
 # firefox
 super + c
