@@ -3,7 +3,8 @@ abbr -a -g g git
 abbr -a -g v nvim
 abbr -a -g sv nvim
 abbr -a -g p sudo pacman
-abbr -a -g sudo systemctl
+abbr -a -g sus sudo systemctl
+abbr -a -g sdn sudo shutdown now
 
 # add directories to path
 set -x PATH /home/theo/dev/scripts /home/theo/.local/bin /home/theo/dev/go/bin /home/theo/.cargo/bin $PATH
