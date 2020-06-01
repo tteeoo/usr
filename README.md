@@ -2,8 +2,8 @@
 My Arch Linux configuration.
 
 Includes config files for:
-* bash
 * fish
+* bash
 * Xorg
 * dunst
 * sxhkd
