@@ -8,7 +8,7 @@
 static char *font = "Fira Mono:pixelsize=14:antialias=true:autohint=true";
 static int borderpx = 6;
 float alpha = 1;
-float alphaUnfocussed = 1;
+float alphaUnfocussed = 0.90;
 
 /*
  * What program is execed by st depends of these precedence rules:
