@@ -1,5 +1,5 @@
 # dotfiles
-My Arch Linux configuration
+My Arch Linux configuration.
 
 Includes config files for:
 * zsh
@@ -10,8 +10,6 @@ Includes config files for:
 * neovim
 * xdg directories
 
-See [tteeoo/dwm](https://github.com/tteeoo/st) for my window manager.
-
-See [tteeoo/st](https://github.com/tteeoo/st) for my terminal emulator.
-
 See [3ximus/gruvbox-gtk](https://github.com/3ximus/gruvbox-gtk) for my gtk themes.
+
+See [tteeoo/suckless](https://github.com/tteeoo/suckless) for some of my other programs and their configuration.
