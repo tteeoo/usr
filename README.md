@@ -3,7 +3,7 @@ This repository is mainly for my own convenience, although it may also serve as 
 # Suckless
 Suckless software is "software that sucks less": [suckless.org](https://suckless.org/)
 
-Suckless software is made to be a simple as possible while still doing their job well, fitting the UNIX philosophy.
+Suckless software is made to be a simple as possible while still doing it's job well, fitting the UNIX philosophy.
 
 This is achieved by having configuration built into the program (recomplied with every config change) and keeping the code clean and concise.
 
