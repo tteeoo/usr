@@ -201,13 +201,13 @@ static Shortcut shortcuts[] = {
 	{ XK_ANY_MOD,           XK_Print,       printsel,       {.i =  0} },
 	{ TERMMOD,              XK_L,           zoom,           {.f = +1} },
 	{ TERMMOD,              XK_H,           zoom,           {.f = -1} },
-	{ TERMMOD,              XK_J,           zoomreset,      {.f =  0} },
+	{ TERMMOD,              XK_G,           zoomreset,      {.f =  0} },
 	{ TERMMOD,              XK_C,           clipcopy,       {.i =  0} },
 	{ TERMMOD,              XK_V,           clippaste,      {.i =  0} },
 	{ TERMMOD,              XK_Y,           selpaste,       {.i =  0} },
 	{ TERMMOD,              XK_Num_Lock,    numlock,        {.i =  0} },
-	{ ShiftMask,            XK_K,           kscrollup,      {.i = -1} },
-        { ShiftMask,            XK_J,           kscrolldown,    {.i = -1} },
+	{ TERMMOD,              XK_K,           kscrollup,      {.i = -1} },
+        { TERMMOD,              XK_J,           kscrolldown,    {.i = -1} },
 };
 
 /*
