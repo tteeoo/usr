@@ -1,3 +1,10 @@
+# abbreviations set here as global vars for clarity's sake
+abbr -a -g g git
+abbr -a -g v nvim
+abbr -a -g sv nvim
+abbr -a -g p sudo pacman
+abbr -a -g sudo systemctl
+
 # add directories to path
 set -x PATH /home/theo/dev/scripts /home/theo/.local/bin /home/theo/dev/go/bin /home/theo/.cargo/bin $PATH
 
