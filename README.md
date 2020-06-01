@@ -7,7 +7,7 @@ Suckless software is made to be a simple as possible while still doing it's job 
 
 This is achieved by having configuration built into the program (recomplied with every config change) and keeping the code clean and concise.
 
-Suckless software is highly extensible with user submitted patches.
+Suckless software is highly extensible through user submitted patches on their website.
 
 # My builds
 This repository contain my forks of various suckless programs with my own changes, configurations, and applied patches.
