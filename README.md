@@ -16,6 +16,7 @@ While `dwmblocks` isn't an official suckless program, it follows the suckless ph
 
 ## st
 Upstream at: [git.suckless.org/st](https://git.suckless.org/st/)
+
 Forked from version 0.8.2, my `st` build has:
 * alpha patch
 * alphaFocusHighlight patch
@@ -25,6 +26,7 @@ Forked from version 0.8.2, my `st` build has:
 
 ## dwm
 Upstream at: [git.suckless.org](https://git.suckless.org/dwm/)
+
 Forked from version 6.2, my `dwm` build has:
 * pertag patch
 * sticky patch
@@ -35,8 +37,10 @@ Forked from version 6.2, my `dwm` build has:
 
 ## slock
 Upstream at: [git.suckless.org/st](https://git.suckless.org/st/)
+
 Forked from version 1.4, I've only really changed the colors.
 
 ## dwmblocks
 Upstream at: [github.com/torrinfail/dwmblocks](https://github.com/torrinfail/dwmblocks/)
+
 I've only added my only blocks from volume, date, and time.
