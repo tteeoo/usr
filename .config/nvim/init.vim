@@ -12,6 +12,8 @@ Plug 'morhetz/gruvbox'
 Plug 'airblade/vim-gitgutter'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
+Plug 'ap/vim-css-color'
+Plug 'dag/vim-fish'
 call plug#end()
 
 " REMAPS
@@ -52,7 +54,7 @@ filetype plugin indent on
 "let g:lightline = {'colorscheme': 'onedark', 'separator': {'left': '', 'right': ''}}
 "let g:onedark_termcolors = 16
 let g:gruvbox_italic = 1
-let g:gruvbox_termcolors=16
+"let g:gruvbox_termcolors=16
 let g:airline_theme = 'gruvbox'
 colorscheme gruvbox
 syntax on
