@@ -25,7 +25,7 @@ Forked from version 0.8.2, my `st` build has:
 * My own colors, font, and other configurations
 
 ## dwm
-Upstream at: [git.suckless.org](https://git.suckless.org/dwm/)
+Upstream at: [git.suckless.org/dwm](https://git.suckless.org/dwm/)
 
 Forked from version 6.2, my `dwm` build has:
 * pertag patch
