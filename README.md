@@ -9,6 +9,7 @@ Includes config files for:
 * sxhkd
 * picom
 * neovim
+* spotifyd
 * xdg directories
 
 See [3ximus/gruvbox-gtk](https://github.com/3ximus/gruvbox-gtk) for my gtk themes.
