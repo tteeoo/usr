@@ -1,0 +1,10 @@
+#!/bin/bash
+
+VOL=$(amixer -D default sget Master | grep 'Left:' | awk -F'[][]' '{ print $2 }')
+
+if [ ${#VOL} -eq 3 ]; then
+    echo "[🔉:  $VOL]"
+else
+    echo "[🔉: $VOL]"
+fi
+
