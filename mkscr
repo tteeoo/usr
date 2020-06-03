@@ -1,0 +1,5 @@
+#!/bin/sh
+
+echo "#!/bin/sh" > ~/dev/scripts/$1
+chmod +x ~/dev/scripts/$1
+echo "o" | nvim -s /dev/stdin ~/dev/scripts/$1
