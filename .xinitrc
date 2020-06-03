@@ -13,4 +13,4 @@ picom -b --config /home/theo/.config/picom/picom.conf &
 
 # start window manager
 dwmblocks &
-exec dwm
+dwm
