@@ -8,7 +8,7 @@ feh --bg-scale $(find /home/theo/media/images/wall -type f -name "*" | shuf -n 1
 # start hotkey daemon, notification daemon, spotify daemon, and compositor
 sxhkd &
 dunst &
-spotifyd --no-daemon &
+spotifyd
 picom -b --config /home/theo/.config/picom/picom.conf &
 
 # start window manager
