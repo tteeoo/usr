@@ -11,6 +11,7 @@ Plug 'vim-airline/vim-airline'	" Fancy bar
 Plug 'vim-airline/vim-airline-themes' " Fancy bars
 Plug 'dag/vim-fish'		" Colors for .fish files
 Plug 'neoclide/coc.nvim', {'branch': 'release'} " Completion
+Plug 'vimwiki/vimwiki' " Notes
 call plug#end()
 " :CocInstall
 " 	coc-go
