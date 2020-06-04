@@ -57,8 +57,8 @@ set signcolumn=yes
 
 " VIMWIKI
 let mapleader = ','
-let g:vimwiki_list = [{'path': '~/media/vimwiki',
-                      \ 'syntax': 'markdown', 'ext': '.md'}]
+let g:vimwiki_list = [{'path': '~/media/vimwiki'}]
+
 " COLORS
 syntax on
 filetype plugin indent on
