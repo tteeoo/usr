@@ -13,7 +13,7 @@ export GOPATH=/home/theo/dev/go
 # things for mitchweaver/subs
 export XDG_CACHE_HOME=/home/theo/.cache
 export SUBS_FILE=/home/theo/media/documents/subs
-export SUBS_MENU_PROG="dmenu -fn FiraMono:size=11 -l 24 -nf #ebdbb2 -nb #282828 -sb #b16286 -sf #282828 -p subs:"
+export SUBS_MENU_PROG="fzf --color=16"
 
 # startx if in tty1 also sets my heatsinks colors (comment this out)
 if [[ -z $DISPLAY ]] && [[ $(tty) = /dev/tty1 ]]; then
