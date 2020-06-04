@@ -14,6 +14,7 @@ mkd () {
     mkdir $HOME/.config/dunst
     mkdir $HOME/.config/nvim
     mkdir $HOME/.config/rco
+    mkdir $HOME/.newsboat
 }
 
 mkd 2> /dev/null
@@ -22,6 +23,8 @@ link .bashrc
 link .xinitrc
 link .gtkrc-2.0
 link .bash_profile
+link .newsboat/urls
+link .newsboat/config
 link media/documents/subs
 link .config/sxhkd/sxhkdrc
 link .config/dunst/dunstrc

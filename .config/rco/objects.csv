@@ -14,3 +14,5 @@ du,/home/theo/.config/dunst/dunstrc,dunst
 fv,/home/theo/.config/fish/fish_variables,fish vars
 fi,/home/theo/.config/fish/config.fish,fish
 fp,/home/theo/.config/fish/functions/fish_prompt.fish,fish prompt
+nb,/home/theo/.newsboat/config,newsboat config
+nu,/home/theo/.newsboat/urls,newsboat urls
