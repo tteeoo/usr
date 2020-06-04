@@ -1,0 +1,16 @@
+nickname,path,description
+rc,/home/theo/.config/rco/config.csv,rco config
+nv,/home/theo/.config/nvim/init.vim,neovim init
+sx,/home/theo/.config/sxhkd/sxhkdrc,sxhkd config
+pi,/home/theo/.config/picom/picom.conf,picom config
+sb,/home/theo/media/documents/subs,subs
+xi,/home/theo/.xinitrc,xinit rc
+g2,/home/theo/.gtkrc-2.0,gtk 2
+ba,/home/theo/.bashrc,bash rc
+bp,/home/theo/.bash_profile,bash profile
+sd,/home/theo/.config/spotifyd/spotifyd.conf,spotifyd
+g3,/home/theo/.config/gtk-3.0/,gtk 3
+du,/home/theo/.config/dunst/dunstrc,dunst
+fv,/home/theo/.config/fish/fish_variables,fish vars
+fi,/home/theo/.config/fish/config.fish,fish
+fp,/home/theo/.config/fish/functions/fish_prompt.fish,fish prompt
