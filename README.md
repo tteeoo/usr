@@ -3,6 +3,7 @@ My Arch Linux configuration.
 
 Includes config files for:
 * rco
+* subs
 * fish
 * bash
 * Xorg
@@ -10,6 +11,7 @@ Includes config files for:
 * sxhkd
 * picom
 * neovim
+* newsboat
 * spotifyd
 * xdg directories
 
