@@ -12,6 +12,7 @@ mkd () {
     mkdir $HOME/.config/sxhkd
     mkdir $HOME/.config/dunst
     mkdir $HOME/.config/nvim
+    mkdir $HOME/.config/rco
 }
 
 mkd 2> /dev/null
@@ -23,6 +24,8 @@ link .bash_profile
 link .config/sxhkd/sxhkdrc
 link .config/dunst/dunstrc
 link .config/nvim/init.vim
+link .config/rco/config.csv
+link .config/rco/objects.csv
 link .config/picom/picom.conf
 link .config/fish/config.fish
 link .config/fish/fish_variables
