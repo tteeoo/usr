@@ -32,6 +32,7 @@ Forked from version 6.2, my `dwm` build has:
 * sticky patch
 * movestack patch
 * vanitygaps patch
+* statusallmons patch
 * My own additions (`togglemono` function)
 * My own colors, keybinds, and other configurations
 
@@ -43,4 +44,6 @@ Forked from version 1.4, I've only really changed the colors.
 ## dwmblocks
 Upstream at: [github.com/torrinfail/dwmblocks](https://github.com/torrinfail/dwmblocks/)
 
-I've only added my only blocks from volume, date, and time.
+I've added my own blocks for cpu temp, cpu usage, volume, date, and time.
+
+See the scripts for these blocks and [tteeoo/scripts](https://github.com/tteeoo/scripts)
