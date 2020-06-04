@@ -23,11 +23,6 @@ color listfocus_unread black cyan
 bind-key G end
 bind-key g home
 
-bind-key i pageup
-bind-key o pagedown
-
-bind-key a toggle-article-read
-
 highlight all "---.*---" yellow
 highlight feedlist ".*(0/0))" black
 highlight article "(^Feed:.*|^Title:.*|^Author:.*)" cyan default bold

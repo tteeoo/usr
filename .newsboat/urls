@@ -1,5 +1,6 @@
-https://lukesmith.xyz/rss.xml
-https://notrelated.xyz/rss
-https://feeds.feedburner.com/tpope
-https://www.archlinux.org/feeds/news/
-https://lunduke.com/index.xml
+https://lukesmith.xyz/rss.xml "~Luke Smith"
+https://notrelated.xyz/rss "~Not related"
+https://feeds.feedburner.com/tpope "~Tim Pope"
+https://www.archlinux.org/feeds/news/ "~Arch Linux"
+https://lunduke.com/index.xml "~lunduke"
+https://github.com/tteeoo.private.atom?token=AIERBL3KQSLSXOC5UXUIQTF44UALC "~GitHub"
