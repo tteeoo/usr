@@ -34,7 +34,50 @@ cnoremap E<CR> e<CR>
 cnoremap f<Space> find<Space>
 " Make tags
 command! MakeTags !ctags -R .
-" Coc specific
+
+" SET
+set path+=**
+set wildmenu
+set number
+set relativenumber
+set nowrap
+set shiftwidth=4
+set cursorline
+set showcmd
+set noshowmode
+set encoding=UTF-8
+set updatetime=50
+" coc specific
+set hidden
+set nobackup
+set nowritebackup
+set cmdheight=2
+set shortmess+=c
+set signcolumn=yes
+
+" VIMWIKI
+let mapleader = ','
+let g:vimwiki_list = [{'path': '~/media/vimwiki',
+                      \ 'syntax': 'markdown', 'ext': '.md'}]
+" COLORS
+syntax on
+filetype plugin indent on
+let g:gruvbox_italic = 1
+"let g:gruvbox_termcolors=16
+let g:airline_theme = 'gruvbox'
+colorscheme gruvbox
+
+" COC
+" Abort completion on backspace
+function! s:check_back_space() abort
+    let col = col('.') - 1
+    return !col || getline('.')[col - 1]  =~# '\s'
+endfunction
+" Symbol renaming.
+nmap ,rn <Plug>(coc-rename)
+" Formatting selected code.
+xmap ,f  <Plug>(coc-format-selected)
+nmap ,f  <Plug>(coc-format-selected)
 " Tab completion
 inoremap <silent><expr> <TAB>
       \ pumvisible() ? "\<C-n>" :
@@ -73,47 +116,3 @@ let g:coc_snippet_next = '<c-j>'
 let g:coc_snippet_prev = '<c-k>'
 " Use <C-j> for both expand and jump (make expand higher priority.)
 " imap <C-j> <Plug>(coc-snippets-expand-jump)
-
-" SET
-set path+=**
-set wildmenu
-set number
-set relativenumber
-set nowrap
-set shiftwidth=4
-set cursorline
-set showcmd
-set noshowmode
-set encoding=UTF-8
-set updatetime=50
-" coc specific
-set hidden
-set nobackup
-set nowritebackup
-set cmdheight=2
-set shortmess+=c
-set signcolumn=yes
-
-" VIMWIKI
-let mapleader = ','
-let g:vimwiki_list = [{'path': '~/media/vimwiki'}]
-
-" COLORS
-syntax on
-filetype plugin indent on
-let g:gruvbox_italic = 1
-"let g:gruvbox_termcolors=16
-let g:airline_theme = 'gruvbox'
-colorscheme gruvbox
-
-" COC
-" Abort completion on backspace
-function! s:check_back_space() abort
-    let col = col('.') - 1
-    return !col || getline('.')[col - 1]  =~# '\s'
-endfunction
-" Symbol renaming.
-nmap ,rn <Plug>(coc-rename)
-" Formatting selected code.
-xmap ,f  <Plug>(coc-format-selected)
-nmap ,f  <Plug>(coc-format-selected)
