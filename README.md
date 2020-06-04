@@ -35,12 +35,12 @@ Forked from version 6.2, my `dwm` build has:
 * My own additions (`togglemono` function)
 * My own colors, keybinds, and other configurations
 
+## dwmblocks
+Upstream at: [github.com/torrinfail/dwmblocks](https://github.com/torrinfail/dwmblocks/)
+
+I've only added my only blocks from cpu temp, cpu usage, volume, date, and time.
+
 ## slock
 Upstream at: [git.suckless.org/st](https://git.suckless.org/st/)
 
 Forked from version 1.4, I've only really changed the colors.
-
-## dwmblocks
-Upstream at: [github.com/torrinfail/dwmblocks](https://github.com/torrinfail/dwmblocks/)
-
-I've only added my only blocks from volume, date, and time.
