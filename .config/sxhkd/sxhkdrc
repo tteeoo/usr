@@ -1,8 +1,8 @@
 #screenshots
 alt + s
-    maim -s ~/media/images/scrot/$(date +%s).png
+    maim -s ~/media/images/scrot/(date +%s).png
 alt + f
-    maim ~/media/images/scrot/$(date +%s).png
+    maim ~/media/images/scrot/(date +%s).png
 
 # volume
 alt + j
