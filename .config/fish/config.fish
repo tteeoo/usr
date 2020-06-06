@@ -8,3 +8,6 @@ abbr -a -g sus sudo systemctl
 abbr -a -g sdn sudo shutdown now
 abbr -a -g gof gofmt -s -w -e -l .
 abbr -a -g vw nvim -c VimwikiIndex
+
+# ensure key swap
+setxkbmap -option caps:swapescape
