@@ -115,4 +115,4 @@ let g:coc_snippet_next = '<c-j>'
 " Use <C-k> for jump to previous placeholder, it's default of coc.nvim
 let g:coc_snippet_prev = '<c-k>'
 " Jump to error
-nnoremap ,ge :lnext
+nnoremap ,ge :lnext<CR>
