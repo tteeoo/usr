@@ -1,4 +1,16 @@
 #!/bin/sh
 # Sets my wallpaper to a random image in my wallpaper directory
 
-feh --bg-scale $(find /home/theo/media/images/wall -type f -name "*" | shuf -n 1)
+OLD=$(</home/theo/.cache/oldwall)
+
+get_file () {
+    NEW=$(find /home/theo/media/images/wall -type f -name "*" | shuf -n 1)
+}
+
+get_file
+while [ $OLD = "$NEW" ]; do
+    get_file
+done
+
+feh --bg-scale $NEW
+echo $NEW > /home/theo/.cache/oldwall
