@@ -1,5 +1,8 @@
 This repository is mainly for my own convenience, although it may also serve as inspiration or a starting off point for your own suckless forks.
 
+A screenshot featuring dwm, st, and dwmblocks:
+![Screenshot](https://raw.githubusercontent.com/tteeoo/suckless/master/screenshot.png)
+
 # Suckless
 Suckless software is "software that sucks less": [suckless.org](https://suckless.org/)
 
