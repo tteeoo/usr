@@ -1,4 +1,5 @@
 #!/bin/sh
+# Script to easily make a new script
 
 echo "#!/bin/sh" > ~/dev/scripts/$1
 chmod +x ~/dev/scripts/$1

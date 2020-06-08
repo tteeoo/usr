@@ -1,4 +1,5 @@
 #!/bin/sh
+# Prints volume information for dwmblocks
 
 VOL=$(amixer -D default sget Master | grep 'Left:' | awk -F'[][]' '{ print $2 }')
 

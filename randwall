@@ -1,3 +1,4 @@
 #!/bin/sh
+# Sets my wallpaper to a random image in my wallpaper directory
 
 feh --bg-scale $(find /home/theo/media/images/wall -type f -name "*" | shuf -n 1)

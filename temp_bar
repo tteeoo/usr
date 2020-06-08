@@ -1,4 +1,5 @@
 #!/bin/sh
+# Prints cpu temperature information for dwmblocks
 
 TEMP=$(sensors -u | grep -A 1 Tdie | tail -n 1)
 
