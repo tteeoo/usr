@@ -5,12 +5,9 @@ function fish_prompt
 
     echo -n (set_color 83A598)(pwd)' '
 
-    echo -en "\033[0m"
-
     echo -n (git_status_prompt)
 
     set_color -o
-
     if test "$USER" = 'root'
         echo -n (set_color CC241D)'# '
     end
