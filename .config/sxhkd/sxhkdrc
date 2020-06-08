@@ -26,6 +26,10 @@ super + Return
 super + p 
     st -e python
 
+# wallpaper
+alt + b
+    randwall
+
 #reload sxhkd
 super + Escape
     pkill -USR1 -x sxhkd
