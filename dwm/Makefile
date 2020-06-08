@@ -37,6 +37,7 @@ dist: clean
 	rm -rf dwm-${VERSION}
 
 install: all
+	cp dwm ../bin
 	mkdir -p ${DESTDIR}${PREFIX}/bin
 	cp -f dwm ${DESTDIR}${PREFIX}/bin
 	chmod 755 ${DESTDIR}${PREFIX}/bin/dwm

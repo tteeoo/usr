@@ -42,6 +42,7 @@ dist: clean
 	@rm -rf slock-${VERSION}
 
 install: all
+	@cp slock ../bin
 	@echo installing executable file to ${DESTDIR}${PREFIX}/bin
 	@mkdir -p ${DESTDIR}${PREFIX}/bin
 	@cp -f slock ${DESTDIR}${PREFIX}/bin
