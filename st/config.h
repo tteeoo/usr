@@ -6,7 +6,7 @@
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
 static char *font = "Fira Mono:pixelsize=14:antialias=true:autohint=true";
-static int borderpx = 6;
+static int borderpx = 8;
 float alpha = 1;
 float alphaUnfocussed = 0.90;
 
@@ -86,8 +86,8 @@ unsigned int tabspaces = 8;
 
 /* Terminal colors (16 first used in escape sequence) */
 static const char *colorname[] = {
-	/* 8 normal colors */
-	"#282828", /* hard contrast: #1d2021 / soft contrast: #32302f */
+	/* gruvbox */
+	"#282828", 
 	"#cc241d",
 	"#98971a",
 	"#d79921",
@@ -103,25 +103,6 @@ static const char *colorname[] = {
 	"#d3869b",
 	"#8ec07c",
 	"#ebdbb2",
-
-	/* "#262626", */
-	/* "#ff5f87", */
-	/* "#87d787", */
-	/* "#d7af87", */
-	/* "#00afff", */
-	/* "#d75fd7", */
-	/* "#00afd7", */
-	/* "#afafaf", */
-
-	/* /1* 8 bright colors *1/ */
-	/* "#303030", */
-	/* "#ff5f87", */
-	/* "#87d787", */
-	/* "#d7af87", */
-	/* "#00afff", */
-	/* "#d75fd7", */
-	/* "#00afd7", */
-	/* "#5f5f5f", */
 
 	[255] = 0,
 
