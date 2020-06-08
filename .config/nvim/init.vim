@@ -60,12 +60,15 @@ set signcolumn=yes
 let mapleader = ','
 let g:vimwiki_list = [{'path': '~/media/vimwiki'}]
 
+" AIRLINE
+let g:airline_theme = 'gruvbox'
+let g:airline_powerline_fonts = 1
+
 " COLORS
 syntax on
 filetype plugin indent on
 let g:gruvbox_italic = 1
 "let g:gruvbox_termcolors=16
-let g:airline_theme = 'gruvbox'
 colorscheme gruvbox
 
 " COC
