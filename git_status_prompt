@@ -1,0 +1,14 @@
+#!/bin/bash
+WORKING="$(git rev-parse --is-inside-work-tree 2>/dev/null)"
+if [ "$WORKING" ]; then
+    BRANCH=$(git branch --no-color --show-current)
+    STATUS="$(git status -s)"
+    COLOR="\033[92m"
+    if [ "$STATUS" ]; then
+	COLOR="\033[91m"
+    fi
+    echo -e "[${COLOR}$BRANCH\033[0m]"
+else
+    echo ""
+fi
+	
