@@ -12,6 +12,7 @@ Plug 'vim-airline/vim-airline-themes' " Fancy bars
 Plug 'dag/vim-fish'		" Colors for .fish files
 Plug 'neoclide/coc.nvim', {'branch': 'release'} " Completion
 Plug 'vimwiki/vimwiki' " Notes
+Plug 'skammer/vim-css-color' " See color of hex codes
 call plug#end()
 " :CocInstall
 " 	coc-go
