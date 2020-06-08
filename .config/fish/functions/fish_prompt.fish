@@ -3,12 +3,12 @@ function fish_prompt
         echo -n (set_color brred)"$USER"(set_color white)'@'(set_color yellow)(prompt_hostname)' '
     end
 
-    echo -n (set_color 689D6A)(pwd)' '
+    echo -n (set_color 83A598)(pwd)' '
 
     set_color -o
     if test "$USER" = 'root'
         echo -n (set_color CC241D)'# '
     end
-    echo -n (set_color B16286)'$ '
+    echo -n (set_color 8EC07C)'$ '
     set_color normal
 end
