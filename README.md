@@ -33,6 +33,7 @@ Upstream at: [git.suckless.org/dwm](https://git.suckless.org/dwm/)
 Forked from version 6.2, my `dwm` build has:
 * pertag patch
 * sticky patch
+* swallow patch
 * movestack patch
 * vanitygaps patch
 * statusallmons patch
