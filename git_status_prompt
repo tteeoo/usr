@@ -7,7 +7,7 @@ if [ "$WORKING" ]; then
     if [ "$STATUS" ]; then
 	COLOR="\033[91m"
     fi
-    echo -e "[${COLOR}$BRANCH\033[0m]"
+    echo -e "${COLOR}$BRANCH\033[0m "
 else
     echo ""
 fi
