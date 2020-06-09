@@ -5,6 +5,7 @@ link () {
 }
 
 mkd () {
+    mkdir $HOME/.config/BetterDiscord/themes -p
     mkdir $HOME/.config/fish/functions -p
     mkdir $HOME/media/documents -p
     # mkdir $HOME/.config/spotifyd
@@ -38,3 +39,4 @@ link .config/gtk-3.0/settings.ini
 # link .config/spotifyd/spotifyd.conf
 link .config/fish/functions/fish_prompt.fish
 link .config/fish/functions/fish_mode_prompt.fish
+link .config/BetterDiscord/themes/simple-gruvbox.theme.css
