@@ -10,6 +10,18 @@ alt + j
 alt + k
    amixer -q sset Master 5%+ && pkill -RTMIN+10 dwmblocks
 
+# python shell
+alt + p 
+    st -e python
+
+# wallpaper
+alt + b
+    randwall
+
+#reload sxhkd
+alt + Escape
+    pkill -USR1 -x sxhkd
+
 # firefox
 super + c
     firefox
@@ -21,15 +33,3 @@ super + z
 # terminal
 super + Return
     st
-
-# python shell
-super + p 
-    st -e python
-
-# wallpaper
-alt + b
-    randwall
-
-#reload sxhkd
-super + Escape
-    pkill -USR1 -x sxhkd
