@@ -1,5 +1,5 @@
 # add directories to path
-export PATH=$PATH:/home/theo/dev/scripts:/home/theo/.local/bin:/home/theo/dev/go/bin:/home/theo/.cargo/bin
+export PATH=$PATH:/home/theo/.deno/bin:/home/theo/dev/scripts:/home/theo/.local/bin:/home/theo/dev/go/bin:/home/theo/.cargo/bin
 
 # set some default programs
 export SHELL=fish

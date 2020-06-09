@@ -9,10 +9,10 @@ g2,/home/theo/.gtkrc-2.0,gtk 2
 ba,/home/theo/.bashrc,bash rc
 bp,/home/theo/.bash_profile,bash profile
 sd,/home/theo/.config/spotifyd/spotifyd.conf,spotifyd
-g3,/home/theo/.config/gtk-3.0/,gtk 3
 du,/home/theo/.config/dunst/dunstrc,dunst
 fv,/home/theo/.config/fish/fish_variables,fish vars
 fi,/home/theo/.config/fish/config.fish,fish
 fp,/home/theo/.config/fish/functions/fish_prompt.fish,fish prompt
 nb,/home/theo/.newsboat/config,newsboat config
 nu,/home/theo/.newsboat/urls,newsboat urls
+g3,/home/theo/.config/gtk-3.0/settings.ini,gtk 3
