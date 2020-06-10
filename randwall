@@ -8,7 +8,7 @@ get_file () {
 }
 
 get_file
-while [ $OLD = "$NEW" ]; do
+while [ "$OLD" = "$NEW" ]; do
     get_file
 done
 

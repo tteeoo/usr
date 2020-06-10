@@ -18,7 +18,7 @@ if [ "$WORKING" ]; then
     fi
 
     BRANCH=$(git branch --no-color --show-current)
-    echo -e "${COLOR}$BRANCH \033[38;2;142;192;124m$PROMPT\033[0m "
+    printf "${COLOR}$BRANCH \033[38;2;142;192;124m$PROMPT\033[0m "
 else
-    echo -e "\033[38;2;142;192;124m$PROMPT\033[0m "
+    printf "\033[38;2;142;192;124m$PROMPT\033[0m "
 fi
