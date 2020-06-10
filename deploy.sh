@@ -37,6 +37,7 @@ link .config/fish/config.fish
 link .config/fish/fish_variables
 link .config/gtk-3.0/settings.ini
 # link .config/spotifyd/spotifyd.conf
+link .config/fish/functions/sudo.fish
 link .config/fish/functions/fish_prompt.fish
 link .config/fish/functions/fish_mode_prompt.fish
 link .config/BetterDiscord/themes/simple-gruvbox.theme.css
