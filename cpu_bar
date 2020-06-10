@@ -10,15 +10,15 @@ NUM=$USAGE
 LEN=${#NUM}
 
 if [ $LEN -eq 5 ]; then
-    echo "[⚡:  $NUM%]"
+    echo "[⚡  $NUM%]"
 elif [ $LEN -eq 4 ]; then
-    echo "[⚡:   $NUM%]"
+    echo "[⚡   $NUM%]"
 elif [ $LEN -eq 3 ]; then
-    echo "[⚡:    $NUM%]"
+    echo "[⚡    $NUM%]"
 elif [ $LEN -eq 2 ]; then
-    echo "[⚡:     $NUM%]"
+    echo "[⚡     $NUM%]"
 elif [ $LEN -eq 1 ]; then
-    echo "[⚡:      $NUM%]"
+    echo "[⚡      $NUM%]"
 else
-    echo "[⚡: $NUM%]"
+    echo "[⚡ $NUM%]"
 fi
