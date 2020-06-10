@@ -5,4 +5,4 @@ TEMP=$(sensors -u | grep -A 1 Tdie | tail -n 1)
 
 TEMP2=${TEMP%.*}
 
-echo "[🌡 ${TEMP2#*:}°C]"
+echo "[T ${TEMP2#*:}°C]"

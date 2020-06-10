@@ -6,10 +6,10 @@ VOL=$(amixer -D default sget Master | grep 'Left:' | awk -F'[][]' '{ print $2 }'
 LEN=${#VOL}
 
 if [ $LEN -eq 3 ]; then
-    echo "[🔉  $VOL]"
+    echo "[V  $VOL]"
 elif [ $LEN -eq 2 ]; then
-    echo "[🔉   $VOL]"
+    echo "[V   $VOL]"
 else
-    echo "[🔉 $VOL]"
+    echo "[v $VOL]"
 fi
 

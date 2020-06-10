@@ -3,4 +3,4 @@
 
 TIME=$(date +"%y.%m.%d %H:%M")
 
-echo "[🕗 $TIME]"
+echo "[D $TIME]"
