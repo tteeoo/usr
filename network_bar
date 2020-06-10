@@ -1,0 +1,12 @@
+#!/bin/sh
+# Shows my cpu usage for dwmblocks
+
+ping -c1 example.com > /dev/null
+
+if [ $? = 0 ]; then
+    SSID=$(iwgetid -r)
+    echo "[🌐 $SSID]"
+    exit
+fi
+
+echo "[🌐 ⛔]"
