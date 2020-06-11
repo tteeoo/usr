@@ -43,6 +43,8 @@ set number
 set relativenumber
 set nowrap
 set shiftwidth=4
+set listchars=tab:\|\ 
+set list
 set cursorline
 set showcmd
 set noshowmode
