@@ -1,7 +1,7 @@
 #!/bin/sh
 # Shows my cpu usage for dwmblocks
 
-ping -c1 example.com > /dev/null
+ping -c1 theohenson.com > /dev/null
 
 if [ $? = 0 ]; then
     SSID=$(iwgetid -r)
