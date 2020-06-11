@@ -1,6 +1,8 @@
 # dotfiles
 My Arch Linux configuration.
 
+![screenshot](https://raw.githubusercontent.com/tteeoo/dotfiles/master/screenshot.png)
+
 Includes config files for:
 * rco
 * subs
