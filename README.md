@@ -34,6 +34,7 @@ Forked from version 6.2, my `dwm` build has:
 * pertag patch
 * sticky patch
 * swallow patch
+* fancybar patch
 * movestack patch
 * vanitygaps patch
 * statusallmons patch
@@ -46,6 +47,7 @@ Upstream at: [github.com/torrinfail/dwmblocks](https://github.com/torrinfail/dwm
 I've added my own blocks for:
 * volume 
 * cpu temp and usage
+* network status
 * date and time
 
 See the scripts for these blocks and [tteeoo/scripts](https://github.com/tteeoo/scripts)
