@@ -1,5 +1,5 @@
 #!/bin/sh
-# Shows my cpu usage for dwmblocks
+# Shows my network status for dwmblocks
 
 ping -c1 theohenson.com > /dev/null
 
