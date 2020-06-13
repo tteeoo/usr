@@ -35,6 +35,7 @@ Forked from version 6.2, my `dwm` build has:
 * fancybar patch
 * movestack patch
 * vanitygaps patch
+* monoclesymbol patch
 * statusallmons patch
 * My own additions (`togglemono` function)
 * My own colors, keybinds, and other configurations
