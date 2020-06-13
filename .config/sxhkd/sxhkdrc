@@ -1,4 +1,4 @@
-#screenshots
+# screenshots
 alt + s
     maim -s ~/media/images/scrot/(date +%s).png
 alt + f
@@ -18,16 +18,20 @@ alt + p
 alt + b
     randwall
 
-#reload sxhkd
+# reload sxhkd
 alt + Escape
     pkill -USR1 -x sxhkd
 
 # firefox
-super + c
+alt + c
     firefox
 
+# bloated spyware
+alt + d
+    discord
+
 # slock
-super + z
+alt + z
     slock 
 
 # terminal
