@@ -6,7 +6,7 @@
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
 static char *font = "Fira Mono:pixelsize=14:antialias=true:autohint=true";
-static int borderpx = 12;
+static int borderpx = 16;
 float alpha = 0.9;
 float alphaUnfocussed = 1;
 
