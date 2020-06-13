@@ -7,7 +7,7 @@
  */
 static char *font = "Fira Mono:pixelsize=14:antialias=true:autohint=true";
 static int borderpx = 12;
-float alpha = 1;
+float alpha = 0.9;
 float alphaUnfocussed = 1;
 
 /*
