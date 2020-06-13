@@ -12,5 +12,5 @@ while [ "$OLD" = "$NEW" ]; do
     get_file
 done
 
-feh --bg-scale $NEW
+feh --bg-fit $NEW
 echo $NEW > /home/theo/.cache/oldwall
