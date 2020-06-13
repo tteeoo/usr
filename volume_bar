@@ -10,6 +10,6 @@ if [ $LEN -eq 3 ]; then
 elif [ $LEN -eq 2 ]; then
     echo "[V   $VOL]"
 else
-    echo "[v $VOL]"
+    echo "[V $VOL]"
 fi
 
