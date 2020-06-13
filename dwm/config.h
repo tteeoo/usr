@@ -14,7 +14,7 @@ static const int topbar             = 1;        /* 0 means bottom bar */
 static const char *fonts[]          = { "Fira Mono:size=11" };
 static const char dmenufont[]       = "Fira Mono:size=11";
 static const char col_gray1[]       = "#282828";
-static const char col_gray2[]       = "#928374";
+static const char col_gray2[]       = "#282828";
 static const char col_gray3[]       = "#ebdbb2";
 static const char col_gray4[]       = "#282828";
 static const char col_cyan[]        = "#83a598";
@@ -43,8 +43,8 @@ static const int resizehints = 0;    /* 1 means respect size hints in tiled resi
 
 static const Layout layouts[] = {
 	/* symbol     arrange function */
-	{ "[]=",      tile },    /* first entry is default */
-	{ "><>",      NULL },    /* no layout function means floating behavior */
+	{ "[T]",      tile },    /* first entry is default */
+	{ "[F]",      NULL },    /* no layout function means floating behavior */
 	{ "[M]",      monocle },
 };
 
@@ -82,6 +82,7 @@ static Key keys[] = {
 	{ MODKEY,                       XK_Tab,    toggleview,     {0} },
 	{ MODKEY,                       XK_w,      killclient,     {0} },
 	{ MODKEY,                       XK_f,      setlayout,      {.v = &layouts[1]} },
+	{ MODKEY|ShiftMask,             XK_f,      setlayout,      {.v = &layouts[0]} },
 	{ MODKEY,                       XK_Tab,    togglemono,     {.v = &layouts[2]} },
 	{ MODKEY,                       XK_g,      togglegaps,     {0} },
 	{ MODKEY|ShiftMask,             XK_Tab,    togglefloating, {0} },
