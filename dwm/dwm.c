@@ -224,6 +224,7 @@ static void togglegaps(const Arg *arg);
 /* static void defaultgaps(const Arg *arg); */
 static void setlayout(const Arg *arg);
 static void togglemono(const Arg *arg);
+static void focusmaster();
 static void setmfact(const Arg *arg);
 static void setup(void);
 static void seturgent(Client *c, int urg);
@@ -1802,6 +1803,13 @@ togglemono(const Arg *arg)
 		new.v = &layouts[2];
 		setlayout(&new);
 	}
+}
+
+void
+focusmaster()
+{
+	if (selmon->clients != NULL)
+		focus(selmon->clients);
 }
 
 /* arg > 1.0 will set mfact absolutely */
