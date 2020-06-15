@@ -1004,6 +1004,16 @@ focusstack(const Arg *arg)
 		focus(c);
 		restack(selmon);
 	}
+	// No mono borders
+	/* if (selmon->lt[selmon->sellt] == &layouts[2]) { */
+	/* 	for (Client *temp = selmon->clients; temp != NULL; temp = temp->next) */
+	/* 		if (temp->bw != 0) */
+	/* 			temp->bw = 0; */
+	/* } else { */
+	/* 	for (Client *temp = selmon->clients; temp != NULL; temp = temp->next) */
+	/* 		if (temp->bw != borderpx) */
+	/* 			temp->bw = borderpx; */
+	/* } */
 }
 
 Atom
@@ -1759,6 +1769,16 @@ togglegaps(const Arg *arg)
 void
 setlayout(const Arg *arg)
 {
+	// No mono borders
+	/* if (arg->v == &layouts[2]) { */
+	/* 	for (Client *temp = selmon->clients; temp != NULL; temp = temp->next) */
+	/* 		if (temp->bw != 0) */
+	/* 			temp->bw = 0; */
+	/* } else { */
+	/* 	for (Client *temp = selmon->clients; temp != NULL; temp = temp->next) */
+	/* 		if (temp->bw != borderpx) */
+	/* 			temp->bw = borderpx; */
+	/* } */
 	if (!arg || !arg->v || arg->v != selmon->lt[selmon->sellt])
 		selmon->sellt = selmon->pertag->sellts[selmon->pertag->curtag] ^= 1;
 	if (arg && arg->v)

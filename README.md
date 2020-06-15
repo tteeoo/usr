@@ -37,8 +37,8 @@ Forked from version 6.2, my `dwm` build has:
 * vanitygaps patch
 * monoclesymbol patch
 * statusallmons patch
-* My own additions (`togglemono` function)
 * My own colors, keybinds, and other configurations
+* My own additions I programmed in (`togglemono` function)
  
 ## dwmblocks
 Upstream at: [github.com/torrinfail/dwmblocks](https://github.com/torrinfail/dwmblocks/)
