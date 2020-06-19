@@ -1,7 +1,7 @@
 /* See LICENSE file for copyright and license details. */
 
 /* appearance */
-static const unsigned int borderpx  = 3;        /* border pixel of windows */
+static const unsigned int borderpx  = 2;        /* border pixel of windows */
 static const unsigned int gappih    = 16;       /* horiz inner gap between windows */
 static const unsigned int gappiv    = 14;       /* vert inner gap between windows */
 static const unsigned int gappoh    = 16;       /* horiz outer gap between windows and screen edge */
@@ -14,7 +14,7 @@ static const int topbar             = 1;        /* 0 means bottom bar */
 static const char *fonts[]          = { "Fira Mono:size=11" };
 static const char dmenufont[]       = "Fira Mono:size=11";
 static const char col_gray1[]       = "#282828";
-static const char col_gray2[]       = "#282828";
+static const char col_gray2[]       = "#928374";
 static const char col_gray3[]       = "#ebdbb2";
 static const char col_gray4[]       = "#282828";
 static const char col_cyan[]        = "#83a598";
