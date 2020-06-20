@@ -33,6 +33,7 @@ Forked from version 6.2, my `dwm` build has:
 * sticky patch
 * swallow patch
 * fancybar patch
+* noborder patch
 * movestack patch
 * vanitygaps patch
 * monoclesymbol patch
