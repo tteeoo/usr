@@ -21,6 +21,7 @@ While `dwmblocks` isn't an official suckless program, it follows the suckless ph
 Upstream at: [git.suckless.org/st](https://git.suckless.org/st/)
 
 Forked from version 0.8.2, my `st` build has:
+* w3m patch
 * scrollback patch
 * scrollback-mouse patch
 * My own colors, font, and other configurations
