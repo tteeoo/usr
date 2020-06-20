@@ -1,9 +1,8 @@
-# fix my secondary monitor (comment this out if you are not me)
-xrandr --output HDMI-A-0 --set underscan on
-xrandr --output HDMI-A-0 --set "underscan hborder" 100 --set "underscan vborder" 60
+# configure monitors
+xrandr --output DisplayPort-0 --off --output DisplayPort-1 --off --output DisplayPort-2 --primary --mode 1920x1080 --pos 0x840 --rotate normal --output HDMI-A-0 --mode 1920x1080 --pos 1920x0 --rotate left --output DVI-D-0 --off
 
 # set wallpaper
-feh --bg-scale $(find /home/theo/media/images/wall -type f -name "*" | shuf -n 1)
+feh --bg-fill $(find /home/theo/media/images/wall -type f -name "*" | shuf -n 1)
 
 # start hotkey daemon, notification daemon, spotify daemon, and compositor
 sxhkd &
