@@ -17,3 +17,5 @@ nb,/home/theo/.newsboat/config,newsboat config
 nu,/home/theo/.newsboat/urls,newsboat urls
 g3,/home/theo/.config/gtk-3.0/settings.ini,gtk 3
 bd,/home/theo/.config/BetterDiscord/themes/simple-gruvbox.theme.css,discord theme
+ro,/home/theo/.config/rco/objects.csv,rco files
+st,/home/theo/.config/spotify-tui/config.yml,spotify-tui config
