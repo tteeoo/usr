@@ -42,7 +42,7 @@ set wildmenu
 set number
 set relativenumber
 set nowrap
-set shiftwidth=4
+set shiftwidth=8
 set listchars=tab:\|\ 
 set list
 set cursorline
@@ -64,7 +64,7 @@ let g:vimwiki_list = [{'path': '~/media/vimwiki'}]
 
 " AIRLINE
 let g:airline_theme = 'gruvbox'
-let g:airline_powerline_fonts = 1
+let g:airline_symbols_ascii = 1
 
 " COLORS
 syntax on
