@@ -40,7 +40,7 @@ Forked from version 6.2, my `dwm` build has:
 * monoclesymbol patch
 * statusallmons patch
 * My own colors, keybinds, and other configurations
-* My own additions I programmed in (`togglemono` and `focusmaster` functions)
+* My own additions I programmed in (`togglelocked`, `togglemono` and `focusmaster` functions)
  
 ## dwmblocks
 Upstream at: [github.com/torrinfail/dwmblocks](https://github.com/torrinfail/dwmblocks/)

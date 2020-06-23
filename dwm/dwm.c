@@ -94,7 +94,7 @@ struct Client {
 	int basew, baseh, incw, inch, maxw, maxh, minw, minh;
 	int bw, oldbw;
 	unsigned int tags;
-	int isfixed, isfloating, isurgent, neverfocus, oldstate, isfullscreen, issticky, isterminal, noswallow;
+	int islocked, isfixed, isfloating, isurgent, neverfocus, oldstate, isfullscreen, issticky, isterminal, noswallow;
 	pid_t pid;
 	Client *next;
 	Client *snext;
@@ -190,6 +190,7 @@ static void grabkeys(void);
 static void incnmaster(const Arg *arg);
 static void keypress(XEvent *e);
 static void killclient(const Arg *arg);
+static void togglelocked(const Arg *arg);
 static void manage(Window w, XWindowAttributes *wa);
 static void mappingnotify(XEvent *e);
 static void maprequest(XEvent *e);
@@ -884,6 +885,8 @@ drawbar(Monitor *m)
 					drw_text(drw, x, 0, tw, bh, lrpad / 2, c->name, 0);
 				if (c->isfloating)
 					drw_rect(drw, x + boxs, boxs, boxw, boxw, c->isfixed, 0);
+				if (c->islocked)
+					drw_rect(drw, x + boxs, boxs, boxw, boxw, c->islocked, 0);
 				x += tw;
 				w -= tw;
 			}
@@ -1161,9 +1164,25 @@ keypress(XEvent *e)
 }
 
 void
+togglelocked(const Arg *arg)
+{
+
+	if (!selmon->sel)
+		return;
+	if (selmon->sel->islocked) {
+		selmon->sel->islocked = 0;
+		return;
+	} else {
+		selmon->sel->islocked = 1;
+	}
+}
+
+void
 killclient(const Arg *arg)
 {
 	if (!selmon->sel)
+		return;
+	if (selmon->sel->islocked)
 		return;
 	if (!sendevent(selmon->sel, wmatom[WMDelete])) {
 		XGrabServer(dpy);
