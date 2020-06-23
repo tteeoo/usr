@@ -5,7 +5,6 @@ My Arch Linux configuration.
 
 Includes config files for:
 * rco
-* subs
 * fish
 * bash
 * Xorg

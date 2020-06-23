@@ -7,7 +7,6 @@ link () {
 mkd () {
     mkdir $HOME/.config/BetterDiscord/themes -p
     mkdir $HOME/.config/fish/functions -p
-    mkdir $HOME/media/documents -p
     # mkdir $HOME/.config/spotifyd
     mkdir $HOME/.config/spotify-tui
     mkdir $HOME/.config/gtk-3.0
@@ -25,9 +24,7 @@ link .bashrc
 link .xinitrc
 link .gtkrc-2.0
 link .bash_profile
-# link .newsboat/urls
 link .newsboat/config
-link media/documents/subs
 link .config/sxhkd/sxhkdrc
 link .config/dunst/dunstrc
 link .config/nvim/init.vim
