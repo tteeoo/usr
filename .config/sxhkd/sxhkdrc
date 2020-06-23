@@ -14,6 +14,10 @@ alt + k
 alt + p 
     st -e python
 
+# ranger fm
+alt + r
+    st -e ranger
+
 # wallpaper
 alt + b
     randwall
