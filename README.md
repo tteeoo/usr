@@ -52,9 +52,3 @@ I've added my own blocks for:
 * date and time
 
 See the scripts for these blocks and [tteeoo/scripts](https://github.com/tteeoo/scripts)
-
-## slock
-Upstream at: [git.suckless.org/st](https://git.suckless.org/st/)
-
-Forked from version 1.4, I've only really changed the colors.
-
