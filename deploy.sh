@@ -23,6 +23,7 @@ mkd 2> /dev/null
 link .bashrc
 link .xinitrc
 link .gtkrc-2.0
+link .Xresources
 link .bash_profile
 link .newsboat/config
 link .config/sxhkd/sxhkdrc
