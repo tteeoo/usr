@@ -18,6 +18,10 @@ alt + p
 alt + r
     st -e ranger
 
+# vimwiki
+alt + n
+    st -e nvim -c VimwikiIndex
+
 # wallpaper
 alt + b
     randwall
