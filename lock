@@ -10,5 +10,5 @@ xargs i3lock -e \
 	--insidecolor=28282888 \
 	--keyhlcolor=b8bb2644 \
 	--bshlcolor=fb493444 \
-	--veriftext="" --noinputtext="" --wrongtext="" \
+	--locktext="" --veriftext="" --noinputtext="" --wrongtext="" \
 	-i < ~/.cache/oldwall
