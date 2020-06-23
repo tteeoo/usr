@@ -1,0 +1,14 @@
+#!/bin/sh
+# Locks my screen with i3lock
+
+xargs i3lock -e \
+	--ringvercolor=45858888 \
+	--ringwrongcolor=cc241d88 \
+	--ringcolor=98971a88 \
+	--insidevercolor=83a59888 \
+	--insidewrongcolor=fb493488 \
+	--insidecolor=28282888 \
+	--keyhlcolor=b8bb2644 \
+	--bshlcolor=fb493444 \
+	--veriftext="" --noinputtext="" --wrongtext="" \
+	-i < ~/.cache/oldwall
