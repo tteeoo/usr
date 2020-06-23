@@ -32,7 +32,7 @@ alt + d
 
 # slock
 super + z
-    slock 
+    lock 
 
 # terminal
 super + Return
