@@ -5,8 +5,8 @@ ping -c1 theohenson.com > /dev/null
 
 if [ $? = 0 ]; then
     SSID=$(iwgetid -r)
-    echo "[N $SSID]"
+    echo "[N  $SSID]"
     exit
 fi
 
-echo "[N X]"
+echo "[N  X]"

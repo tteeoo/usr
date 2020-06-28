@@ -7,18 +7,4 @@ USAGE=$(top -bn1 | grep "Cpu(s)" | \
 
 NUM=$USAGE
 
-LEN=${#NUM}
-
-if [ $LEN -eq 5 ]; then
-    echo "[C  $NUM%]"
-elif [ $LEN -eq 4 ]; then
-    echo "[C   $NUM%]"
-elif [ $LEN -eq 3 ]; then
-    echo "[C    $NUM%]"
-elif [ $LEN -eq 2 ]; then
-    echo "[C     $NUM%]"
-elif [ $LEN -eq 1 ]; then
-    echo "[C      $NUM%]"
-else
-    echo "[C $NUM%]"
-fi
+echo "[C  $NUM%]"
