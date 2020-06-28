@@ -1,0 +1,8 @@
+#!/bin/sh
+# Displays available pacman package updates for dwmblocks
+
+sudo pacman -Sy > /dev/null
+
+NUM=$(pacman -Qu | wc -l)
+
+echo "[U $NUM]"
