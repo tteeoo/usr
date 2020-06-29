@@ -495,6 +495,7 @@ swallow(Client *p, Client *c)
 	arrange(p->mon);
 	configure(p);
 	updateclientlist();
+	arrange(selmon);
 }
 
 void
@@ -1166,15 +1167,10 @@ keypress(XEvent *e)
 void
 togglelocked(const Arg *arg)
 {
-
 	if (!selmon->sel)
 		return;
-	if (selmon->sel->islocked) {
-		selmon->sel->islocked = 0;
-		return;
-	} else {
-		selmon->sel->islocked = 1;
-	}
+	selmon->sel->islocked = !selmon->sel->islocked;
+	drawbar(selmon);
 }
 
 void
