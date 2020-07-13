@@ -2,6 +2,7 @@
 abbr -a -g g git
 abbr -a -g v nvim
 abbr -a -g sv nvim
+abbr -a -g rm rm -i
 abbr -a -g p sudo pacman
 abbr -a -g nb newsboat -r
 abbr -a -g sus sudo systemctl

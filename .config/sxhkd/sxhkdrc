@@ -22,6 +22,10 @@ alt + r
 alt + n
     st -e nvim -c VimwikiIndex
 
+# xreader
+alt + x
+    xreader
+
 # wallpaper
 alt + b
     randwall

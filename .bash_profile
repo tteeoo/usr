@@ -1,6 +1,9 @@
 # add directories to path
 export PATH=$PATH:/home/theo/.deno/bin:/home/theo/dev/scripts:/home/theo/.local/bin:/home/theo/dev/go/bin:/home/theo/.cargo/bin
 
+# default directories
+export XDG_CONFIG_HOME=/home/theo/.config
+
 # set some default programs
 export SHELL=fish
 export VISUAL=nvim
