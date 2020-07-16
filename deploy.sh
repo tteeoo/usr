@@ -30,6 +30,7 @@ link .newsboat/config
 link .config/sxhkd/sxhkdrc
 link .config/dunst/dunstrc
 link .config/nvim/init.vim
+link .config/nvim/coc-settings.json
 link .config/rco/config.csv
 link .config/rco/objects.csv
 link .config/picom/picom.conf
