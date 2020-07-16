@@ -7,7 +7,6 @@ link () {
 mkd () {
     mkdir $HOME/.config/BetterDiscord/themes -p
     mkdir $HOME/.config/fish/functions -p
-    mkdir $HOME/.config/mpv/scripts -p
     # mkdir $HOME/.config/spotifyd
     mkdir $HOME/.config/spotify-tui
     mkdir $HOME/.config/gtk-3.0
@@ -38,9 +37,6 @@ link .config/fish/config.fish
 link .config/fish/fish_variables
 link .config/gtk-3.0/settings.ini
 link .config/spotify-tui/config.yml
-link .config/mpv/mpv.conf
-link .config/mpv/scripts/mpv_thumbnail_script_server.lua
-link .config/mpv/scripts/mpv_thumbnail_script_client_osc.lua
 # link .config/spotifyd/spotifyd.conf
 link .config/fish/functions/sudo.fish
 link .config/fish/functions/fish_prompt.fish
