@@ -12,8 +12,9 @@ Includes config files for:
 * sxhkd
 * picom
 * neovim
-* spotifyd
 * newsboat
+* spotifyd
+* coc.nvim
 * bandaged BD
 * xdg directories
 
