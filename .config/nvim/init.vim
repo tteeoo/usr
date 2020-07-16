@@ -13,6 +13,8 @@ Plug 'dag/vim-fish'		" Colors for .fish files
 Plug 'neoclide/coc.nvim', {'branch': 'release'} " Completion
 Plug 'vimwiki/vimwiki' " Notes
 Plug 'skammer/vim-css-color' " See color of hex codes
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
 call plug#end()
 " :CocInstall
 " 	coc-go
@@ -55,6 +57,11 @@ set nowritebackup
 set cmdheight=2
 set shortmess+=c
 set signcolumn=yes
+
+" FZF
+command! -bang -nargs=? -complete=dir Files
+    \ call fzf#vim#files(<q-args>, {'options': ['--color=16']}, <bang>0)
+noremap <C-f> :Files<CR>
 
 " VIMWIKI
 let g:vimwiki_list = [{'path': '~/media/vimwiki'}]
