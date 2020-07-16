@@ -30,13 +30,10 @@ cnoremap W<CR> w<CR>
 cnoremap Q<CR> q<CR>
 " Ex mode is icky
 nnoremap Q <Nop>
-" Quick stuff
-cnoremap E<CR> e<CR>
-cnoremap f<Space> find<Space>
 " Make tags
 command! MakeTags !ctags -R .
 
-" SET
+" MISC
 set path+=**
 set wildmenu
 set number
@@ -50,6 +47,7 @@ set showcmd
 set noshowmode
 set encoding=UTF-8
 set updatetime=50
+let mapleader = ','
 " coc specific
 set hidden
 set nobackup
@@ -59,46 +57,40 @@ set shortmess+=c
 set signcolumn=yes
 
 " VIMWIKI
-let mapleader = ','
 let g:vimwiki_list = [{'path': '~/media/vimwiki'}]
 
 " AIRLINE
 let g:airline_theme = 'gruvbox'
 let g:airline_symbols_ascii = 1
+let g:airline_section_z = '%l:%c %p%%'
 
 " COLORS
 syntax on
-filetype plugin indent on
 let g:gruvbox_italic = 1
-"let g:gruvbox_termcolors=16
+" let g:gruvbox_termcolors=16
 colorscheme gruvbox
 
-" COC
+" COC.NVIM
 " Abort completion on backspace
 function! s:check_back_space() abort
     let col = col('.') - 1
     return !col || getline('.')[col - 1]  =~# '\s'
 endfunction
-" Symbol renaming.
+" Symbol renaming
 nmap ,rn <Plug>(coc-rename)
-" Formatting selected code.
-xmap ,f  <Plug>(coc-format-selected)
-nmap ,f  <Plug>(coc-format-selected)
 " Tab completion
 inoremap <silent><expr> <TAB>
       \ pumvisible() ? "\<C-n>" :
+      \ coc#expandableOrJumpable() ? "\<C-r>=coc#rpc#request('doKeymap', ['snippets-expand-jump',''])\<CR>" :
       \ <SID>check_back_space() ? "\<TAB>" :
       \ coc#refresh()
-inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
-" <C-Space> to trigger completion
-inoremap <silent><expr> <c-space> coc#refresh()
 " <CR> to confirm completion
 if exists('*complete_info')
     inoremap <expr> <cr> complete_info()["selected"] != "-1" ? "\<C-y>" : "\<C-g>u\<CR>"
 else
     inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
 endif
-" GoTo code navigation.
+" Code navigation
 nmap <silent> gd <Plug>(coc-definition)
 nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)
@@ -112,13 +104,7 @@ function! s:show_documentation()
 	call CocAction('doHover')
     endif
 endfunction
-" Use <C-l> for trigger snippet expand.
-imap <C-l> <Plug>(coc-snippets-expand)
-" Use <C-j> for select text for visual placeholder of snippet.
-vmap <C-j> <Plug>(coc-snippets-select)
-" Use <C-j> for jump to next placeholder, it's default of coc.nvim
-let g:coc_snippet_next = '<c-j>'
-" Use <C-k> for jump to previous placeholder, it's default of coc.nvim
-let g:coc_snippet_prev = '<c-k>'
+" Use <C-s> for trigger snippet expand.
+imap <C-s> <Plug>(coc-snippets-expand)
 " Jump to error
 nnoremap ,ge :lnext<CR>
