@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 # Sets my wallpaper to a random image in my wallpaper directory
 
 OLD=$(</home/theo/.cache/oldwall)
