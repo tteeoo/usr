@@ -5,4 +5,4 @@ VOL=$(amixer -D default sget Master | grep 'Left:' | awk -F'[][]' '{ print $2 }'
 
 LEN=${#VOL}
 
-echo "[V  $VOL]"
+echo "[V $VOL]"

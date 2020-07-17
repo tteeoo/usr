@@ -7,4 +7,4 @@ USAGE=$(top -bn1 | grep "Cpu(s)" | \
 
 NUM=$(echo "$USAGE" | sed "s/\..*//")
 
-echo "[C  $NUM%]"
+echo "[C $NUM%]"
