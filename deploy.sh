@@ -15,6 +15,7 @@ mkd () {
     mkdir $HOME/.config/dunst
     mkdir $HOME/.config/nvim
     mkdir $HOME/.config/rco
+    mkdir $HOME/.config/mpv
     mkdir $HOME/.newsboat
 }
 
@@ -26,6 +27,8 @@ link .gtkrc-2.0
 link .Xresources
 link .bash_profile
 link .newsboat/config
+link .config/mpv/mpv.conf
+link .config/mpv/input.conf
 link .config/sxhkd/sxhkdrc
 link .config/dunst/dunstrc
 link .config/nvim/init.vim
