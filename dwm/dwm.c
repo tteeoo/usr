@@ -512,10 +512,10 @@ unswallow(Client *c)
 	setfullscreen(c, 0);
 	updatetitle(c);
 	arrange(c->mon);
-	c->bw = borderpx;
 	XMapWindow(dpy, c->win);
 	XMoveResizeWindow(dpy, c->win, c->x, c->y, c->w, c->h);
 	setclientstate(c, NormalState);
+	c->bw = borderpx;
 	focus(NULL);
 	arrange(c->mon);
 }
