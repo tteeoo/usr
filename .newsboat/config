@@ -1,3 +1,7 @@
+browser lynx
+macro m set browser "mpv %u" ; open-in-browser ; set browser "lynx %u"
+macro f set browser "firefox %u" ; open-in-browser ; set browser "lynx %u"
+
 bind-key j next
 bind-key k prev
 bind-key j down article
