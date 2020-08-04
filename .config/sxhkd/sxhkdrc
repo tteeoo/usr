@@ -22,10 +22,6 @@ alt + r
 alt + n
     st -e nvim -c VimwikiIndex
 
-# xreader
-alt + x
-    xreader
-
 # wallpaper
 alt + b
     randwall
@@ -49,3 +45,7 @@ super + z
 # terminal
 super + Return
     st
+
+# xkill
+alt + x
+    pkill xkill || xkill
