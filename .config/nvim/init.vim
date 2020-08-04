@@ -64,7 +64,7 @@ command! -bang -nargs=? -complete=dir Files
 noremap <C-f> :Files<CR>
 
 " VIMWIKI
-let g:vimwiki_list = [{'path': '~/media/vimwiki'}]
+let g:vimwiki_list = [{'path': '~/media/documents/vimwiki'}]
 
 " AIRLINE
 let g:airline_theme = 'gruvbox'
