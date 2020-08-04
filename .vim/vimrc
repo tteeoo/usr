@@ -1,0 +1,78 @@
+"
+" Theo Henson's vimrc
+" Configuration file for vim (place at ~/.vimrc or ~/.vim/vimrc)
+"
+
+" Add some remaps for when you type too quickly
+cnoremap Wq<cr> wq<cr>
+cnoremap W<cr> w<cr>
+cnoremap Q<cr> q<cr>
+
+" Unmap Q to enter Ex mode
+nnoremap Q <nop>
+
+" Set leader key to ,
+let mapleader=','
+
+" Disable vi compatibility
+set nocompatible
+
+" Make backspace be handled nicely
+set backspace=2
+
+" Enable line numbers
+set number
+set relativenumber
+
+" Disable wrap
+set nowrap
+
+" Show command as you type 
+set showcmd
+
+" Set defualt encoding
+set encoding=UTF-8
+
+" Indentation
+set tabstop=8
+set noexpandtab
+set autoindent
+set listchars=tab:\|\ 
+set list
+
+" Turn on wildcard menu and add to path
+set wildmenu
+set path+=**
+
+" Create custom statusline
+set showmode
+set laststatus=2
+set statusline=
+set statusline+=%#LineNr#
+set statusline+=\ %F
+set statusline+=%m\ 
+set statusline+=%r\ 
+set statusline+=%h\ 
+set statusline+=\ %=
+set statusline+=%#CursorColumn#
+set statusline+=%y
+set statusline+=\ %{&fileencoding?&fileencoding:&encoding}
+set statusline+=\[%{&fileformat}\]
+set statusline+=\ %p%%
+set statusline+=\ %l:%c
+
+" Create MakeTags command for ctags
+command! MakeTags !ctags -R .
+
+" Detect filetype
+filetype plugin indent on
+
+" Set colors
+syntax on
+colorscheme pablo
+if filereadable(expand('~/.vim/colors/gruvbox.vim'))
+	colorscheme gruvbox
+endif
+
+" Enable cursorline in insert mode
+autocmd InsertEnter,InsertLeave * set cul!

@@ -21,3 +21,4 @@ ro,/home/theo/.config/rco/objects.csv,rco files
 st,/home/theo/.config/spotify-tui/config.yml,spotify-tui config
 mp,/home/theo/.config/mpv/mpv.conf,mpv config
 mi,/home/theo/.config/mpv/input.conf,mpv inputs
+vi,/home/theo/.vim/vimrc,normal vimrc

@@ -17,12 +17,14 @@ mkd () {
     mkdir $HOME/.config/rco
     mkdir $HOME/.config/mpv
     mkdir $HOME/.newsboat
+    mkdir $HOME/.vim
 }
 
 mkd 2> /dev/null
 
 link .bashrc
 link .xinitrc
+link .vim/vimrc
 link .gtkrc-2.0
 link .Xresources
 link .bash_profile
