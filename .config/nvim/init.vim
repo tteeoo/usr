@@ -1,20 +1,21 @@
 " PLUGINS
 call plug#begin('~/.vim/plugged')
-Plug 'itchyny/vim-cursorword'	" Fancy underlines
-Plug 'tpope/vim-fugitive' 	" Noice git stuff
+Plug 'junegunn/goyo.vim'        " Distraction-free mode
+Plug 'itchyny/vim-cursorword'   " Fancy underlines
+Plug 'tpope/vim-fugitive'       " Noice git stuff
 Plug 'tpope/vim-commentary'     " For 'debugging'
-Plug 'tpope/vim-surround'	" Very handy
-Plug 'tmsvg/pear-tree'		" Very handy
-Plug 'morhetz/gruvbox'		" Colorscheme
-Plug 'airblade/vim-gitgutter'	" See file changes
-Plug 'vim-airline/vim-airline'	" Fancy bar
-Plug 'vim-airline/vim-airline-themes' " Fancy bars
-Plug 'dag/vim-fish'		" Colors for .fish files
-Plug 'neoclide/coc.nvim', {'branch': 'release'} " Completion
-Plug 'vimwiki/vimwiki' " Notes
-Plug 'skammer/vim-css-color' " See color of hex codes
+Plug 'tpope/vim-surround'       " Change surrounding characters
+Plug 'tmsvg/pear-tree'          " Make pairs of brackets, etc.
+Plug 'morhetz/gruvbox'          " Colorscheme
+Plug 'airblade/vim-gitgutter'   " See file changes
+Plug 'vim-airline/vim-airline'  " Fancy bar
+Plug 'vim-airline/vim-airline-themes' " Fancy bar themes
+Plug 'dag/vim-fish'             " Syntax highlighting for .fish files
+Plug 'neoclide/coc.nvim', {'branch': 'release'} " Completion, etc.
+Plug 'vimwiki/vimwiki'          " Notes
+Plug 'skammer/vim-css-color'    " See color of hex codes
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-Plug 'junegunn/fzf.vim'
+Plug 'junegunn/fzf.vim'         " fzf
 call plug#end()
 " :CocInstall
 " 	coc-go
@@ -30,18 +31,24 @@ call plug#end()
 cnoremap Wq<CR> wq<CR>
 cnoremap W<CR> w<CR>
 cnoremap Q<CR> q<CR>
-" Ex mode is icky
+" Disable Ex mode
 nnoremap Q <Nop>
+" Split navigation
+noremap <C-h> <C-w>h
+noremap <C-j> <C-w>j
+noremap <C-k> <C-w>k
+noremap <C-l> <C-w>l
 " Make tags
 command! MakeTags !ctags -R .
 
 " MISC
 set path+=**
 set wildmenu
+set splitbelow splitright
 set number
 set relativenumber
 set nowrap
-set shiftwidth=8
+set tabstop=8
 set listchars=tab:\|\ 
 set list
 set cursorline
@@ -57,6 +64,9 @@ set nowritebackup
 set cmdheight=2
 set shortmess+=c
 set signcolumn=yes
+
+" GOYO
+noremap <C-g> :Goyo<CR>
 
 " FZF
 command! -bang -nargs=? -complete=dir Files
@@ -91,9 +101,9 @@ inoremap <silent><expr> <TAB>
       \ coc#refresh()
 " <CR> to confirm completion
 if exists('*complete_info')
-    inoremap <expr> <cr> complete_info()["selected"] != "-1" ? "\<C-y>" : "\<C-g>u\<CR>"
+    inoremap <expr> <CR> complete_info()["selected"] != "-1" ? "\<C-y>" : "\<C-g>u\<CR>"
 else
-    inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
+    inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
 endif
 " Use K to show documentation in preview window.
 nnoremap <silent> K :call <SID>show_documentation()<CR>
@@ -105,13 +115,13 @@ function! s:show_documentation()
     endif
 endfunction
 " Jump to error
-nnoremap ,ge :lnext<CR>
+nnoremap <leader>ge :lnext<CR>
 " Symbol renaming
-nmap ,rn <Plug>(coc-rename)
+nnoremap <silent> <leader>rn <Plug>(coc-rename)
 " Code navigation
-nmap <silent> gd <Plug>(coc-definition)
-nmap <silent> gy <Plug>(coc-type-definition)
-nmap <silent> gi <Plug>(coc-implementation)
-nmap <silent> gr <Plug>(coc-references)
+nnoremap <silent> <leader>gd <Plug>(coc-definition)
+nnoremap <silent> <leader>gy <Plug>(coc-type-definition)
+nnoremap <silent> <leader>gi <Plug>(coc-implementation)
+nnoremap <silent> <leader>gr <Plug>(coc-references)
 " Use <C-s> for trigger snippet expand.
-imap <C-s> <Plug>(coc-snippets-expand)
+inoremap <silent> <C-s> <Plug>(coc-snippets-expand)
