@@ -55,11 +55,11 @@ set statusline+=%r\
 set statusline+=%h\ 
 set statusline+=\ %=
 set statusline+=%#CursorColumn#
-set statusline+=%y
+set statusline+=\ %y
 set statusline+=\ %{&fileencoding?&fileencoding:&encoding}
 set statusline+=\[%{&fileformat}\]
 set statusline+=\ %p%%
-set statusline+=\ %l:%c
+set statusline+=\ %l:%c\ 
 
 " Create MakeTags command for ctags
 command! MakeTags !ctags -R .
