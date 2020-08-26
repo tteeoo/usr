@@ -17,6 +17,10 @@ noremap <C-j> <C-w>j
 noremap <C-k> <C-w>k
 noremap <C-l> <C-w>l
 
+" Easier search navigation
+nnoremap n nzz
+nnoremap N Nzz
+
 " Set leader key to ,
 let mapleader=','
 

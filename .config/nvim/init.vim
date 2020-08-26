@@ -13,9 +13,8 @@ Plug 'vim-airline/vim-airline-themes' " Fancy bar themes
 Plug 'dag/vim-fish'             " Syntax highlighting for .fish files
 Plug 'neoclide/coc.nvim', {'branch': 'release'} " Completion, etc.
 Plug 'vimwiki/vimwiki'          " Notes
-Plug 'skammer/vim-css-color'    " See color of hex codes
-Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-Plug 'junegunn/fzf.vim'         " fzf
+" TODO: get better css color plugin
+"Plug 'skammer/vim-css-color'    " See color of hex codes
 call plug#end()
 " :CocInstall
 " 	coc-go
@@ -40,8 +39,12 @@ noremap <C-k> <C-w>k
 noremap <C-l> <C-w>l
 " Make tags
 command! MakeTags !ctags -R .
+" Easier search navigation
+nnoremap n nzz
+nnoremap N Nzz
 
 " MISC
+set autoindent
 set path+=**
 set wildmenu
 set splitbelow splitright
@@ -61,17 +64,11 @@ let mapleader = ','
 set hidden
 set nobackup
 set nowritebackup
-set cmdheight=2
 set shortmess+=c
 set signcolumn=yes
 
 " GOYO
 noremap <C-g> :Goyo<CR>
-
-" FZF
-command! -bang -nargs=? -complete=dir Files
-    \ call fzf#vim#files(<q-args>, {'options': ['--color=16']}, <bang>0)
-noremap <C-f> :Files<CR>
 
 " VIMWIKI
 let g:vimwiki_list = [{'path': '~/media/documents/vimwiki'}]
@@ -80,6 +77,7 @@ let g:vimwiki_list = [{'path': '~/media/documents/vimwiki'}]
 let g:airline_theme = 'gruvbox'
 let g:airline_symbols_ascii = 1
 let g:airline_section_z = '%l:%c %p%%'
+let g:airline_extensions = []
 
 " COLORS
 syntax on

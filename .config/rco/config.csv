@@ -1,4 +1,4 @@
 property,value
 editor,nvim
-color,true
+color,no
 shell,/bin/sh
