@@ -1,0 +1,52 @@
+#!/usr/bin/env python3
+# mema (media manager)
+
+import sys
+import shutil
+
+# define constants
+BASE_DIR = '/home/theo/media'
+TYPES = {
+    'audio': ['m4a', 'mp3', 'm4p', 'mpc', 'ogg', 'oga', 'mogg', 'opus', 'wav', 'wma'],
+    'images': ['jpeg', 'jfif', 'exif', 'tiff', 'gif', 'bmp', 'png', 'jpg', 'webp', 'hdr', 'heif', 'svg', 'ico', 'xcf'],
+    'videos': ['mp4', 'webm', 'mkv', 'flv', 'vob', 'ogv', 'ogg', 'drc', 'gifv', 'mng', 'avi', 'mov', 'wmv', 'm4p', 'm4v', 'mpg', 'mpeg', 'm2v'],
+    'documents': ['pdf', 'txt', '', 'html', 'doc', 'docx', 'odt', 'xml', 'ps', 'rtf', 'zip', 'gz', 'xz', 'bzip2', 'man', 'bin', 'iso', 'img', 'roff', 'md']
+}
+
+# sorts a file in media library
+def sort_file(file_name):
+
+    # process name
+    new_name = file_name.lower().replace(' ', '-')
+
+    # get file destination
+    directory = BASE_DIR
+    for type_dir in TYPES:
+        if new_name.split('.')[-1] in TYPES[type_dir]:
+            directory += '/' + type_dir
+    if directory == BASE_DIR:
+        print('mema: warning: unknown file type:', new_name.split('.')[-1])
+        exit(1)
+
+    # move file
+    shutil.move(file_name, directory + '/' + new_name)
+    print('mema: moved', file_name, 'to', directory + '/' + new_name)
+
+# main execution
+if __name__ == '__main__':
+
+    # options
+    if len(sys.argv) > 1:
+
+        # help
+        if sys.argv[1] == '-h' or sys.argv[1] == '--help':
+            print('mema: usage: mema [ -h | -V ] | [ file ]')
+            exit(0)
+
+        # version
+        elif sys.argv[1] == '-V' or sys.argv[1] == '--version':
+            print('mema: version: 0.1.0')
+            exit(0)
+
+        # basic file operation
+        sort_file(sys.argv[1].split('/')[-1])
