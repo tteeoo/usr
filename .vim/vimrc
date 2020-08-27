@@ -28,6 +28,9 @@ let mapleader=','
 " Disable vi compatibility
 set nocompatible
 
+" Clean up ~
+set viminfo=%,<800,'10,/50,:100,h,f0,n~/.vim/info
+
 " Make backspace be handled nicely
 set backspace=2
 

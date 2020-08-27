@@ -7,11 +7,13 @@ link () {
 mkd () {
     mkdir $HOME/.config/BetterDiscord/themes -p
     mkdir $HOME/.config/fish/functions -p
+    mkdir .local/share/wineprefixes -p
     # mkdir $HOME/.config/spotifyd
     mkdir $HOME/.config/spotify-tui
     mkdir $HOME/.config/newsboat
     mkdir $HOME/.config/gtk-3.0
     mkdir $HOME/.config/gtk-2.0
+    mkdir $HOME/.config/python
     mkdir $HOME/.config/picom
     mkdir $HOME/.config/sxhkd
     mkdir $HOME/.config/dunst
@@ -19,6 +21,8 @@ mkd () {
     mkdir $HOME/.config/rco
     mkdir $HOME/.config/git
     mkdir $HOME/.config/mpv
+    mkdir $HOME/.config/npm
+    mkdir $HOME/.config/X11
     mkdir $HOME/.vim
 }
 
@@ -27,13 +31,16 @@ mkd 2> /dev/null
 link .bashrc
 link .xinitrc
 link .vim/vimrc
-link .Xresources
 link .bash_profile
+link .config/wgetrc
+link .config/npm/npmrc
 link .config/git/config
 link .config/mpv/mpv.conf
+link .config/python/rc.py
 link .config/sxhkd/sxhkdrc
 link .config/dunst/dunstrc
 link .config/nvim/init.vim
+link .config/X11/Xresources
 link .config/mpv/input.conf
 link .config/newsboat/config
 link .config/rco/config.csv
