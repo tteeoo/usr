@@ -1,51 +1,47 @@
+# MISC
 # screenshots
 alt + s
     maim -s ~/media/images/scrot/(date +%s).png
 alt + f
     maim ~/media/images/scrot/(date +%s).png
-
 # volume
 alt + j
    amixer -q sset Master 5%- && pkill -RTMIN+10  dwmblocks
 alt + k
    amixer -q sset Master 5%+ && pkill -RTMIN+10 dwmblocks
-
-# python shell
-alt + p 
-    st -e python
-
-# ranger fm
-alt + r
-    st -e ranger
-
-# vimwiki
-alt + n
-    st -e nvim -c VimwikiIndex
-
 # wallpaper
 alt + b
     randwall
-
-# reload sxhkd
-alt + Escape
-    pkill -USR1 -x sxhkd
-
-# firefox
-alt + c
-    firefox
-
-# bloated spyware
-alt + d
-    discord
-
-# slock
+# lock
 super + z
     lock 
+# xkill
+alt + x
+    pkill xkill || xkill
+# reload sxhkd
+alt + escape
+    pkill -USR1 -x sxhkd
 
+# LAUNCH
+# python shell
+alt + shift + p 
+    st -e python
+# ranger fm
+alt + shift + r
+    st -e ranger
+# vimwiki
+alt + shift + w
+    st -e nvim -c VimwikiIndex
+# firefox
+alt + shift + c
+    firefox
+# bloated spyware
+alt + shift + d
+    discord
+# spotify
+alt + shift + s
+    st -e spt
 # terminal
 super + Return
     st
 
-# xkill
-alt + x
-    pkill xkill || xkill

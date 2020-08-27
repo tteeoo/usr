@@ -20,6 +20,7 @@ noremap <C-l> <C-w>l
 " Easier search navigation
 nnoremap n nzz
 nnoremap N Nzz
+set nohlsearch
 
 " Set leader key to ,
 let mapleader=','

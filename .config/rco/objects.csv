@@ -5,7 +5,7 @@ sx,/home/theo/.config/sxhkd/sxhkdrc,sxhkd config
 pi,/home/theo/.config/picom/picom.conf,picom config
 sb,/home/theo/media/documents/subs,subs
 xi,/home/theo/.xinitrc,xinit rc
-g2,/home/theo/.gtkrc-2.0,gtk 2
+g2,/home/theo/.config/gtk-2.0/gtkrc-2.0,gtk 2
 ba,/home/theo/.bashrc,bash rc
 bp,/home/theo/.bash_profile,bash profile
 sd,/home/theo/.config/spotifyd/spotifyd.conf,spotifyd
@@ -13,8 +13,8 @@ du,/home/theo/.config/dunst/dunstrc,dunst
 fv,/home/theo/.config/fish/fish_variables,fish vars
 fi,/home/theo/.config/fish/config.fish,fish
 fp,/home/theo/.config/fish/functions/fish_prompt.fish,fish prompt
-nb,/home/theo/.newsboat/config,newsboat config
-nu,/home/theo/.newsboat/urls,newsboat urls
+nb,/home/theo/.config/newsboat/config,newsboat config
+nu,/home/theo/.config/newsboat/urls,newsboat urls
 g3,/home/theo/.config/gtk-3.0/settings.ini,gtk 3
 bd,/home/theo/.config/BetterDiscord/themes/simple-gruvbox.theme.css,discord theme
 ro,/home/theo/.config/rco/objects.csv,rco files
@@ -22,3 +22,4 @@ st,/home/theo/.config/spotify-tui/config.yml,spotify-tui config
 mp,/home/theo/.config/mpv/mpv.conf,mpv config
 mi,/home/theo/.config/mpv/input.conf,mpv inputs
 vi,/home/theo/.vim/vimrc,normal vimrc
+gi,/home/theo/.config/git/config,git config

@@ -42,6 +42,7 @@ command! MakeTags !ctags -R .
 " Easier search navigation
 nnoremap n nzz
 nnoremap N Nzz
+set nohlsearch
 
 " MISC
 set autoindent
