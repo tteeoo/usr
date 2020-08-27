@@ -30,17 +30,14 @@ Forked from version 0.8.2, my `st` build has:
 Upstream at: [git.suckless.org/dwm](https://git.suckless.org/dwm/)
 
 Forked from version 6.2, my `dwm` build has:
+* cfacts patch
 * pertag patch
-* sticky patch
-* swallow patch
-* fancybar patch
+* tilegap patch
 * noborder patch
 * movestack patch
-* vanitygaps patch
-* monoclesymbol patch
-* statusallmons patch
+* Removed some features
 * My own colors, keybinds, and other configurations
-* My own additions I programmed in (`togglelocked`, `togglemono` and `focusmaster` functions)
+* My own additions I programmed in (`togglelayout` and `focusmaster` functions, changing how the bar looks)
  
 ## dwmblocks
 Upstream at: [github.com/torrinfail/dwmblocks](https://github.com/torrinfail/dwmblocks/)
@@ -48,7 +45,6 @@ Upstream at: [github.com/torrinfail/dwmblocks](https://github.com/torrinfail/dwm
 I've added my own blocks for:
 * volume 
 * cpu temp and usage
-* network status
 * date and time
 
 See the scripts for these blocks and [tteeoo/scripts](https://github.com/tteeoo/scripts)
