@@ -12,5 +12,5 @@ while [ "$OLD" = "$NEW" ]; do
     get_file
 done
 
-feh --bg-fill $NEW
+feh --no-fehbg --bg-fill $NEW
 echo $NEW > /home/theo/.cache/oldwall
