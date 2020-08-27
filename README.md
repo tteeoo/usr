@@ -1,14 +1,11 @@
+# Suckless
 This repository is mainly for my own convenience, although it may also serve as inspiration or a starting off point for your own suckless forks.
 
-A screenshot featuring `dwm`, `st`, and `dwmblocks`:
-![Screenshot](https://raw.githubusercontent.com/tteeoo/suckless/master/screenshot.png)
-
-# Suckless
 Suckless software is "software that sucks less": [suckless.org](https://suckless.org/)
 
-Suckless software is made to be a simple as possible while still doing it's job well, fitting with the UNIX philosophy.
+Suckless software is made to be a simple as possible while still doing its job well, fitting with the UNIX philosophy.
 
-This is achieved by having configuration built into the program (recomplied with every config change) and keeping the code clean and concise.
+This is achieved by having configuration built into the program, and keeping the code clean and concise (among other things).
 
 Suckless software is highly extensible through user submitted patches on their website.
 
@@ -47,4 +44,9 @@ I've added my own blocks for:
 * cpu temp and usage
 * date and time
 
-See the scripts for these blocks and [tteeoo/scripts](https://github.com/tteeoo/scripts)
+See the scripts for these blocks at [tteeoo/scripts](https://github.com/tteeoo/scripts).
+
+<hr>
+
+A screenshot featuring `dwm`, `st`, and `dwmblocks`:
+![Screenshot](https://raw.githubusercontent.com/tteeoo/suckless/master/screenshot.png)
