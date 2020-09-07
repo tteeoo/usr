@@ -11,6 +11,9 @@ dunst &
 spotifyd
 picom -b --config /home/theo/.config/picom/picom.conf &
 
+# fix java apps with non-reparenting wms
+export _JAVA_AWT_WM_NONREPARENTING=1
+
 # start window manager
 dwmblocks &
 exec dwm

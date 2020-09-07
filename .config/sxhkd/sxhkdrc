@@ -15,11 +15,14 @@ alt + b
 # lock
 super + z
     lock 
+# mixer
+alt + m
+    st -e pulsemixer 
 # xkill
 alt + x
     pkill xkill || xkill
 # reload sxhkd
-alt + escape
+alt + Escape
     pkill -USR1 -x sxhkd
 
 # LAUNCH

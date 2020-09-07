@@ -24,3 +24,4 @@ mi,/home/theo/.config/mpv/input.conf,mpv inputs
 vi,/home/theo/.vim/vimrc,normal vimrc
 gi,/home/theo/.config/git/config,git config
 py,/home/theo/.config/python/rc.py,python shell rc
+xr,/home/theo/.config/X11/Xresources,X resources

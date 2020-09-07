@@ -16,6 +16,7 @@ abbr -a -g c fzfcmd
 
 alias fzfcmd='set fzfcmd ( grep " cmd: " ~/.local/share/fish/fish_history | sed "s/- cmd: //" | grep -v fzfcmd | tac | fzf -e --color=16 --no-sort ) && echo $fzfcmd && eval $fzfcmd'
 alias lynx='lynx -accept_all_cookies -vikeys'
+alias vimwiki='nvim -c VimwikiIndex'
 
 setxkbmap -option caps:swapescape
 
