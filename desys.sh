@@ -18,7 +18,7 @@ pacman -Sy --noconfirm > /dev/null && echo "OK" || exit 1
 printf "updating package keyring... "
 pacman -S --needed --noconfirm archlinux-keyring > /dev/null && echo "OK" || exit 1
 printf "installing packages... "
-pacman -S --needed --noconfirm biber ranger texlive-most zathura zathura-pdf-mupdf nodejs newsboat lm_sensors neofetch cmatrix htop nemo dmenu icu firefox imagemagick ffmpeg mpv feh nettle git fish sudo xorg wget maim dunst maim sxhkd picom neovim xreader base-devel xorg-xinit alsa-utils noto-fonts pavucontrol ttf-fira-mono > /dev/null && echo "OK" || exit 1
+pacman -S --needed --noconfirm pulsemixer ranger zathura zathura-pdf-mupdf nodejs newsboat lm_sensors neofetch cmatrix htop nemo dmenu icu firefox imagemagick ffmpeg mpv feh nettle git fish sudo xorg wget maim dunst maim sxhkd picom neovim xreader base-devel xorg-xinit alsa-utils noto-fonts pavucontrol ttf-fira-mono > /dev/null && echo "OK" || exit 1
 
 # ---------------------------------------------
 
@@ -39,11 +39,6 @@ su -c "mkdir -p /home/theo/media/documents > /dev/null" theo && echo "OK" || exi
 # ---------------------------------------------
 
 echo "--GIT--"
-
-printf "setting git email... "
-su -c "git config --global user.email 'theodorehenson@protonmail.com' > /dev/null" theo && echo "OK" || exit 1
-printf "setting git name... "
-su -c "git config --global user.name 'Theo Henson' > /dev/null" theo && echo "OK" || exit 1
 
 printf "cloning dotfiles... "
 su -c "git clone https://github.com/tteeoo/dotfiles /home/theo/dev/repos/dotfiles > /dev/null" theo && echo "OK" || exit 1
