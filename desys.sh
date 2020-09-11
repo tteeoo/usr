@@ -14,11 +14,11 @@ rmmod pcspkr > /dev/null && echo "OK"
 echo "--PACKAGES--"
 
 printf "updating package db... "
-pacman -Sy --noconfirm > /dev/null && echo "OK" || exit 1
+pacman -Syu --noconfirm > /dev/null && echo "OK" || exit 1
 printf "updating package keyring... "
 pacman -S --needed --noconfirm archlinux-keyring > /dev/null && echo "OK" || exit 1
 printf "installing packages... "
-pacman -S --needed --noconfirm pulsemixer ranger zathura zathura-pdf-mupdf nodejs newsboat lm_sensors neofetch cmatrix htop nemo dmenu icu firefox imagemagick ffmpeg mpv feh nettle git fish sudo xorg wget maim dunst maim sxhkd picom neovim xreader base-devel xorg-xinit alsa-utils noto-fonts pavucontrol ttf-fira-mono > /dev/null && echo "OK" || exit 1
+pacman -S --needed --noconfirm vulkan-radeon xf86-video-amdgpu mesa pulsemixer ranger zathura zathura-pdf-mupdf nodejs newsboat lm_sensors neofetch cmatrix htop nemo dmenu icu firefox imagemagick ffmpeg mpv feh nettle git fish sudo xorg wget maim dunst maim sxhkd picom neovim xreader base-devel xorg-xinit alsa-utils noto-fonts pavucontrol ttf-fira-mono > /dev/null && echo "OK" || exit 1
 
 # ---------------------------------------------
 
