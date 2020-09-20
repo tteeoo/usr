@@ -1,7 +1,6 @@
 # abbreviations set here as global vars for clarity's sake
 abbr -a -g g git
 abbr -a -g v nvim
-abbr -a -g sv nvim
 abbr -a -g r ranger
 abbr -a -g cp cp -i
 abbr -a -g z zathura
@@ -20,4 +19,14 @@ alias vimwiki='nvim -c VimwikiIndex'
 
 setxkbmap -option caps:swapescape
 
-tput smkx
+switch $TERM
+    case 'st-*' # suckless' simple terminal
+                # Enable keypad, do it once before fish_postexec ever fires
+        tput smkx
+        function st_smkx --on-event fish_postexec
+            tput smkx
+        end
+        function st_rmkx --on-event fish_preexec
+            tput rmkx
+        end
+end

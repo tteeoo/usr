@@ -6,9 +6,9 @@ alt + f
     maim ~/media/images/scrot/(date +%s).png
 # volume
 alt + j
-   amixer -q sset Master 5%- && pkill -RTMIN+10  dwmblocks
+   amixer -D pulse sset Master 5%- && pkill -RTMIN+10 dwmblocks
 alt + k
-   amixer -q sset Master 5%+ && pkill -RTMIN+10 dwmblocks
+   amixer -D pulse sset Master 5%+ && pkill -RTMIN+10 dwmblocks
 # wallpaper
 alt + b
     randwall
@@ -48,3 +48,6 @@ alt + shift + s
 super + Return
     st
 
+# intercept keybind from firefox
+control + q
+    echo
