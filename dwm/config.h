@@ -25,7 +25,7 @@ static const char *colors[][3]      = {
 };
 
 /* tagging */
-static const char *tags[] = { "I", "II", "III", "IV", "V" };
+static const char *tags[] = { "1", "2", "3", "4", "5" };
 
 /* layout(s) */
 static int oldlayout          = 0;    /* used in togglelayout() */
