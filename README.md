@@ -28,11 +28,10 @@ Upstream at: [git.suckless.org/dwm](https://git.suckless.org/dwm/)
 
 Forked from version 6.2, my `dwm` build has:
 * cfacts patch
-* pertag patch
+* pertag patch (I added resizehints into the Pertag struct as well)
 * tilegap patch
 * noborder patch
 * movestack patch
-* Removed some features
 * My own colors, keybinds, and other configurations
 * My own additions I programmed in (`togglelayout` and `focusmaster` functions, changing how the bar looks)
  
