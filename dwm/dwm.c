@@ -134,6 +134,7 @@ struct Monitor {
 };
 
 /* function declarations */
+static int applysizehints(Client *c, int *x, int *y, int *w, int *h, int interact);
 static void arrange(Monitor *m);
 static void arrangemon(Monitor *m);
 static void attach(Client *c);
@@ -194,6 +195,7 @@ static void setfocus(Client *c);
 static void setfullscreen(Client *c, int fullscreen);
 static void setlayout(const Arg *arg);
 static void togglelayout(const Arg *arg);
+static void toggleresizehints(const Arg *arg);
 static void setcfact(const Arg *arg);
 static void setmfact(const Arg *arg);
 static void setup(void);
@@ -216,6 +218,7 @@ static void updatebars(void);
 static void updateclientlist(void);
 static int updategeom(void);
 static void updatenumlockmask(void);
+static void updatesizehints(Client *c);
 static void updatestatus(void);
 static void updatetitle(Client *c);
 static void updatewindowtype(Client *c);
@@ -272,12 +275,79 @@ struct Pertag {
 	unsigned int sellts[LENGTH(tags) + 1]; /* selected layouts */
 	const Layout *ltidxs[LENGTH(tags) + 1][2]; /* matrix of tags and layouts indexes  */
 	int showbars[LENGTH(tags) + 1]; /* display bar for the current tag */
+	int resizehints[LENGTH(tags) + 1]; /* follow window hints when resizing */
 };
 
 /* compile-time check if all tags fit into an unsigned int bit array. */
 struct NumTags { char limitexceeded[LENGTH(tags) > 31 ? -1 : 1]; };
 
 /* function implementations */
+int
+applysizehints(Client *c, int *x, int *y, int *w, int *h, int interact)
+{
+	int baseismin;
+	Monitor *m = c->mon;
+
+	/* set minimum possible */
+	*w = MAX(1, *w);
+	*h = MAX(1, *h);
+	if (interact) {
+		if (*x > sw)
+			*x = sw - WIDTH(c);
+		if (*y > sh)
+			*y = sh - HEIGHT(c);
+		if (*x + *w + 2 * c->bw < 0)
+			*x = 0;
+		if (*y + *h + 2 * c->bw < 0)
+			*y = 0;
+	} else {
+		if (*x >= m->wx + m->ww)
+			*x = m->wx + m->ww - WIDTH(c);
+		if (*y >= m->wy + m->wh)
+			*y = m->wy + m->wh - HEIGHT(c);
+		if (*x + *w + 2 * c->bw <= m->wx)
+			*x = m->wx;
+		if (*y + *h + 2 * c->bw <= m->wy)
+			*y = m->wy;
+	}
+	if (*h < bh)
+		*h = bh;
+	if (*w < bh)
+		*w = bh;
+	if (selmon->pertag->resizehints[selmon->seltags] || c->isfloating || !c->mon->lt[c->mon->sellt]->arrange) {
+		/* see last two sentences in ICCCM 4.1.2.3 */
+		baseismin = c->basew == c->minw && c->baseh == c->minh;
+		if (!baseismin) { /* temporarily remove base dimensions */
+			*w -= c->basew;
+			*h -= c->baseh;
+		}
+		/* adjust for aspect limits */
+		if (c->mina > 0 && c->maxa > 0) {
+			if (c->maxa < (float)*w / *h)
+				*w = *h * c->maxa + 0.5;
+			else if (c->mina < (float)*h / *w)
+				*h = *w * c->mina + 0.5;
+		}
+		if (baseismin) { /* increment calculation requires this */
+			*w -= c->basew;
+			*h -= c->baseh;
+		}
+	        /* adjust for increment value */
+		if (c->incw)
+			*w -= *w % c->incw;
+		if (c->inch)
+			*h -= *h % c->inch;
+		/* restore base dimensions */
+		*w = MAX(*w + c->basew, c->minw);
+		*h = MAX(*h + c->baseh, c->minh);
+		if (c->maxw)
+			*w = MIN(*w, c->maxw);
+		if (c->maxh)
+			*h = MIN(*h, c->maxh);
+	}
+	return *x != c->x || *y != c->y || *w != c->w || *h != c->h;
+}
+
 void
 arrange(Monitor *m)
 {
@@ -553,6 +623,8 @@ createmon(void)
 		m->pertag->sellts[i] = m->sellt;
 
 		m->pertag->showbars[i] = m->showbar;
+
+		m->pertag->resizehints[i] = resizehints;
 	}
 
 	return m;
@@ -1018,6 +1090,7 @@ manage(Window w, XWindowAttributes *wa)
 	XSetWindowBorder(dpy, w, scheme[SchemeNorm][ColBorder].pixel);
 	configure(c); /* propagates border_width, if size doesn't change */
 	updatewindowtype(c);
+	updatesizehints(c);
 	updatewmhints(c);
 	XSelectInput(dpy, w, EnterWindowMask|FocusChangeMask|PropertyChangeMask|StructureNotifyMask);
 	grabbuttons(c, 0);
@@ -1189,6 +1262,7 @@ propertynotify(XEvent *e)
 				arrange(c->mon);
 			break;
 		case XA_WM_NORMAL_HINTS:
+			updatesizehints(c);
 			break;
 		case XA_WM_HINTS:
 			updatewmhints(c);
@@ -1228,7 +1302,8 @@ recttomon(int x, int y, int w, int h)
 void
 resize(Client *c, int x, int y, int w, int h, int interact)
 {
-	resizeclient(c, x, y, w, h);
+	if (applysizehints(c, &x, &y, &w, &h, interact))
+		resizeclient(c, x, y, w, h);
 }
 
 void
@@ -1496,6 +1571,13 @@ togglelayout(const Arg *arg)
 		new.v = &layouts[arg->i];
 		setlayout(&new);
 	}
+}
+
+void
+toggleresizehints(const Arg *arg)
+{
+	selmon->pertag->resizehints[selmon->seltags] = !selmon->pertag->resizehints[selmon->seltags];
+	arrange(selmon);
 }
 
 void setcfact(const Arg *arg) {
@@ -1979,6 +2061,49 @@ updatenumlockmask(void)
 				== XKeysymToKeycode(dpy, XK_Num_Lock))
 				numlockmask = (1 << i);
 	XFreeModifiermap(modmap);
+}
+
+void
+updatesizehints(Client *c)
+{
+	long msize;
+	XSizeHints size;
+
+	if (!XGetWMNormalHints(dpy, c->win, &size, &msize))
+		 /* size is uninitialized, ensure that size.flags aren't used */
+		 size.flags = PSize;
+	if (size.flags & PBaseSize) {
+		 c->basew = size.base_width;
+		 c->baseh = size.base_height;
+	} else if (size.flags & PMinSize) {
+		 c->basew = size.min_width;
+		 c->baseh = size.min_height;
+	} else
+		 c->basew = c->baseh = 0;
+	if (size.flags & PResizeInc) {
+		 c->incw = size.width_inc;
+		 c->inch = size.height_inc;
+	} else
+		 c->incw = c->inch = 0;
+	if (size.flags & PMaxSize) {
+		 c->maxw = size.max_width;
+		 c->maxh = size.max_height;
+	} else
+		 c->maxw = c->maxh = 0;
+	if (size.flags & PMinSize) {
+		 c->minw = size.min_width;
+		 c->minh = size.min_height;
+	} else if (size.flags & PBaseSize) {
+		 c->minw = size.base_width;
+		 c->minh = size.base_height;
+	} else
+		 c->minw = c->minh = 0;
+	if (size.flags & PAspect) {
+		 c->mina = (float)size.min_aspect.y / size.min_aspect.x;
+		 c->maxa = (float)size.max_aspect.x / size.max_aspect.y;
+	} else
+		 c->maxa = c->mina = 0.0;
+	c->isfixed = (c->maxw && c->maxh && c->maxw == c->minw && c->maxh == c->minh);
 }
 
 void

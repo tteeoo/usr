@@ -6,6 +6,7 @@ static const unsigned int snap      = 8;        /* snap pixel */
 static const unsigned int gappx     = 12;       /* gap pixel */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
+static const int resizehints        = 0;        /* 1 means respect size hints in tiled resizals */
 
 static const char *fonts[]          = { "Fira Mono:size=10" };
 static const char dmenufont[]       = "Fira Mono:size=10";
@@ -83,6 +84,8 @@ static Key keys[] = {
 	// mod + tab: toggle monocle
 	{ MODKEY,                       XK_Tab,    togglelayout,   {.i = 1} },
 	{ MODKEY|ShiftMask,             XK_Tab,    togglefloating, {0} },
+	// mod + t: toggle resizehints
+	{ MODKEY,                       XK_t,      toggleresizehints, {0} },
 	// mod + number: view tag
 	{ MODKEY,                       XK_0,      view,           {.ui = ~0 } },
 	// mod + shift + number: tag client
