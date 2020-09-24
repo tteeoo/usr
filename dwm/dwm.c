@@ -717,8 +717,8 @@ drawbar(Monitor *m)
 		drw_setscheme(drw, scheme[SchemeNorm]); // Never use ShemeSel for name
 		if (m->sel) {
 			if (m->sel->isfloating) {
-				drw_text(drw, x, 0, w, bh, lrpad / 2, "F", 0);
-				drw_text(drw, x + TEXTW("F"), 0, w, bh, lrpad / 2, m->sel->name, 0);
+				drw_text(drw, x, 0, w, bh, lrpad / 2, "F ", 0);
+				drw_text(drw, x + TEXTW("F "), 0, w - TEXTW("F "), bh, (lrpad - TEXTW("F ")) / 2, m->sel->name, 0);
 			} else {
 				drw_text(drw, x, 0, w, bh, lrpad / 2, m->sel->name, 0);
 			}
