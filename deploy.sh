@@ -47,7 +47,7 @@ link .config/rco/config.csv
 link .config/rco/objects.csv
 link .config/picom/picom.conf
 link .config/fish/config.fish
-link .config/gtk-2.0/.gtkrc-2.0
+link .config/gtk-2.0/gtkrc-2.0
 link .config/fish/fish_variables
 link .config/gtk-3.0/settings.ini
 link .config/spotify-tui/config.yml
