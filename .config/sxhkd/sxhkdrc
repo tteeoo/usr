@@ -1,9 +1,9 @@
 # MISC
 # screenshots
 alt + s
-    maim -s ~/media/images/scrot/(date +%s).png
+    maim -s ~/media/images/scrot/$(date +%s).png
 alt + f
-    maim ~/media/images/scrot/(date +%s).png
+    maim ~/media/images/scrot/$(date +%s).png
 # volume
 alt + j
    amixer -D pulse sset Master 5%- && pkill -RTMIN+10 dwmblocks
@@ -44,9 +44,16 @@ alt + shift + d
 # spotify
 alt + shift + s
     st -e spt
+# nemo
+alt + shift + n
+    nemo
+
 # terminal
 super + Return
     st
+# rofi
+super + r
+    rofi -theme gruvbox-dark -show run
 
 # intercept keybind from firefox
 control + q

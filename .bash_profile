@@ -2,7 +2,7 @@
 export PATH="$PATH:$HOME/dev/deno/bin:$HOME/dev/scripts:$HOME/.local/bin:$HOME/dev/go/bin:$HOME/dev/cargo/bin"
 
 # set some default programs
-export SHELL=/usr/bin/fish
+# export SHELL=/usr/bin/fish
 export VISUAL=/usr/bin/nvim
 export EDITOR=/usr/bin/nvim
 export TERMINAL=/usr/local/bin/st

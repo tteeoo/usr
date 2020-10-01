@@ -19,6 +19,6 @@ Includes config files for:
 * bandaged BD
 * xdg directories
 
-See [AUR gtk-theme-arc-gruvbox-git](https://aur.archlinux.org/packages/gtk-theme-arc-gruvbox-git/) for my gtk themes.
+See [sainnhe/gruvbox-material-gtk](https://github.com/sainnhe/gruvbox-material-gtk) for my gtk themes.
 
 See [tteeoo/suckless](https://github.com/tteeoo/suckless) for some of my other programs and their configuration.
