@@ -1,5 +1,5 @@
 # dotfiles
-My Arch Linux configuration.
+My Arch (now technically Artix) Linux configuration.
 
 ![screenshot](https://raw.githubusercontent.com/tteeoo/dotfiles/master/screenshot.png)
 
