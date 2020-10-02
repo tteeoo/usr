@@ -57,7 +57,7 @@ static Key keys[] = {
 	// mod + space: swap focused client and master's position
 	{ MODKEY,                       XK_space,  zoom,           {0} },
 	// mod + r: spawn dmenu on the focused monitor
-	{ MODKEY,                       XK_r,      dmenu,          {0} },
+	/* { MODKEY,                       XK_r,      dmenu,          {0} }, */
 	// mod + b: toggle the bar for the selected tag(s)
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
 	// mod + j/k: change focus up/down the stack of clients
