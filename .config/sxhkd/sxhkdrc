@@ -22,7 +22,7 @@ alt + m
 alt + x
     pkill xkill || xkill
 # reload sxhkd
-alt + Escape
+control + Return
     pkill -USR1 -x sxhkd
 
 # LAUNCH
