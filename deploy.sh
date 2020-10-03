@@ -5,9 +5,9 @@ link () {
 }
 
 mkd () {
-    mkdir $HOME/.config/BetterDiscord/themes -p
     mkdir $HOME/.config/fish/functions -p
     mkdir .local/share/wineprefixes -p
+    mkdir $HOME/.config/discocss -p
     # mkdir $HOME/.config/spotifyd
     mkdir $HOME/.config/spotify-tui
     mkdir $HOME/.config/newsboat
@@ -56,4 +56,4 @@ link .config/nvim/coc-settings.json
 link .config/fish/functions/sudo.fish
 link .config/fish/functions/fish_prompt.fish
 link .config/fish/functions/fish_mode_prompt.fish
-link .config/BetterDiscord/themes/simple-gruvbox.theme.css
+link .config/discocss/custom.css
