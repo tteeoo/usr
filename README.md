@@ -27,6 +27,7 @@ Forked from version 0.8.2, my `st` build has:
 Upstream at: [git.suckless.org/dwm](https://git.suckless.org/dwm/)
 
 Forked from version 6.2, my `dwm` build has:
+* warp patch
 * cfacts patch
 * pertag patch (I added resizehints into the Pertag struct as well)
 * tilegap patch
