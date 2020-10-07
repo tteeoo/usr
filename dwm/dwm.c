@@ -708,6 +708,10 @@ drawbar(Monitor *m)
 		// Draw bar if any clients are tagged with client and isn't focused
 		if (occ & 1 << i && (m->tagset[m->seltags] & 1 << i) == 0)
 			drw_rect(drw, x + boxs - 1, drw->fonts->h, w, boxw - 1, 1, urg & 1 << i);
+		else if (m->sel && m->sel->isfloating && (m->tagset[m->seltags] & 1 << i) != 0) {
+			drw_setscheme(drw, scheme[SchemeNorm]);
+			drw_rect(drw, x + boxs - 1, drw->fonts->h, w, boxw - 1, 1, urg & 1 << i);
+		}
 		x += w;
 	}
 	drw_setscheme(drw, scheme[SchemeNorm]);
@@ -717,13 +721,8 @@ drawbar(Monitor *m)
 		//drw_setscheme(drw, scheme[m == selmon ? SchemeSel : SchemeNorm]);
 		drw_setscheme(drw, scheme[SchemeNorm]); // Never use ShemeSel for name
 		if (m->sel) {
-			if (m->sel->isfloating) {
-				drw_text(drw, x, 0, w, bh, lrpad / 2, "F ", 0);
-				drw_text(drw, x + TEXTW("F "), 0, w - TEXTW("F "), bh, (lrpad - TEXTW("F ")) / 2, m->sel->name, 0);
-			} else {
-				drw_text(drw, x, 0, w, bh, lrpad / 2, m->sel->name, 0);
-			}
-				/* drw_rect(drw, x + boxs, boxs, boxw, boxw, m->sel->isfixed, 0); */
+			drw_text(drw, x, 0, w, bh, lrpad / 2, m->sel->name, 0);
+			/* drw_rect(drw, x + boxs, boxs, boxw, boxw, m->sel->isfixed, 0); */
 		} else {
 			drw_rect(drw, x, 0, w, bh, 1, 1);
 		}
