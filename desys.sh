@@ -1,4 +1,5 @@
 #!/bin/bash
+chmod u+s /usr/local/bin/slock > /dev/null && echo "OK" || exit 1
 # desys.sh (deploy system)
 # (C) 2020 Theo Henson, MIT License
 # deploys my Arch Linux system
@@ -18,7 +19,7 @@ pacman -Syu --noconfirm > /dev/null && echo "OK" || exit 1
 printf "updating package keyring... "
 pacman -S --needed --noconfirm archlinux-keyring > /dev/null && echo "OK" || exit 1
 printf "installing packages... "
-pacman -S --needed --noconfirm vulkan-radeon xf86-video-amdgpu mesa pulsemixer ranger zathura zathura-pdf-mupdf nodejs newsboat lm_sensors neofetch cmatrix htop nemo dmenu icu firefox imagemagick ffmpeg mpv feh nettle git fish sudo xorg wget maim dunst maim sxhkd picom neovim xreader base-devel xorg-xinit alsa-utils noto-fonts pavucontrol ttf-fira-mono > /dev/null && echo "OK" || exit 1
+pacman -S --needed --noconfirm npm lxsession polkit python-pip fzf i3lock-color spotifyd mesa pulsemixer ranger zathura zathura-pdf-mupdf nodejs newsboat lm_sensors neofetch cmatrix htop nemo dmenu icu firefox imagemagick ffmpeg mpv feh nettle git fish sudo xorg wget maim dunst maim sxhkd picom neovim xreader base-devel xorg-xinit alsa-utils noto-fonts pavucontrol ttf-fira-mono > /dev/null && echo "OK" || exit 1
 
 # ---------------------------------------------
 
@@ -56,8 +57,6 @@ printf "chmoding suckless programs... "
 su -c "chmod +x /home/theo/dev/repos/suckless/bin/* > /dev/null" theo && echo "OK" || exit 1
 printf "copying suckless programs to bin... "
 cp /home/theo/dev/repos/suckless/bin/* /usr/local/bin > /dev/null && echo "OK" || exit 1
-printf "chmod suid-ing slock... "
-chmod u+s /usr/local/bin/slock > /dev/null && echo "OK" || exit 1
 
 printf "cloning sest... "
 su -c "git clone https://github.com/tteeoo/sest /home/theo/dev/repos/sest > /dev/null" theo && echo "OK" || exit 1
@@ -85,7 +84,7 @@ curl https://directory.theohenson.com/file/bin/yay > /usr/local/bin/yay && echo 
 printf "chmoding yay binary... "
 chmod +x /usr/local/bin/yay > /dev/null && echo "OK" || exit 1
 printf "installing aur packages with yay... "
-su -c "yay -S --needed --noconfirm spotifyd-bin spotify-tui-bin > /dev/null" theo && echo "OK" || exit 1
+su -c "yay -S --needed --noconfirm spotify-tui-bin > /dev/null" theo && echo "OK" || exit 1
 
 # ---------------------------------------------
 
@@ -114,4 +113,5 @@ sensors-detect --auto > /dev/null && echo "OK" || exit 1
 
 echo "--END--"
 echo "<C-d> and login as theo!"
+echo "Remember to install graphics drivers for your specific GPU"
 exit 0

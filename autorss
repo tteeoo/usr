@@ -1,0 +1,7 @@
+#!/bin/sh
+
+newsboat -x reload
+MSG=`newsboat -x print-unread`
+if [[ `echo $MSG | awk '{print $1}'` -gt 0 ]]; then
+	notify-send -a "newsboat" "updated rss" "$MSG"
+fi
