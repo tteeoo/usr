@@ -1,9 +1,9 @@
 /* See LICENSE file for copyright and license details. */
 
 /* appearance */
+static const unsigned int gappx     = 12;       /* gap pixel */
 static const unsigned int borderpx  = 2;        /* border pixel of windows */
 static const unsigned int snap      = 8;        /* snap pixel */
-static const unsigned int gappx     = 12;       /* gap pixel */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
 static const int resizehints        = 0;        /* 1 means respect size hints in tiled resizals */
@@ -63,6 +63,10 @@ static Key keys[] = {
 	// mod + j/k: change focus up/down the stack of clients
 	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
 	{ MODKEY,                       XK_k,      focusstack,     {.i = -1 } },
+	// mod + a/e: change gap size
+	{ MODKEY|ControlMask,           XK_k,      changegaps,     {.i = +6 } },
+	{ MODKEY|ControlMask,           XK_j,      changegaps,     {.i = -6 } },
+	{ MODKEY|ControlMask,           XK_g,      setgaps,        {.i = 12 } },
 	// mod + shift + j/k: change position of the focused client up/down the stack of clients
 	{ MODKEY|ShiftMask,             XK_j,      movestack,      {.i = +1 } },
 	{ MODKEY|ShiftMask,             XK_k,      movestack,      {.i = -1 } },

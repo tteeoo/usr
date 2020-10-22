@@ -205,6 +205,8 @@ static void sigchld(int unused);
 static void dmenu(const Arg *arg);
 static void tag(const Arg *arg);
 static void tagmon(const Arg *arg);
+static void changegaps(const Arg *arg);
+static void setgaps(const Arg *arg);
 static void tile(Monitor *);
 static void togglebar(const Arg *arg);
 static void togglefloating(const Arg *arg);
@@ -277,6 +279,7 @@ struct Pertag {
 	const Layout *ltidxs[LENGTH(tags) + 1][2]; /* matrix of tags and layouts indexes  */
 	int showbars[LENGTH(tags) + 1]; /* display bar for the current tag */
 	int resizehints[LENGTH(tags) + 1]; /* follow window hints when resizing */
+	int gappx[LENGTH(tags) + 1]; /* default gappx */
 };
 
 /* compile-time check if all tags fit into an unsigned int bit array. */
@@ -626,6 +629,8 @@ createmon(void)
 		m->pertag->showbars[i] = m->showbar;
 
 		m->pertag->resizehints[i] = resizehints;
+
+		m->pertag->gappx[i] = gappx;
 	}
 
 	return m;
@@ -1759,6 +1764,24 @@ tagmon(const Arg *arg)
 }
 
 void
+changegaps(const Arg *arg)
+{
+	int g = selmon->pertag->gappx[selmon->seltags];
+	if ((g== 0 && arg->i < 0) ||
+		(g>= 128 && arg->i > 0))
+		return;
+	selmon->pertag->gappx[selmon->seltags] += arg->i;
+	arrange(selmon);
+}
+
+void
+setgaps(const Arg *arg)
+{
+	selmon->pertag->gappx[selmon->seltags] = arg->i;
+	arrange(selmon);
+}
+
+void
 tile(Monitor *m)
 {
 	unsigned int i, n, h, mw, my, ty, ns;
@@ -1781,18 +1804,19 @@ tile(Monitor *m)
 		mw = m->ww;
 		ns = 1;
 	}
-	for(i = 0, my = ty = gappx, c = nexttiled(m->clients); c; c = nexttiled(c->next), i++)
+	int gpx = m->pertag->gappx[m->seltags];
+	for(i = 0, my = ty = gpx, c = nexttiled(m->clients); c; c = nexttiled(c->next), i++)
 		if (i < m->nmaster) {
-			h = (m->wh - my) * (c->cfact / mfacts) - gappx;
-			resize(c, m->wx + gappx, m->wy + my, mw - (2*c->bw) - gappx*(5-ns)/2, h - (2*c->bw), False);
-			if (my + HEIGHT(c) + gappx < m->wh - gappx)
-				my += HEIGHT(c) + gappx;
+			h = (m->wh - my) * (c->cfact / mfacts) - gpx;
+			resize(c, m->wx + gpx, m->wy + my, mw - (2*c->bw) - gpx*(5-ns)/2, h - (2*c->bw), False);
+			if (my + HEIGHT(c) + gpx < m->wh - gpx)
+				my += HEIGHT(c) + gpx;
 			mfacts -= c->cfact;
 		} else {
-			h = (m->wh - ty) * (c->cfact / sfacts) - gappx;
-			resize(c, m->wx + mw + gappx/ns, m->wy + ty, m->ww - mw - (2*c->bw) - gappx*(5-ns)/2, h - (2*c->bw), False);
-			if (ty + HEIGHT(c) + gappx < m->wh - gappx)
-				ty += HEIGHT(c) + gappx;
+			h = (m->wh - ty) * (c->cfact / sfacts) - gpx;
+			resize(c, m->wx + mw + gpx/ns, m->wy + ty, m->ww - mw - (2*c->bw) - gpx*(5-ns)/2, h - (2*c->bw), False);
+			if (ty + HEIGHT(c) + gpx < m->wh - gpx)
+				ty += HEIGHT(c) + gpx;
 			sfacts -= c->cfact;
 		}
 }
