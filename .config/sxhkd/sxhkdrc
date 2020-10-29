@@ -1,14 +1,20 @@
 # MISC
 # screenshots
 alt + s
-    maim -s ~/media/images/scrot/$(date +%s).png
-alt + f
-    maim ~/media/images/scrot/$(date +%s).png
+    maim -s $MEDIA/images/scrot/$(date +%s).png
+control + alt + s
+    maim $MEDIA/images/scrot/$(date +%s).png
 # volume
 alt + j
    amixer -D pulse sset Master 5%- && pkill -RTMIN+10 dwmblocks
 alt + k
    amixer -D pulse sset Master 5%+ && pkill -RTMIN+10 dwmblocks
+control + alt + j
+   spt-vol.sh -
+control + alt + k
+   spt-vol.sh +
+control + alt + space
+   spt-mute.sh
 # wallpaper
 alt + b
     randwall
@@ -44,9 +50,9 @@ alt + shift + d
 # spotify
 alt + shift + s
     st -e spt
-# nemo
-alt + shift + n
-    nemo
+# thunar
+alt + shift + t
+    thunar
 
 # terminal
 super + Return

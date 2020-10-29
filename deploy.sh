@@ -1,28 +1,28 @@
 #!/bin/sh
 
 link () {
-    ln -sf /home/theo/dev/repos/dotfiles/$1 $HOME/$1
+    ln -sf $(pwd)/$1 $HOME/$1
 }
 
 mkd () {
-    mkdir $HOME/.config/fish/functions -p
-    mkdir .local/share/wineprefixes -p
-    mkdir $HOME/.config/discocss -p
-    # mkdir $HOME/.config/spotifyd
-    mkdir $HOME/.config/spotify-tui
-    mkdir $HOME/.config/newsboat
-    mkdir $HOME/.config/gtk-3.0
-    mkdir $HOME/.config/gtk-2.0
-    mkdir $HOME/.config/python
-    mkdir $HOME/.config/picom
-    mkdir $HOME/.config/sxhkd
-    mkdir $HOME/.config/dunst
-    mkdir $HOME/.config/nvim
-    mkdir $HOME/.config/rco
-    mkdir $HOME/.config/git
-    mkdir $HOME/.config/mpv
-    mkdir $HOME/.config/npm
-    mkdir $HOME/.config/X11
+    mkdir $XDG_CONFIG_HOME/fish/functions -p
+    mkdir $XDG_DATA_HOME/wineprefixes -p
+    mkdir $XDG_CONFIG_HOME/discocss -p
+    # mkdir $XDG_CONFIG_HOME/spotifyd
+    mkdir $XDG_CONFIG_HOME/spotify-tui
+    mkdir $XDG_CONFIG_HOME/newsboat
+    mkdir $XDG_CONFIG_HOME/gtk-3.0
+    mkdir $XDG_CONFIG_HOME/gtk-2.0
+    mkdir $XDG_CONFIG_HOME/python
+    mkdir $XDG_CONFIG_HOME/picom
+    mkdir $XDG_CONFIG_HOME/sxhkd
+    mkdir $XDG_CONFIG_HOME/dunst
+    mkdir $XDG_CONFIG_HOME/nvim
+    mkdir $XDG_CONFIG_HOME/rco
+    mkdir $XDG_CONFIG_HOME/git
+    mkdir $XDG_CONFIG_HOME/mpv
+    mkdir $XDG_CONFIG_HOME/npm
+    mkdir $XDG_CONFIG_HOME/X11
     mkdir $HOME/.vim
 }
 

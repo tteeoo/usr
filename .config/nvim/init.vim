@@ -72,7 +72,7 @@ set signcolumn=yes
 noremap <C-g> :Goyo<CR>
 
 " VIMWIKI
-let g:vimwiki_list = [{'path': '~/media/documents/vimwiki'}]
+let g:vimwiki_list = [{'path': '~/docs/vimwiki'}]
 
 " AIRLINE
 let g:airline_theme = 'gruvbox'
