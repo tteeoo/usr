@@ -1,9 +1,9 @@
 # MISC
 # screenshots
 alt + s
-    maim -s $MEDIA/images/scrot/$(date +%s).png
-control + alt + s
-    maim $MEDIA/images/scrot/$(date +%s).png
+    maim -s $XDG_PICTURES_DIR/scrot/$(date +%s).png
+alt + f
+    maim $XDG_PICTURES_DIR/scrot/$(date +%s).png
 # volume
 alt + j
    amixer -D pulse sset Master 5%- && pkill -RTMIN+10 dwmblocks
@@ -23,7 +23,7 @@ super + z
     lock 
 # mixer
 alt + m
-    st -e pulsemixer 
+    $TERMINAL -e pulsemixer 
 # xkill
 alt + x
     pkill xkill || xkill
@@ -34,16 +34,16 @@ control + Return
 # LAUNCH
 # python shell
 alt + shift + p 
-    st -e python
+    $TERMINAL -e python
 # ranger fm
 alt + shift + r
-    st -e ranger
+    $TERMINAL -e ranger
 # vimwiki
 alt + shift + w
-    st -e nvim -c VimwikiIndex
+    $TERMINAL -e nvim -c VimwikiIndex
 # firefox
 alt + shift + c
-    firefox
+    $BROWSER
 # bloated spyware
 alt + shift + d
     discord
@@ -53,10 +53,16 @@ alt + shift + s
 # thunar
 alt + shift + t
     thunar
+# nnn
+alt + shift + n
+    $TERMINAL -e nnn -de
+# zathura
+alt + shift + z
+    $READER
 
 # terminal
 super + Return
-    st
+    $TERMINAL
 # rofi
 super + r
     rofi -theme gruvbox-dark -show run

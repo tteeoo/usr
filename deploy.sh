@@ -5,9 +5,9 @@ link () {
 }
 
 mkd () {
-    mkdir $XDG_CONFIG_HOME/fish/functions -p
     mkdir $XDG_DATA_HOME/wineprefixes -p
     mkdir $XDG_CONFIG_HOME/discocss -p
+    mkdir $XDG_CONFIG_HOME/fish -p
     # mkdir $XDG_CONFIG_HOME/spotifyd
     mkdir $XDG_CONFIG_HOME/spotify-tui
     mkdir $XDG_CONFIG_HOME/newsboat
@@ -53,7 +53,4 @@ link .config/gtk-3.0/settings.ini
 link .config/spotify-tui/config.yml
 link .config/nvim/coc-settings.json
 # link .config/spotifyd/spotifyd.conf
-link .config/fish/functions/sudo.fish
-link .config/fish/functions/fish_prompt.fish
-link .config/fish/functions/fish_mode_prompt.fish
 link .config/discocss/custom.css
