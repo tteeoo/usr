@@ -5,20 +5,20 @@ PROMPT="$"
 WORKING="$(git rev-parse --is-inside-work-tree 2>/dev/null)"
 
 if [ "$WORKING" ]; then
-    STATUS="$(git status -s)"
-    COLOR="\033[92m"
-    COMMIT=""
-    if [ "$STATUS" ]; then
-	COLOR="\033[91m"
-    fi
+	STATUS="$(git status -s)"
+	COLOR="\033[92m"
+	COMMIT=""
+	if [ "$STATUS" ]; then
+		COLOR="\033[91m"
+	fi
 
-    COMMIT="$(git status | grep ahead)"
-    if [ "$COMMIT" ]; then
-	PROMPT="λ"
-    fi
+	COMMIT="$(git status | grep ahead)"
+	if [ "$COMMIT" ]; then
+		PROMPT="λ"
+	fi
 
-    BRANCH=$(git branch --no-color --show-current)
-    printf "${COLOR}$BRANCH \033[38;2;142;192;124m$PROMPT\033[0m "
+	BRANCH=$(git branch --no-color --show-current)
+	printf "${COLOR}$BRANCH \033[38;2;142;192;124m$PROMPT\033[0m "
 else
-    printf "\033[38;2;142;192;124m$PROMPT\033[0m "
+	printf "\033[38;2;142;192;124m$PROMPT\033[0m "
 fi
