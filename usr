@@ -14,7 +14,7 @@ die() {
 
 [ "$(id -u)" = 0 ] && die "usr: do not run as root"
 
-: "${USR_DIR:=$HOME/src/git/usr}"
+: "${USR_DIR:=$HOME/src/usr}"
 
 # create directories
 mkdir -p "$USR_DIR"/var
@@ -123,11 +123,9 @@ prep_module() {
 
 	BASE_URL=$(cat "$USR_DIR"/var/remote)
 	for FILE in $("$MOD"_files) ; do
-		if ! [ -f "$USR_DIR/home/$FILE" ] ; then
-			URL="$BASE_URL"home/"$FILE"
-			printf "usr: getting %s\n" "$URL"
-			printf "url = %s" "$URL" | curl -sLf -o "$USR_DIR/home/$FILE" -K - || die "usr: error getting $USR_DIR/home/$FILE" &
-		fi
+		URL="$BASE_URL"home/"$FILE"
+		printf "usr: getting %s\n" "$URL"
+		printf "url = %s" "$URL" | curl -sLf -o "$USR_DIR/home/$FILE" -K - || die "usr: error getting $USR_DIR/home/$FILE" &
 	done
 
 	while : ; do
@@ -138,8 +136,8 @@ prep_module() {
 			fi
 		done
 
-		if [ "$COUNT" -ne $("$MOD"_files | wc -w) ] ; then
-			printf "usr: waiting for curl jobs to finish [%s/%s]\n" "$COUNT" $("$MOD"_files | wc -w)
+		printf "usr: waiting for curl jobs to finish [%s/%s]\n" "$COUNT" "$("$MOD"_files | wc -w)"
+		if [ "$COUNT" -ne "$("$MOD"_files | wc -w)" ] ; then
 			sleep 0.5
 		else
 			break
