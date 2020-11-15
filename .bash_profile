@@ -3,8 +3,8 @@ export XDG_CONFIG_HOME="$HOME/.config"
 export XDG_DATA_HOME="$HOME/.local/share"
 export XDG_CACHE_HOME="$HOME/.cache"
 
-# these are actually set in ~/.config/user-dirs.dirs but i set them here for reference
-export XDG_DESKTOP_DIR="/home/theo/av/desktop"
+# these are used in ~/.config/user-dirs.dirs to set locations
+export XDG_DESKTOP_DIR="/home/theo"
 export XDG_DOCUMENTS_DIR="/home/theo/docs"
 export XDG_DOWNLOAD_DIR="/home/theo"
 export XDG_MUSIC_DIR="/home/theo/av"
@@ -60,7 +60,7 @@ export SUBS_FILE="$XDG_DOCUMENTS_DIR/subs.list"
 export SUBS_MENU_PROG="fzf --no-sort -e --color=16"
 
 # add directories to path
-export PATH="$PATH:$BIN:$SCRIPTS:$CARGO_HOME/bin:$GOPATH/bin:$DENO_INSTALL_ROOT"
+export PATH="$SCRIPTS:$BIN:$CARGO_HOME/bin:$GOPATH/bin:$DENO_INSTALL_ROOT:$PATH"
 
 if [[ -z $DISPLAY ]] ; then
 
