@@ -1,0 +1,2 @@
+# This is C, not Objective-C! Objective-C is like, objectively bad.
+*.h linguist-language=C
