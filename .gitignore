@@ -1,4 +1,5 @@
 *.o
+installed/
 home/src/suk/st/st
 home/src/suk/dwm/dwm
 home/src/suk/dwmblocks/dwmblocks

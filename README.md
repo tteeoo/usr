@@ -2,6 +2,8 @@
 
 My dotfiles + more, and some tools to manage them.
 
+Work in progress.
+
 ## .local/bin/opt
 
 Some scripts I've made, which are all licensed under the Unlicense.
@@ -44,5 +46,7 @@ Not from suckless but integrates with `dwm`.
 Upstream: [github.com/torrinfail/dwmblocks](https://github.com/torrinfail/dwmblocks/)
 
 I've added my own blocks in `blocks.h` which use some scripts I made.
+
+## Gallery
 
 ![Screenshot of my desktop](https://raw.githubusercontent.com/tteeoo/usr/main/scrot.png)

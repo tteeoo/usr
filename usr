@@ -1,0 +1,78 @@
+#!/bin/sh
+
+set -e
+
+: "${USR_DIR:=$HOME/src/git/usr}"
+
+mkdir -p "$USR_DIR"/modules
+mkdir -p "$USR_DIR"/installed
+
+die() {
+	>&2 printf "%s\n" "$*"
+	exit 1
+}
+
+usage() {
+	die "usage: usr [-a <module>] [-r <module>] [-i <module>] [-l]"
+}
+
+module_add() {
+	MOD="$2"
+	MOD_FILE="$USR_DIR/modules/$MOD".mod.sh
+	MOD_INSTALL="$USR_DIR/installed/$MOD"
+
+	[ -e "$MOD_INSTALL" ] && die "$MOD is already installed"
+	[ -z "$MOD" ] && usage
+
+	# shellcheck source=modules/test.mod.sh
+	. "$MOD_FILE"
+
+	"$MOD"_add
+
+	touch "$MOD_INSTALL"
+}
+
+module_remove() {
+	MOD="$2"
+	MOD_FILE="$USR_DIR/modules/$MOD".mod.sh
+	MOD_INSTALL="$USR_DIR/installed/$MOD"
+
+	[ -e "$MOD_INSTALL" ] || die "$MOD is not installed"
+	[ -z "$MOD" ] && usage
+
+	# shellcheck source=modules/test.mod.sh
+	. "$MOD_FILE"
+
+	"$MOD"_remove
+
+	rm "$MOD_INSTALL"
+}
+
+module_info() {
+	MOD="$2"
+	MOD_FILE="$USR_DIR/modules/$MOD".mod.sh
+
+	[ -z "$MOD" ] && usage
+
+	# shellcheck source=modules/test.mod.sh
+	. "$MOD_FILE"
+
+	"$MOD"_info
+}
+
+list_modules() {
+	for MOD in "$USR_DIR"/modules/*; do 
+		[ -f "$MOD" ] && printf "%s\n" "$MOD"
+	done
+}
+
+case ${1#-} in
+	h) usage ;;
+	a) module_add "$@" ;;
+	r) module_remove "$@" ;;
+	i) module_info "$@" ;;
+	l) list_modules ;;
+	*) usage ;;
+esac
+
+exit 0
