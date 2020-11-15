@@ -45,4 +45,4 @@ Upstream: [github.com/torrinfail/dwmblocks](https://github.com/torrinfail/dwmblo
 
 I've added my own blocks in `blocks.h` which use some scripts I made.
 
-![Screen shot of my desktop](https://raw.githubusercontent.com/tteeoo/usr/master/scrot.png)
+![Screenshot of my desktop](https://raw.githubusercontent.com/tteeoo/usr/main/scrot.png)
