@@ -1,7 +1,5 @@
 #!/bin/sh
 # licensed under the Unlicense
-# TODO:
-# - module files
 
 set -e
 
@@ -10,10 +8,11 @@ die() {
 	exit 1
 }
 
-[ "$(id -u)" = 0 ] && die "do not run as root"
+[ "$(id -u)" = 0 ] && die "usr: do not run as root"
 
 : "${USR_DIR:=$HOME/src/git/usr}"
 
+# create directories
 mkdir -p "$USR_DIR"/var
 mkdir -p "$USR_DIR"/home
 mkdir -p "$USR_DIR"/modules
@@ -26,6 +25,7 @@ options:
   -r <module>  remove module
   -i <module>  module information
   -g <module>  get module
+  -p <module>  prep module
   -u           update remote
   -l           list local modules
   -li          list installed modules
@@ -37,13 +37,13 @@ module_add() {
 	MOD_FILE="$USR_DIR/modules/$MOD".mod.sh
 	MOD_INSTALL="$USR_DIR/var/$MOD".installed
 
-	[ -e "$MOD_INSTALL" ] && die "$MOD is already installed"
+	[ -e "$MOD_INSTALL" ] && die "usr: $MOD is already installed"
 	[ -z "$MOD" ] && usage
 
 	# shellcheck source=modules/test.mod.sh
 	. "$MOD_FILE"
 
-	printf "adding %s...\n" "$MOD"
+	printf "usr: adding %s\n" "$MOD"
 	"$MOD"_add
 
 	touch "$MOD_INSTALL"
@@ -54,13 +54,13 @@ module_remove() {
 	MOD_FILE="$USR_DIR/modules/$MOD".mod.sh
 	MOD_INSTALL="$USR_DIR/var/$MOD".installed
 
-	[ -e "$MOD_INSTALL" ] || die "$MOD is not installed"
+	[ -e "$MOD_INSTALL" ] || die "usr: $MOD is not installed"
 	[ -z "$MOD" ] && usage
 
 	# shellcheck source=modules/test.mod.sh
 	. "$MOD_FILE"
 
-	printf "removing %s...\n" "$MOD"
+	printf "usr: removing %s\n" "$MOD"
 	"$MOD"_remove
 
 	rm "$MOD_INSTALL"
@@ -75,7 +75,7 @@ module_info() {
 	# shellcheck source=modules/test.mod.sh
 	. "$MOD_FILE"
 
-	printf "%s:\n" "$MOD"
+	printf "usr: %s:\n" "$MOD"
 	"$MOD"_info
 }
 
@@ -86,22 +86,48 @@ get_module() {
 	[ -z "$MOD" ] && usage
 
 	VALID=""
-	while read -r RMOD; do 
+	while read -r RMOD ; do 
 		if [ "$MOD" = "$RMOD" ] ; then
 			VALID="yes"
 		fi
 	done <"$USR_DIR"/var/remote.list
 
-	[ "$VALID" = "yes" ] || die "remote does not have $MOD"
+	[ "$VALID" = "yes" ] || die "usr: remote does not have $MOD"
 
 	URL=$(cat "$USR_DIR"/var/remote)
 	URL="$URL"modules/"$MOD".mod.sh
-	printf "getting %s\n" "$URL"
-	printf "url = %s" "$URL" | curl -sLf -o "$USR_DIR/modules/$MOD".mod.sh -K - || die "error getting"
+	printf "usr: getting %s\n" "$URL"
+	printf "url = %s" "$URL" | curl -sLf -o "$USR_DIR/modules/$MOD".mod.sh -K - || die "usr: error getting"
+}
+
+prep_module() {
+	MOD="$2"
+	MOD_FILE="$USR_DIR/modules/$MOD".mod.sh
+
+	[ -z "$MOD" ] && usage
+
+	# shellcheck source=modules/test.mod.sh
+	. "$MOD_FILE"
+
+	for DIR in $("$MOD"_dirs) ; do
+		if ! [ -d "$USR_DIR/home/$DIR" ] ; then
+			printf "usr: mkdir %s/home/%s\n" "$USR_DIR" "$DIR"
+			mkdir -p "$USR_DIR/home/$DIR"
+		fi
+	done
+
+	BASE_URL=$(cat "$USR_DIR"/var/remote)
+	for FILE in $("$MOD"_files) ; do
+		if ! [ -f "$USR_DIR/home/$FILE" ] ; then
+			URL="$BASE_URL"home/"$FILE"
+			printf "usr: getting %s\n" "$URL"
+			printf "url = %s" "$URL" | curl -sLf -o "$USR_DIR/home/$FILE" -K - || die "usr: error getting $USR_DIR/home/$FILE" &
+		fi
+	done
 }
 
 list_modules() {
-	for MOD in "$USR_DIR"/modules/*; do 
+	for MOD in "$USR_DIR"/modules/* ; do 
 		if [ -f "$MOD" ] ; then
 			if [ "${MOD#*.}" = "mod.sh" ] ; then
 				NODOT=${MOD%%.*}
@@ -112,7 +138,7 @@ list_modules() {
 }
 
 list_installed() {
-	for MOD in "$USR_DIR"/var/*; do 
+	for MOD in "$USR_DIR"/var/* ; do 
 		if [ -f "$MOD" ] ; then
 			if [ "${MOD#*.}" = "installed" ] ; then
 				NODOT=${MOD%%.*}
@@ -123,7 +149,7 @@ list_installed() {
 }
 
 list_remote() {
-	while read -r MOD; do 
+	while read -r MOD ; do 
 		printf "%s\n" "$MOD"
 	done <"$USR_DIR"/var/remote.list
 }
@@ -131,8 +157,8 @@ list_remote() {
 update_remote() {
 	URL=$(cat "$USR_DIR"/var/remote)
 	URL="$URL"modules/mod.list
-	printf "getting %s\n" "$URL"
-	printf "url = %s" "$URL" | curl -sLf -o "$USR_DIR"/var/remote.list -K - || die "error updating"
+	printf "usr: getting %s\n" "$URL"
+	printf "url = %s" "$URL" | curl -sLf -o "$USR_DIR"/var/remote.list -K - || die "usr: error updating"
 }
 
 # create module list if it does not exist
@@ -142,11 +168,11 @@ update_remote() {
 [ -e "$USR_DIR"/var/remote ] || printf "https://raw.githubusercontent.com/tteeoo/usr/main/" > "$USR_DIR"/var/remote
 
 case ${1#-} in
-	h) usage ;;
 	a) module_add "$@" ;;
 	r) module_remove "$@" ;;
 	i) module_info "$@" ;;
 	g) get_module "$@" ;;
+	p) prep_module "$@" ;;
 	l) list_modules ;;
 	u) update_remote ;;
 	li) list_installed ;;
