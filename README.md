@@ -6,11 +6,11 @@ My dotfiles + more, and some tools to manage them.
 
 The `usr` script is licensed under the Unlicense.
 
-## .local/bin/opt
+## home/.local/bin/opt
 
 Some scripts I've made, which are all licensed under the Unlicense.
 
-## src/suk
+## home/src/suk
 
 [Suckless software](https://suckless.org/) forks.
 
