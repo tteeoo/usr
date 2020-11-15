@@ -13,9 +13,9 @@ theo_dirs_add() {
 	mkdir -p "$HOME"/src/git/ghf
 	mkdir -p "$HOME"/src/git/ghf
 	mkdir -p "$XDG_DATA_HOME"/pub
-	printf "theo_dirs: linking some wallpapers\n"
-	ln -sf "$USR_DIR"/home/av/wall/bg1.jpg "$HOME"/av/wall/bg1.jpg
-	ln -sf "$USR_DIR"/home/av/wall/bg2.jpg "$HOME"/av/wall/bg2.jpg
+	printf "theo_dirs: copying some wallpapers\n"
+	cp "$USR_DIR"/home/av/wall/bg1.jpg "$HOME"/av/wall/bg1.jpg
+	cp "$USR_DIR"/home/av/wall/bg2.jpg "$HOME"/av/wall/bg2.jpg
 }
 
 theo_dirs_remove() {
