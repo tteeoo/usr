@@ -1,8 +1,10 @@
 # usr
 
+Work in progress.
+
 My dotfiles + more, and some tools to manage them.
 
-Work in progress.
+The `usr` script is licensed under the Unlicense.
 
 ## .local/bin/opt
 

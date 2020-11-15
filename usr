@@ -4,16 +4,18 @@
 
 set -e
 
+die() {
+	>&2 printf "%s\n" "$*"
+	exit 1
+}
+
+[ "$EUID" = "0" ] && die "do not run as root"
+
 : "${USR_DIR:=$HOME/src/git/usr}"
 
 mkdir -p "$USR_DIR"/var
 mkdir -p "$USR_DIR"/home
 mkdir -p "$USR_DIR"/modules
-
-die() {
-	>&2 printf "%s\n" "$*"
-	exit 1
-}
 
 usage() {
 	die "usage: usr [-a <module>] | [-r <module>] | [-i <module>] | [-g <module>] | [-u] | [-l[i | r]]"
@@ -78,7 +80,7 @@ get_module() {
 
 	[ "$VALID" = "yes" ] || die "remote does not have $MOD"
 
-	xargs printf "url = %s$MOD.mod.sh" <"$USR_DIR"/var/remote | curl -sLf -o "$USR_DIR/modules/$MOD".mod.sh -K - || die "error getting"
+	xargs printf "url = %smodules/$MOD.mod.sh" <"$USR_DIR"/var/remote | curl -sLf -o "$USR_DIR/modules/$MOD".mod.sh -K - || die "error getting"
 }
 
 list_modules() {
@@ -110,11 +112,11 @@ list_remote() {
 }
 
 update_remote() {
-	xargs printf "url = %smod.list" <"$USR_DIR"/var/remote | curl -sLf -o "$USR_DIR"/var/remote.list -K - || die "error updating"
+	xargs printf "url = %smodules/mod.list" <"$USR_DIR"/var/remote | curl -sLf -o "$USR_DIR"/var/remote.list -K - || die "error updating"
 }
 
 [ -e "$USR_DIR"/modules/mod.list ] || list_modules > "$USR_DIR"/modules/mod.list
-[ -e "$USR_DIR"/var/remote ] || printf "https://raw.githubusercontent.com/tteeoo/usr/main/modules/" > "$USR_DIR"/var/remote
+[ -e "$USR_DIR"/var/remote ] || printf "https://raw.githubusercontent.com/tteeoo/usr/main/" > "$USR_DIR"/var/remote
 
 case ${1#-} in
 	h) usage ;;
