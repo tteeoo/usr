@@ -1,0 +1,8 @@
+#!/bin/sh
+# Script to easily do a web search with lynx
+
+URL='lynx -vikeys -accept_all_cookies https://lite.duckduckgo.com/lite/?q='
+
+SEARCH=$(echo $@ | sed 's/ /+/g')
+
+eval "$URL$SEARCH"

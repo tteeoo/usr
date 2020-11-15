@@ -1,0 +1,7 @@
+#!/bin/sh
+# Script to run commands many times
+j=1
+while [ $j -le $1 ]; do
+	$2
+	j=$(( j + 1 ))
+done

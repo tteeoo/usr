@@ -1,0 +1,6 @@
+#!/bin/sh
+# Prints time/date information for dwmblocks
+
+TIME=$(date +"%I:%M %m.%d.%y")
+
+echo "$TIME"

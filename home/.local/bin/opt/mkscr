@@ -1,0 +1,7 @@
+#!/bin/sh
+# Script to easily make a new script
+
+SCR_PATH="$HOME/git/scripts/$1"
+echo "#!/bin/sh" > $SCR_PATH
+chmod +x $SCR_PATH
+echo "o" | $EDITOR -s /dev/stdin $SCR_PATH
