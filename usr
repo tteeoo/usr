@@ -160,6 +160,7 @@ list_remote() {
 }
 
 update_remote() {
+	list_modules > "$USR_DIR"/modules/mod.list
 	URL=$(cat "$USR_DIR"/var/remote)
 	URL="$URL"modules/mod.list
 	printf "usr: getting %s\n" "$URL"

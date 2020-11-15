@@ -7,6 +7,13 @@ DATA_DIR="${XDG_DATA_HOME#$HOME/}"
 CONFIG_DIR="${XDG_CONFIG_HOME#$HOME/}"
 
 theo_dotfiles_add() {
+	for DIR in $(theo_dotfiles_dirs) ; do
+		if ! [ -d "$HOME/$DIR" ] ; then 
+			mkdir -p "$HOME/$DIR"
+			printf "theo_dotfiles: making directory %s/%s\n" "$HOME" "$DIR"
+		fi
+	done
+
 	for FILE in $(theo_dotfiles_files) ; do
 		[ -f "$HOME/$FILE" ] && mv "$HOME/$FILE" "$HOME/$FILE".orig && \
 			printf "theo_dotfiles: moving %s/%s to %s/%s.orig\n" "$HOME" "$FILE" "$HOME" "$FILE"
