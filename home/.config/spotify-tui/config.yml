@@ -1,0 +1,7 @@
+theme:
+      hovered: LightBlue # hovered pane border
+
+behavior:
+    tick_rate_milliseconds: 50
+    show_loading_indicator: false
+

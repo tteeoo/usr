@@ -1,0 +1,4 @@
+property,value
+editor,nvim
+color,true
+shell,/bin/sh

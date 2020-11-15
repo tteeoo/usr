@@ -1,0 +1,72 @@
+# MISC
+# screenshots
+alt + s
+    maim -s $XDG_PICTURES_DIR/scrot/$(date +%s).png
+alt + f
+    maim $XDG_PICTURES_DIR/scrot/$(date +%s).png
+# volume
+alt + j
+   amixer -D pulse sset Master 5%- && pkill -RTMIN+10 dwmblocks
+alt + k
+   amixer -D pulse sset Master 5%+ && pkill -RTMIN+10 dwmblocks
+control + alt + j
+   spt-vol.sh -
+control + alt + k
+   spt-vol.sh +
+control + alt + space
+   spt-mute.sh
+# wallpaper
+alt + b
+    randwall
+# lock
+super + z
+    lock 
+# mixer
+alt + m
+    $TERMINAL -e pulsemixer 
+# xkill
+alt + x
+    pkill xkill || xkill
+# reload sxhkd
+control + Return
+    pkill -USR1 -x sxhkd
+
+# LAUNCH
+# python shell
+alt + shift + p 
+    $TERMINAL -e python
+# ranger fm
+alt + shift + r
+    $TERMINAL -e ranger
+# vimwiki
+alt + shift + w
+    $TERMINAL -e nvim -c VimwikiIndex
+# firefox
+alt + shift + c
+    $BROWSER
+# bloated spyware
+alt + shift + d
+    discord
+# spotify
+alt + shift + s
+    st -e spt
+# thunar
+alt + shift + t
+    thunar
+# nnn
+alt + shift + n
+    $TERMINAL -e nnn -de
+# zathura
+alt + shift + z
+    $READER
+
+# terminal
+super + Return
+    $TERMINAL
+# rofi
+super + r
+    rofi -theme gruvbox-dark -show run
+
+# intercept keybind from firefox
+control + q
+    echo
