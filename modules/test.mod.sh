@@ -1,18 +1,21 @@
 # test module
 
 test_add() {
-	printf "linking \$HOME/.test\n"
+	printf "test: linking \$HOME/.test\n"
 	ln -sf "$USR_DIR/home/.test" "$HOME/.test"
+	printf "test: linking \$HOME/.test-dir\n"
+	ln -sf "$USR_DIR/home/.test-dir" "$HOME/.test-dir"
 }
 
 test_remove() {
-	printf "removing \$HOME/.test\n"
+	printf "test: removing \$HOME/.test\n"
 	rm "$HOME/.test"
+	printf "test: removing \$HOME/.test-dir\n"
+	rm "$HOME/.test-dir"
 }
 
 test_info() {
-	printf "this module exists for testing purposes.
-it links a file (.test) into your home directory.\n"
+	printf "This module exists for testing purposes.\nIt links a file (.test) into your home directory, and a directory (.test-dir),\nwhich has some content in it (1 and 2).\n"
 }
 
 test_dirs() {

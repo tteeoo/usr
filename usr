@@ -21,6 +21,7 @@ usage() {
 	die "usage: usr <option [arg]> 
 
 options:
+  -s <module>  sync module (equivalent to -g; -p; -a)
   -a <module>  add module
   -r <module>  remove module
   -i <module>  module information
@@ -168,6 +169,7 @@ update_remote() {
 [ -e "$USR_DIR"/var/remote ] || printf "https://raw.githubusercontent.com/tteeoo/usr/main/" > "$USR_DIR"/var/remote
 
 case ${1#-} in
+	s) get_module "$@" && prep_module "$@" && module_add "$@" ;;
 	a) module_add "$@" ;;
 	r) module_remove "$@" ;;
 	i) module_info "$@" ;;
