@@ -1,6 +1,10 @@
 # theo_scripts module
 
 theo_scripts_add() {
+	printf "theo_scripts: chmoding scripts\n"
+	for SCRIPT in $(theo_scripts_files) ; do
+		chmod +x "$USR_DIR/home/$SCRIPT"
+	done
 	printf "theo_scripts: linking %s/.local/bin/opt\n" "$HOME"
 	ln -sf "$USR_DIR"/home/.local/bin/opt "$HOME"/.local/bin/opt
 }

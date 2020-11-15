@@ -138,8 +138,8 @@ prep_module() {
 			fi
 		done
 
-		if [ $COUNT -ne $("$MOD"_files | wc -w) ] ; then
-			printf "usr: waiting for curl jobs to finish [%s/%s]" "$COUNT" $("$MOD"_files | wc -w)
+		if [ "$COUNT" -ne $("$MOD"_files | wc -w) ] ; then
+			printf "usr: waiting for curl jobs to finish [%s/%s]\n" "$COUNT" $("$MOD"_files | wc -w)
 			sleep 0.5
 		else
 			break
