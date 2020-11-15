@@ -1,4 +1,6 @@
 #!/bin/sh
+# TODO: module dependencies
+#       module files (to get from home/)
 
 set -e
 
@@ -14,7 +16,7 @@ die() {
 }
 
 usage() {
-	die "usage: usr [-a <module>] | [-r <module>] | [-i <module>] | [-u] | [-l[i | r]]"
+	die "usage: usr [-a <module>] | [-r <module>] | [-i <module>] | [-g <module>] | [-u] | [-l[i | r]]"
 }
 
 module_add() {
@@ -61,6 +63,24 @@ module_info() {
 	"$MOD"_info
 }
 
+get_module() {
+	MOD="$2"
+	MOD_FILE="$USR_DIR/modules/$MOD".mod.sh
+
+	[ -z "$MOD" ] && usage
+
+	VALID=""
+	while read -r RMOD; do 
+		if [ "$MOD" = "$RMOD" ] ; then
+			VALID="yes"
+		fi
+	done <"$USR_DIR"/var/remote.list
+
+	[ "$VALID" = "yes" ] || die "remote does not have $MOD"
+
+	xargs printf "url = %s$MOD.mod.sh" <"$USR_DIR"/var/remote | curl -sLf -o "$USR_DIR/modules/$MOD".mod.sh -K - || die "error getting"
+}
+
 list_modules() {
 	for MOD in "$USR_DIR"/modules/*; do 
 		if [ -f "$MOD" ] ; then
@@ -84,7 +104,9 @@ list_installed() {
 }
 
 list_remote() {
-	xargs printf "%s" <"$USR_DIR"/var/remote.list
+	while read -r MOD; do 
+		printf "%s\n" "$MOD"
+	done <"$USR_DIR"/var/remote.list
 }
 
 update_remote() {
@@ -99,6 +121,7 @@ case ${1#-} in
 	a) module_add "$@" ;;
 	r) module_remove "$@" ;;
 	i) module_info "$@" ;;
+	g) get_module "$@" ;;
 	l) list_modules ;;
 	u) update_remote ;;
 	li) list_installed ;;
