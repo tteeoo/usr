@@ -5,7 +5,6 @@ output: dwmblocks.c blocks.h
 clean:
 	rm -f *.o *.gch dwmblocks
 install: output
-	cp dwmblocks ../bin
 	mkdir -p $(DESTDIR)$(PREFIX)/bin
 	cp -f dwmblocks $(DESTDIR)$(PREFIX)/bin
 	chmod 755 $(DESTDIR)$(PREFIX)/bin/dwmblocks
