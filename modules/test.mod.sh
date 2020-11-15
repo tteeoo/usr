@@ -1,16 +1,16 @@
 # test module
 
 test_add() {
-	printf "test: linking \$HOME/.test\n"
+	printf "test: linking %s/.test\n" "$HOME"
 	ln -sf "$USR_DIR/home/.test" "$HOME/.test"
-	printf "test: linking \$HOME/.test-dir\n"
+	printf "test: linking %s/.test-dir\n" "$HOME"
 	ln -sf "$USR_DIR/home/.test-dir" "$HOME/.test-dir"
 }
 
 test_remove() {
-	printf "test: removing \$HOME/.test\n"
+	printf "test: removing %s/.test\n" "$HOME"
 	rm "$HOME/.test"
-	printf "test: removing \$HOME/.test-dir\n"
+	printf "test: removing %s/.test-dir\n" "$HOME"
 	rm "$HOME/.test-dir"
 }
 

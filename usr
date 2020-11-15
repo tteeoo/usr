@@ -129,6 +129,22 @@ prep_module() {
 			printf "url = %s" "$URL" | curl -sLf -o "$USR_DIR/home/$FILE" -K - || die "usr: error getting $USR_DIR/home/$FILE" &
 		fi
 	done
+
+	while : ; do
+		COUNT=0
+		for FILE in $("$MOD"_files) ; do
+			if [ -f "$USR_DIR/home/$FILE" ] ; then
+				: "$((COUNT = COUNT + 1))"
+			fi
+		done
+
+		if [ $COUNT -ne $("$MOD"_files | wc -w) ] ; then
+			printf "usr: waiting for curl jobs to finish [%s/%s]" "$COUNT" $("$MOD"_files | wc -w)
+			sleep 0.5
+		else
+			break
+		fi
+	done
 }
 
 list_modules() {

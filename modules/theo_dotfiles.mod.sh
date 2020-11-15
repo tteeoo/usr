@@ -44,7 +44,7 @@ theo_dotfiles_dirs() {
 }
 
 theo_dotfiles_files() {
-	printf ".bashrc .xinitrc .vim/vimrc .bash_profile $CONFIG_DIR/wgetrc
+	printf ".profile .bashrc .xinitrc .vim/vimrc .bash_profile $CONFIG_DIR/wgetrc
 		$CONFIG_DIR/npm/npmrc $CONFIG_DIR/git/config $CONFIG_DIR/mpv/mpv.conf
 		$CONFIG_DIR/python/rc.py $CONFIG_DIR/sxhkd/sxhkdrc $CONFIG_DIR/dunst/dunstrc
 		$CONFIG_DIR/nvim/init.vim $CONFIG_DIR/X11/Xresources $CONFIG_DIR/mpv/input.conf
