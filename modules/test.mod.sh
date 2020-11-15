@@ -19,9 +19,9 @@ test_info() {
 }
 
 test_dirs() {
-	printf ".test-dir\n"
+	printf ".test-dir"
 }
 
 test_files() {
-	printf ".test\n.test-dir/1\n.test-dir/2"
+	printf ".test .test-dir/1 .test-dir/2"
 }

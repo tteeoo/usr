@@ -11,4 +11,4 @@ uninstall:
 	rm ${PREFIX}/bin/${NAME}
 
 test:
-	shellcheck -s sh ${NAME} modules/test.mod.sh
+	shellcheck -s sh ${NAME} modules/*.mod.sh

@@ -1,5 +1,9 @@
 #!/bin/sh
 # licensed under the Unlicense
+# TODO:
+# - create more modules
+# - force add/force remove
+# - purge from home tree
 
 set -e
 
