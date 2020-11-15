@@ -24,7 +24,7 @@ From version 0.8.2, my `st` has:
 * scrollback-mouse patch
 * My own colors, font, and other configurations
 
-## dwm
+### dwm
 
 Upstream: [git.suckless.org/dwm](https://git.suckless.org/dwm/)
 
@@ -39,7 +39,7 @@ From version 6.2, my `dwm` has:
 * Custom settings in `config.h` 
 * My own additions I programmed in (`togglelayout` and `focusmaster` functions, changing how the bar looks, etc.)
  
-## dwmblocks
+### dwmblocks
 
 Not from suckless but integrates with `dwm`.
 
