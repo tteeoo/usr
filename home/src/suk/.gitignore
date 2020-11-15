@@ -1,0 +1,5 @@
+*.o
+st/st
+dwm/dwm
+slock/slock
+dwmblocks/dwmblocks
