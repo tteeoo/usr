@@ -24,7 +24,7 @@ theo_suk_arch_remove() {
 	rm "$HOME"/.local/bin/st "$HOME"/.local/bin/dwm "$HOME"/.local/bin/dwmblocks
 }
 
-theo_suk_arch_information() {
+theo_suk_arch_info() {
 	printf "Installs my (theo's) build of some suckless software, and dependencies for them with pacman."
 }
 

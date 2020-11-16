@@ -14,7 +14,7 @@ theo_scripts_remove() {
 	rm "$HOME"/.local/bin/opt
 }
 
-theo_scripts_information() {
+theo_scripts_info() {
 	printf "Contains some scripts I (theo) made and use.\n"
 }
 
