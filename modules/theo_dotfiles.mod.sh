@@ -52,5 +52,5 @@ theo_dotfiles_files() {
 		$CONFIG_DIR/picom/picom.conf $CONFIG_DIR/fish/config.fish $CONFIG_DIR/gtk-2.0/gtkrc-2.0
 		$CONFIG_DIR/fish/fish_variables $CONFIG_DIR/gtk-3.0/settings.ini
 		$CONFIG_DIR/spotify-tui/config.yml $CONFIG_DIR/nvim/coc-settings.json
-		$CONFIG_DIR/discocss/custom.css"
+		$CONFIG_DIR/discocss/custom.css $CONFIG_DIR/user-dirs.dirs"
 }
