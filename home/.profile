@@ -9,8 +9,8 @@ export XDG_DOCUMENTS_DIR="/home/theo/docs"
 export XDG_DOWNLOAD_DIR="/home/theo"
 export XDG_MUSIC_DIR="/home/theo/av"
 export XDG_PICTURES_DIR="/home/theo/av"
-export XDG_PUBLICSHARE_DIR="/home/theo/.local/share/pub"
-export XDG_TEMPLATES_DIR="/home/theo/docs"
+export XDG_PUBLICSHARE_DIR="/home/theo/docs/pub"
+export XDG_TEMPLATES_DIR="/home/theo/docs/templates"
 export XDG_VIDEOS_DIR="/home/theo/av"
 
 # more envs
@@ -21,7 +21,7 @@ export GOPATH="$XDG_DATA_HOME/go"
 # set some default programs
 export VISUAL=/usr/bin/nvim
 export EDITOR=/usr/bin/nvim
-export TERMINAL=/usr/local/bin/st
+export TERMINAL="$BIN/st"
 export BROWSER=/usr/bin/firefox
 export READER=/usr/bin/zathura
 
