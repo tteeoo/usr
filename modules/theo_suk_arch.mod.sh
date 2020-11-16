@@ -7,10 +7,10 @@ theo_suk_arch_add() {
 	mkdir -p "$HOME"/src/suk
 	ln -sf "$USR_DIR"/home/src/suk "$HOME"/src/suk
 
-	printf "theo_suk_arch: compiling software and linking binaries\n" "$HOME"
+	printf "theo_suk_arch: compiling software and linking binaries\n"
 	mkdir -p "$HOME"/.local/bin
-	for PROG in "dwm st dwmblocks" ; do
-		cd "$USR_DIR/home/src/suk/$PROG"
+	for PROG in dwm st dwmblocks ; do
+		cd "$USR_DIR/home/src/suk/$PROG" || exit
 		make
 		chmod +x "$PROG"
 		ln -sf "$USR_DIR/home/src/suk/$PROG/$PROG" "$HOME/.local/bin/$PROG"
