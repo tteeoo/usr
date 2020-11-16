@@ -1,5 +1,3 @@
-# theo_scripts module
-
 theo_scripts_add() {
 	printf "theo_scripts: chmoding scripts\n"
 	for SCRIPT in $(theo_scripts_files) ; do

@@ -187,6 +187,9 @@ update_remote() {
 # create remote URL file if it does not exist
 [ -e "$USR_DIR"/var/remote ] || printf "https://raw.githubusercontent.com/tteeoo/usr/main/" > "$USR_DIR"/var/remote
 
+# update remote if remote.list does not exist
+[ -e "$USR_DIR"/var/remote.list ] || update_remote
+
 case ${1#-} in
 	s) get_module "$@" && prep_module "$@" && module_add "$@" ;;
 	a) module_add "$@" ;;

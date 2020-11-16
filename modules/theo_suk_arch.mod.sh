@@ -1,5 +1,3 @@
-# theo_scripts module
-
 theo_suk_arch_add() {
 	printf "theo_suk_arch: installing packages\n"
 	sudo pacman -S --needed --noconfirm --quiet libxinerama libxft libx11 freetype2 make gcc

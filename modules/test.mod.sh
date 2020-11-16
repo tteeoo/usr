@@ -1,5 +1,3 @@
-# test module
-
 test_add() {
 	printf "test: linking %s/.test\n" "$HOME"
 	ln -sf "$USR_DIR/home/.test" "$HOME/.test"

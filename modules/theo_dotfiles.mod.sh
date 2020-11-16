@@ -1,5 +1,3 @@
-# theo_dotfiles module
-
 : "${XDG_DATA_HOME:=$HOME/.local/share}"
 DATA_DIR="${XDG_DATA_HOME#$HOME/}"
 

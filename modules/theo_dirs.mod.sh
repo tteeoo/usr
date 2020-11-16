@@ -1,5 +1,3 @@
-# theo_dirs module
-
 theo_dirs_add() {
 	printf "theo_dirs: creating directories\n"
 	mkdir -p "$HOME"/av/wall
