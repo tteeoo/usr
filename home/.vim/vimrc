@@ -30,6 +30,9 @@ set nocompatible
 
 " Clean up ~
 set viminfo=%,<800,'10,/50,:100,h,f0,n~/.vim/info
+set backupdir=~/.vim/cache//,.
+set directory=~/.vim/cache//,.
+set undodir=~/.vim/cache//,.
 
 " Make backspace be handled nicely
 set backspace=2
