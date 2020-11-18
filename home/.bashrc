@@ -5,7 +5,7 @@ then
 fi
 
 # prompt
-PS1="\033[96m[bash] \033[94m\w \$(git_status_prompt)"
+PS1="\033[96m[bash] \033[94m\w \[\$(git_status_prompt)\]"
 
 # aliases
 alias g="git"
