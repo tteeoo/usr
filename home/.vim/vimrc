@@ -12,10 +12,10 @@ cnoremap Q<cr> q<cr>
 nnoremap Q <nop>
 
 " Remaps for easier split navigation
-noremap <C-h> <C-w>h
-noremap <C-j> <C-w>j
-noremap <C-k> <C-w>k
-noremap <C-l> <C-w>l
+noremap <c-h> <c-w>h
+noremap <c-j> <c-w>j
+noremap <c-k> <c-w>k
+noremap <c-l> <c-w>l
 
 " Easier search navigation
 nnoremap n nzz
@@ -65,24 +65,36 @@ set wildmenu
 set path+=**
 
 " Create custom statusline
+function! GitBranch()
+	  return system("git rev-parse --abbrev-ref HEAD 2>/dev/null | tr -d '\n'")
+endfunction
+
+function! StatuslineGit()
+	let l:branchname = GitBranch()
+	return strlen(l:branchname) > 0?'  '.l:branchname.' ':''
+endfunction
+
 set showmode
 set laststatus=2
 set statusline=
+set statusline+=%#PmenuSel#
+set statusline+=%{StatuslineGit()}
 set statusline+=%#LineNr#
 set statusline+=\ %F
 set statusline+=%m\ 
 set statusline+=%r\ 
 set statusline+=%h\ 
-set statusline+=\ %=
-set statusline+=%#CursorColumn#
-set statusline+=\ %y
+set statusline+=%=
+set statusline+=%#Pmenu#
+set statusline+=%y
 set statusline+=\ %{&fileencoding?&fileencoding:&encoding}
 set statusline+=\[%{&fileformat}\]
 set statusline+=\ %p%%
-set statusline+=\ %l:%c\ 
+set statusline+=\ %l:%c
 
 " Create MakeTags command for ctags
 command! MakeTags !ctags -R .
+noremap <c-r> :MakeTags<cr>
 
 " Detect filetype
 filetype plugin indent on
