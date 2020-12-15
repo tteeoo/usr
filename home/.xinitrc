@@ -20,4 +20,5 @@ export _JAVA_AWT_WM_NONREPARENTING=1
 dwmblocks &
 lxpolkit &
 setxkbmap -option caps:swapescape
+setxkbmap -option compose:ralt
 exec dwm

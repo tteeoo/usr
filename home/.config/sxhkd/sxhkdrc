@@ -53,6 +53,9 @@ alt + shift + s
 # thunar
 alt + shift + t
     thunar
+# htop
+alt + shift + h
+   $TERMINAL -e htop 
 # nnn
 alt + shift + n
     $TERMINAL -e nnn -de

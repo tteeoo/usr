@@ -56,3 +56,9 @@ function sudo
 		command sudo $argv
 	end
 end
+
+# switch two files' names
+function sw
+	set TMPFILE (mktemp)
+	mv -f $argv[1] $TMPFILE && mv $argv[2] $argv[1] && mv $TMPFILE $argv[2]
+end
