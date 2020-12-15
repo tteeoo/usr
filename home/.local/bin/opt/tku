@@ -1,0 +1,5 @@
+#!/bin/sh
+# Kills all tmux sessions that are not currently attached to
+tmux list-sessions | grep -v attached | while read -r session; do
+	tmux kill-session -t "${session%%:*}"
+done
