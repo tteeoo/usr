@@ -42,10 +42,10 @@ noremap <C-h> <C-w>h
 noremap <C-j> <C-w>j
 noremap <C-k> <C-w>k
 noremap <C-l> <C-w>l
-noremap <A-h> :vertical resize -5<CR>
-noremap <A-l> :vertical resize +5<CR>
-noremap <A-j> :resize -5<CR>
-noremap <A-k> :resize +5<CR>
+noremap <Space>h :vertical resize -5<CR>
+noremap <Space>l :vertical resize +5<CR>
+noremap <Space>k :resize -5<CR>
+noremap <Space>j :resize +5<CR>
 noremap <C-c> <C-w>q
 " }}}2 Tabs {{{2
 noremap <A-TAB> :tabnext<CR>

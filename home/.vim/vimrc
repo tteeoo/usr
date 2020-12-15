@@ -3,78 +3,90 @@
 " Configuration file for vim (place at ~/.vimrc or ~/.vim/vimrc)
 "
 
-" Add some remaps for when you type too quickly
+" Some remaps for when you type too quickly {{{
 cnoremap Wq<cr> wq<cr>
 cnoremap W<cr> w<cr>
 cnoremap Q<cr> q<cr>
-
-" Unmap Q to enter Ex mode
 nnoremap Q <nop>
+" }}}
 
-" Remaps for easier split navigation
+" Keys for easier split navigation {{{
+set splitbelow splitright
+noremap <C-s> :split<CR>
+noremap <C-v> :vsplit<CR>
+noremap <C-c> <C-w>q
 noremap <c-h> <c-w>h
 noremap <c-j> <c-w>j
 noremap <c-k> <c-w>k
 noremap <c-l> <c-w>l
+" }}}
 
-" Easier search navigation
+" Keys for easier tab navigation {{{
+noremap <A-TAB> :tabnext<CR>
+noremap <A-t> :tabnew<CR>
+noremap <A-c> :tabclose<CR> 
+" }}}
+
+" Folds {{{
+set foldmethod=marker
+" }}}
+
+" Easier search navigation {{{
 nnoremap n nzz
 nnoremap N Nzz
+nnoremap S :%s//g<Left><Left>
 set nohlsearch
+set ignorecase
+" }}}
 
-" Set leader key to ,
+" Set leader key to comma {{{
 let mapleader=','
+" }}}
 
-" Disable vi compatibility
+" General compatibility {{{
+filetype plugin indent on
 set nocompatible
+set backspace=2
+set encoding=UTF-8
+" }}}
 
-" Clean up ~
+" Clean up ~ {{{
 set viminfo=%,<800,'10,/50,:100,h,f0,n~/.vim/info
 set backupdir=~/.vim/cache//,.
 set directory=~/.vim/cache//,.
 set undodir=~/.vim/cache//,.
+" }}}
 
-" Make backspace be handled nicely
-set backspace=2
-
-" Enable line numbers
+" Enable line numbers and change line wrap {{{
 set number
 set relativenumber
-
-" Change where splits open
-set splitbelow splitright
-
-" Disable wrap
 set nowrap
+" }}}
 
-" Show command as you type 
-set showcmd
-
-" Set defualt encoding
-set encoding=UTF-8
-
-" Indentation
+" Indentation {{{
 set tabstop=8
 set noexpandtab
 set autoindent
 set listchars=tab:\|\ 
 set list
+" }}}
 
-" Turn on wildcard menu and add to path
+" Fuzzy file finding {{{
 set wildmenu
 set path+=**
+noremap <C-f> :find 
+" }}}
 
-" Create custom statusline
+" Create custom statusline {{{
 function! GitBranch()
 	  return system("git rev-parse --abbrev-ref HEAD 2>/dev/null | tr -d '\n'")
 endfunction
-
 function! StatuslineGit()
 	let l:branchname = GitBranch()
 	return strlen(l:branchname) > 0?'  '.l:branchname.' ':''
 endfunction
-
 set showmode
+set showcmd
 set laststatus=2
 set statusline=
 set statusline+=%#PmenuSel#
@@ -91,20 +103,21 @@ set statusline+=\ %{&fileencoding?&fileencoding:&encoding}
 set statusline+=\[%{&fileformat}\]
 set statusline+=\ %p%%
 set statusline+=\ %l:%c
+" }}}
 
-" Create MakeTags command for ctags
+" Create MakeTags command for ctags {{{
 command! MakeTags !ctags -R .
-noremap <c-r> :MakeTags<cr>
+noremap <C-r> :MakeTags<cr>
+" }}}
 
-" Detect filetype
-filetype plugin indent on
-
-" Set colors
+" Set colors {{{
 syntax on
 colorscheme pablo
 if filereadable(expand('~/.vim/colors/gruvbox.vim'))
 	colorscheme gruvbox
 endif
+" }}}
 
-" Enable cursorline in insert mode
+" Enable cursorline in insert mode {{{
 autocmd InsertEnter,InsertLeave * set cul!
+" }}}
