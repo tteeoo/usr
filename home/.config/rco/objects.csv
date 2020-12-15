@@ -1,5 +1,6 @@
 nickname,path,description
 rc,/home/theo/.config/rco/config.csv,rco config
+ro,/home/theo/.config/rco/objects.csv,rco files
 nv,/home/theo/.config/nvim/init.vim,neovim init
 sx,/home/theo/.config/sxhkd/sxhkdrc,sxhkd config
 pi,/home/theo/.config/picom/picom.conf,picom config
@@ -15,12 +16,11 @@ fi,/home/theo/.config/fish/config.fish,fish
 nb,/home/theo/.config/newsboat/config,newsboat config
 nu,/home/theo/.config/newsboat/urls,newsboat urls
 g3,/home/theo/.config/gtk-3.0/settings.ini,gtk 3
-bd,/home/theo/.config/BetterDiscord/themes/simple-gruvbox.theme.css,discord theme
-ro,/home/theo/.config/rco/objects.csv,rco files
 st,/home/theo/.config/spotify-tui/config.yml,spotify-tui config
 mp,/home/theo/.config/mpv/mpv.conf,mpv config
-mi,/home/theo/.config/mpv/input.conf,mpv inputs
+mi,/home/theo/.config/mpv/input.conf,mpv inputs config
 vi,/home/theo/.vim/vimrc,normal vimrc
 gi,/home/theo/.config/git/config,git config
 py,/home/theo/.config/python/rc.py,python shell rc
 xr,/home/theo/.config/X11/Xresources,X resources
+tx,/home/theo/.config/tmux/tmux.conf,tmux config
