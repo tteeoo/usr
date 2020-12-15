@@ -34,7 +34,7 @@ control + Return
 # LAUNCH
 # python shell
 alt + shift + p 
-    $TERMINAL -e python
+    $TERMINAL -e tmux attach -t py || $TERMINAL -e tmux new -s py /usr/bin/python3
 # ranger fm
 alt + shift + r
     $TERMINAL -e ranger

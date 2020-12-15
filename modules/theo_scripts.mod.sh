@@ -25,5 +25,5 @@ theo_scripts_files() {
 		.local/bin/opt/git_status_prompt .local/bin/opt/lock .local/bin/opt/lsearch
 		.local/bin/opt/openup .local/bin/opt/randwall .local/bin/opt/runt
 		.local/bin/opt/spt-mute.sh .local/bin/opt/spt-vol.sh .local/bin/opt/time_bar
-		.local/bin/opt/volume_bar"
+		.local/bin/opt/volume_bar .local/bin/opt/range .local/bin/opt/tku"
 }

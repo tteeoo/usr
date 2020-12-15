@@ -19,6 +19,7 @@ abbr -ag gof gofmt -s -w -e -l .
 abbr -ag vw nvim -c VimwikiIndex
 abbr -ag mi 'make && sudo make install'
 
+abbr -ag t tmux
 abbr -ag ta tmux attach -t
 abbr -ag tks tmux kill-session -t
 abbr -ag tls tmux list-sessions
