@@ -14,6 +14,7 @@ Plug 'tmsvg/pear-tree'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-surround'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'tpope/vim-fugitive'
 " Appearance
 Plug 'airblade/vim-gitgutter'
 Plug 'morhetz/gruvbox'
@@ -42,10 +43,10 @@ noremap <C-h> <C-w>h
 noremap <C-j> <C-w>j
 noremap <C-k> <C-w>k
 noremap <C-l> <C-w>l
-noremap <Space>h :vertical resize -5<CR>
-noremap <Space>l :vertical resize +5<CR>
-noremap <Space>k :resize -5<CR>
-noremap <Space>j :resize +5<CR>
+" noremap <Space>h :vertical resize -5<CR>
+" noremap <Space>l :vertical resize +5<CR>
+" noremap <Space>k :resize -5<CR>
+" noremap <Space>j :resize +5<CR>
 noremap <C-c> <C-w>q
 " }}}2 Tabs {{{2
 noremap <A-TAB> :tabnext<CR>

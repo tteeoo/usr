@@ -2,24 +2,34 @@
 abbr -ag g git
 abbr -ag v nvim
 abbr -ag r ranger
+abbr -ag z zathura
+abbr -ag n nnn -de
+abbr -ag nb newsboat -r
+
 abbr -ag cp cp -i
 abbr -ag mv mv -i
-abbr -ag n nnn -de
-abbr -ag z zathura
+
+abbr -ag a sudo apt
 abbr -ag p sudo pacman
-abbr -ag nb newsboat -r
 abbr -ag sus sudo systemctl
 abbr -ag sdn sudo shutdown now
+abbr -ag spn sudo poweroff now
+
 abbr -ag gof gofmt -s -w -e -l .
 abbr -ag vw nvim -c VimwikiIndex
 abbr -ag mi 'make && sudo make install'
+
+abbr -ag ta tmux attach -t
+abbr -ag tks tmux kill-session -t
+abbr -ag tls tmux list-sessions
+
 abbr -ag c fzfcmd
 
 # aliases
-alias fzfcmd='set fzfcmd ( grep " cmd: " $XDG_DATA_HOME/fish/fish_history | sed "s/- cmd: //" | grep -v fzfcmd | tac | fzf -e --color=16 --no-sort ) && echo $fzfcmd && eval $fzfcmd'
-alias lynx='lynx -accept_all_cookies -vikeys'
 alias vimwiki='nvim -c VimwikiIndex'
+alias lynx='lynx -accept_all_cookies -vikeys'
 alias pcmn='pacman -Sl | cut -d" " -f2,3,4 | fzf -m  --preview "pacman -Si {1}" --preview-window=right:66%:wrap | xargs -ro -n 1 sudo pacman -S'
+alias fzfcmd='set fzfcmd ( grep " cmd: " $XDG_DATA_HOME/fish/fish_history | sed "s/- cmd: //" | grep -v fzfcmd | tac | fzf -e --color=16 --no-sort ) && echo $fzfcmd && eval $fzfcmd'
 
 # make delete work in st
 switch $TERM
@@ -44,8 +54,27 @@ function fish_prompt
 	echo -n (git_status_prompt)
 end
 
+# vi mode indicator
 function fish_mode_prompt
-	# turns off vi mode indicator
+	# switch $fish_bind_mode
+	# case default
+	# 	set_color --bold red
+	# 	echo 'N'
+	# case insert
+	# 	set_color --bold green
+	# 	echo 'I'
+	# case replace_one
+	# 	set_color --bold green
+	# 	echo 'R'
+	# case visual
+	# 	set_color --bold brmagenta
+	# 	echo 'V'
+	# case '*'
+	# 	set_color --bold red
+	# 	echo '?'
+	# end
+	# set_color normal
+	# echo ' '
 end
 
 # sudo !!
@@ -62,3 +91,6 @@ function sw
 	set TMPFILE (mktemp)
 	mv -f $argv[1] $TMPFILE && mv $argv[2] $argv[1] && mv $TMPFILE $argv[2]
 end
+
+# tmux
+[ $TERM != "screen" ] && [ $TERM != "screen-256color" ] && tmux
