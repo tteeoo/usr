@@ -6,8 +6,9 @@ abbr -ag z zathura
 abbr -ag n nnn -de
 abbr -ag nb newsboat -r
 
-abbr -ag cp cp -i
-abbr -ag mv mv -i
+abbr -ag cp cp -iv
+abbr -ag mv mv -iv
+abbr -ag mv rm -v
 
 abbr -ag a sudo apt
 abbr -ag p sudo pacman

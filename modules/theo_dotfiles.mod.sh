@@ -38,7 +38,8 @@ theo_dotfiles_dirs() {
 		$CONFIG_DIR/spotify-tui $CONFIG_DIR/newsboat $CONFIG_DIR/gtk-3.0
 		$CONFIG_DIR/gtk-2.0 $CONFIG_DIR/python $CONFIG_DIR/picom $CONFIG_DIR/sxhkd
 		$CONFIG_DIR/dunst $CONFIG_DIR/nvim $CONFIG_DIR/rco $CONFIG_DIR/git
-		$CONFIG_DIR/mpv $CONFIG_DIR/npm $CONFIG_DIR/X11 $CONFIG_DIR/tmux .vim"
+		$CONFIG_DIR/mpv $CONFIG_DIR/npm $CONFIG_DIR/X11 $CONFIG_DIR/tmux .vim
+		$DATA_DIR/gnupg"
 }
 
 theo_dotfiles_files() {
@@ -50,5 +51,6 @@ theo_dotfiles_files() {
 		$CONFIG_DIR/picom/picom.conf $CONFIG_DIR/fish/config.fish $CONFIG_DIR/gtk-2.0/gtkrc-2.0
 		$CONFIG_DIR/fish/fish_variables $CONFIG_DIR/gtk-3.0/settings.ini
 		$CONFIG_DIR/spotify-tui/config.yml $CONFIG_DIR/nvim/coc-settings.json
-		$CONFIG_DIR/discocss/custom.css $CONFIG_DIR/user-dirs.dirs $CONFIG_DIR/tmux/tmux.conf"
+		$CONFIG_DIR/discocss/custom.css $CONFIG_DIR/user-dirs.dirs $CONFIG_DIR/tmux/tmux.conf
+		$DATA_DIR/gnupg/sshcontrol $DATA_DIR/gnupg/gpg-agent.conf"
 }
