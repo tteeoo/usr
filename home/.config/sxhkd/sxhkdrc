@@ -34,7 +34,10 @@ control + Return
 # LAUNCH
 # python shell
 alt + shift + p 
-    $TERMINAL -e tmux attach -t py || $TERMINAL -e tmux new -s py /usr/bin/python3
+    $TERMINAL -e tmux attach -t py || $TERMINAL -e tmux new -s py /usr/bin/ipython
+# persistant terminal
+alt + shift + y
+    $TERMINAL -e tmux attach -t subs || $TERMINAL -e tmux new -s subs
 # ranger fm
 alt + shift + r
     $TERMINAL -e ranger
@@ -49,7 +52,7 @@ alt + shift + d
     discord
 # spotify
 alt + shift + s
-    st -e spt
+    $TERMINAL -e spt
 # thunar
 alt + shift + t
     thunar

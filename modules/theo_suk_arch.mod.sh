@@ -2,7 +2,7 @@ theo_suk_arch_add() {
 	printf "theo_suk_arch: installing packages\n"
 	sudo pacman -S --needed --noconfirm --quiet libxinerama libxft libx11 freetype2 make gcc
 	printf "theo_suk_arch: linking %s/src/suk\n" "$HOME"
-	ln -sf "$USR_DIR"/home/src/suk/ "$HOME"/src/suk/
+	ln -sf "$USR_DIR"/home/src/suk "$HOME"/src/suk
 
 	printf "theo_suk_arch: compiling software and linking binaries\n"
 	mkdir -p "$HOME"/.local/bin

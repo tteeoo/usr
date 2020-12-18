@@ -1,9 +1,0 @@
-#!/bin/sh
-
-AGDIR=$HOME/src/git/aur/$1
-
-mkdir -p $AGDIR
-
-git clone https://aur.archlinux.org/$1.git $AGDIR
-
-echo "cd $AGDIR; makepkg -s"

@@ -39,8 +39,8 @@ set nohlsearch
 set ignorecase
 " }}}
 
-" Set leader key to comma {{{
-let mapleader=','
+" Set leader key to space {{{
+let mapleader=' '
 " }}}
 
 " General compatibility {{{
