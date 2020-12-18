@@ -9,6 +9,7 @@ xi,/home/theo/.xinitrc,xinit rc
 g2,/home/theo/.config/gtk-2.0/gtkrc-2.0,gtk 2
 ba,/home/theo/.bashrc,bash rc
 bp,/home/theo/.bash_profile,bash profile
+pr,/home/theo/.profile,profile
 sd,/home/theo/.config/spotifyd/spotifyd.conf,spotifyd
 du,/home/theo/.config/dunst/dunstrc,dunst
 fv,/home/theo/.config/fish/fish_variables,fish vars

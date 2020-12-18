@@ -1,5 +1,8 @@
 source "$HOME"/.profile
 
+export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
+gpgconf --launch gpg-agent
+
 if [[ -z $DISPLAY ]] ; then
 
 	# test for an existing bus daemon, just to be safe
