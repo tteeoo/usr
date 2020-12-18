@@ -2,7 +2,6 @@
 # licensed under the Unlicense
 # TODO:
 # - create more modules
-# - force add/force remove
 # - purge from home tree
 
 set -e
@@ -27,7 +26,9 @@ usage() {
 options:
   -s <module>  sync module (equivalent to -g; -p; -a)
   -a <module>  add module
+  -af <module> add module (force)
   -r <module>  remove module
+  -rf <module> remove module (force)
   -i <module>  module information
   -g <module>  get module
   -p <module>  prep module
@@ -42,7 +43,9 @@ module_add() {
 	MOD_FILE="$USR_DIR/modules/$MOD".mod.sh
 	MOD_INSTALL="$USR_DIR/var/$MOD".installed
 
-	[ -e "$MOD_INSTALL" ] && die "usr: $MOD is already installed"
+	if [ "$3" = "" ] ; then
+		[ -e "$MOD_INSTALL" ] && die "usr: $MOD is already installed"
+	fi
 	[ -z "$MOD" ] && usage
 
 	# shellcheck source=modules/test.mod.sh
@@ -59,7 +62,9 @@ module_remove() {
 	MOD_FILE="$USR_DIR/modules/$MOD".mod.sh
 	MOD_INSTALL="$USR_DIR/var/$MOD".installed
 
-	[ -e "$MOD_INSTALL" ] || die "usr: $MOD is not installed"
+	if [ "$3" = "" ] ; then
+		[ -e "$MOD_INSTALL" ] || die "usr: $MOD is not installed"
+	fi
 	[ -z "$MOD" ] && usage
 
 	# shellcheck source=modules/test.mod.sh
@@ -193,7 +198,9 @@ update_remote() {
 case ${1#-} in
 	s) get_module "$@" && prep_module "$@" && module_add "$@" ;;
 	a) module_add "$@" ;;
+	af) module_add "$@" force ;;
 	r) module_remove "$@" ;;
+	rf) module_remove "$@" force ;;
 	i) module_info "$@" ;;
 	g) get_module "$@" ;;
 	p) prep_module "$@" ;;
