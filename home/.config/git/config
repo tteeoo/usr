@@ -1,5 +1,6 @@
 [user]
 	email = theodorehenson@protonmail.com
 	name = Theo Henson
+	signingkey = 8555348DA0F543DC
 [credential]
 	helper = cache
