@@ -1,7 +1,8 @@
 #!/bin/sh
+# Updates my RSS reader and sends a notification if there are new articles
 
 newsboat -x reload
-MSG=`newsboat -x print-unread`
+msg=`newsboat -x print-unread`
 if [[ `echo $MSG | awk '{print $1}'` -gt 0 ]]; then
 	notify-send -a "newsboat" "updated rss" "$MSG"
 fi

@@ -1,16 +1,16 @@
-#!/bin/bash
+#!/bin/sh
 # Sets my wallpaper to a random image in my wallpaper directory
 
-OLD=$(<$XDG_CACHE_HOME/oldwall)
+old=$(cat "$XDG_CACHE_HOME"/oldwall)
 
 get_file () {
-	NEW=$(find $XDG_PICTURES_DIR/wall -type f -name "*" | shuf -n 1)
+	new=$(find "$XDG_PICTURES_DIR"/wall -type f -name '*' | shuf -n 1)
 }
 
 get_file
-while [ "$OLD" = "$NEW" ]; do
+while [ "$old" = "$new" ]; do
 	get_file
 done
 
-feh --no-fehbg --bg-fill $NEW
-echo $NEW > $XDG_CACHE_HOME/oldwall
+feh --no-fehbg --bg-fill "$new"
+echo "$new" > "$XDG_CACHE_HOME"/oldwall

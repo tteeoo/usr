@@ -1,5 +1,6 @@
 #!/bin/sh
-# Script to run commands many times
+# Script to run a command a certain ammount of times (useful for benchmarking like 'time runt <command>')
+
 j=1
 while [ $j -le $1 ]; do
 	$2

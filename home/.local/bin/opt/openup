@@ -1,3 +1,4 @@
 #!/bin/sh
+# Opens a file from $PATH in $EDITOR
 
 $EDITOR $(which $1)

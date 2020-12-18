@@ -1,5 +1,10 @@
 #!/bin/sh
-# Kills all tmux sessions that are not currently attached to
+# Kills all tmux sessions that are not currently attached to and have a number as a name
+
 tmux list-sessions | grep -v attached | while read -r session; do
-	tmux kill-session -t "${session%%:*}"
+	name="${session%%:*}"
+	case $name in
+		(*[!0-9]*|'') ;;
+		(*) tmux kill-session -t "$name" ;;
+	esac
 done

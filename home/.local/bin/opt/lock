@@ -1,5 +1,5 @@
 #!/bin/sh
-# Locks my screen with i3lock
+# Locks my screen with i3lock-color
 
 xargs i3lock -e \
 	--ringvercolor=45858888 \
