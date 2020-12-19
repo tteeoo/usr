@@ -67,6 +67,7 @@ noremap <C-l> <C-w>l
 " noremap <Space>k :resize -5<CR>
 " noremap <Space>j :resize +5<CR>
 noremap <C-c> <C-w>q
+noremap <C-d> :bdelete<CR>
 noremap <Leader>, :bprevious<CR>
 noremap <Leader>. :bnext<CR>
 " }}}2 
@@ -127,6 +128,7 @@ set noshowmode
 set updatetime=50
 let g:airline_theme = 'gruvbox'
 let g:airline_symbols_ascii = 1
+let g:airline#extensions#tabline#formatter = 'unique_tail'
 let g:airline_section_z = '%l:%c %p%%'
 let g:airline_extensions = ['tabline', 'branch', 'hunks']
 " }}}2 

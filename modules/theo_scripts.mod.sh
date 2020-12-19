@@ -21,7 +21,7 @@ theo_scripts_dirs() {
 }
 
 theo_scripts_files() {
-	printf ".local/bin/opt/aur .local/bin/opt/autorss .local/bin/opt/cpusage
+	printf ".local/bin/opt/autorss .local/bin/opt/cpusage
 		.local/bin/opt/git_status_prompt .local/bin/opt/lock .local/bin/opt/lsearch
 		.local/bin/opt/openup .local/bin/opt/randwall .local/bin/opt/runt
 		.local/bin/opt/spt-mute.sh .local/bin/opt/spt-vol.sh .local/bin/opt/time_bar

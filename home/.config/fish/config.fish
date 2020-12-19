@@ -1,14 +1,25 @@
 # abbreviations set here as global vars for clarity's sake
-abbr -ag g git
 abbr -ag v nvim
 abbr -ag r ranger
 abbr -ag z zathura
 abbr -ag n nnn -de
 abbr -ag nb newsboat -r
 
+abbr -ag g git
+abbr -ag gc git commit -S
+abbr -ag gs git status
+abbr -ag gd git diff
+abbr -ag gb git branch
+abbr -ag ga git add
+abbr -ag gp git pull
+abbr -ag gch git checkout
+abbr -ag gpsh git push
+abbr -ag gbpsh git push --set-upstream origin
+
 abbr -ag cp cp -iv
 abbr -ag mv mv -iv
-abbr -ag mv rm -v
+abbr -ag rm rm -v
+abbr -ag ll ls -lAh
 
 abbr -ag a sudo apt
 abbr -ag p sudo pacman
@@ -95,4 +106,4 @@ function sw
 end
 
 # tmux
-[ $TERM != "screen" ] && [ $TERM != "screen-256color" ] && tmux
+[ $TERM != "screen" ] && [ $TERM != "screen-256color" ] && exec tmux
