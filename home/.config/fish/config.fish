@@ -106,4 +106,4 @@ function sw
 end
 
 # tmux
-[ $TERM != "screen" ] && [ $TERM != "screen-256color" ] && exec tmux
+[ "$TMUX" = "" ] && exec tmux
