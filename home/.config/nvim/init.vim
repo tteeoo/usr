@@ -11,15 +11,20 @@ endif
 
 call plug#begin('~/.vim/plugged')
 
-" Editing functionality
-Plug 'tmsvg/pear-tree'
-Plug 'tpope/vim-commentary'
-Plug 'tpope/vim-surround'
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
+" tpope is actually a god
+Plug 'tpope/vim-vinegar'
 Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-commentary'
+
+" Make the computer code for you
+Plug 'tmsvg/pear-tree'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+
+" Git
+Plug 'airblade/vim-gitgutter'
 
 " Appearance
-Plug 'airblade/vim-gitgutter'
 Plug 'morhetz/gruvbox'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
@@ -78,12 +83,14 @@ noremap <A-t> :tabnew<CR>
 noremap <A-c> :tabclose<CR> 
 " }}}2 
 
-" Easier search/replace navigation {{{2
+" Easier in-file navigation {{{2
 set nohlsearch
 set ignorecase
 nnoremap n nzz
 nnoremap N Nzz
 nnoremap S :%s//g<Left><Left>
+nnoremap <C-o> <C-o>zz
+nnoremap <C-i> <C-i>zz
 " }}}2 
 
 " Make tags command {{{2
@@ -119,7 +126,7 @@ set signcolumn=yes
 " }}}2 
 
 " Vim wiki {{{2
-let g:vimwiki_list = [{'path': '~/docs/vimwiki'}]
+let g:vimwiki_list = [{'path': '~/docs/vimwiki', 'syntax': 'markdown', 'ext': '.md'}]
 " }}}2
 
 " Status line {{{2
@@ -137,6 +144,9 @@ let g:airline_extensions = ['tabline', 'branch', 'hunks']
 syntax on
 let g:gruvbox_italic = 1
 colorscheme gruvbox
+if (has("termguicolors"))
+	set termguicolors
+endif
 " }}}2
 
 " }}}

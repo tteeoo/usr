@@ -110,4 +110,4 @@ function sw
 end
 
 # tmux
-[ "$TMUX" = "" ] && exec tmux
+[ "$TMUX" = "" ] && [ "$TERM" != "linux" ] && exec tmux
