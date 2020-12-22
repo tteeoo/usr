@@ -69,9 +69,10 @@ alt + shift + z
 # terminal
 super + Return
     $TERMINAL
-# rofi
+# dmenu
 super + r
-    rofi -theme gruvbox-dark -show run
+    dmenu_run
+# rofi -theme gruvbox-dark -show run
 
 # intercept keybind from firefox
 control + q

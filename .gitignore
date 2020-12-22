@@ -2,4 +2,6 @@
 var/
 home/src/suk/st/st
 home/src/suk/dwm/dwm
+home/src/suk/dmenu/dmenu
+home/src/suk/dmenu/stest
 home/src/suk/dwmblocks/dwmblocks
