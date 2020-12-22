@@ -6,11 +6,11 @@ My dotfiles + more, and some tools to manage them.
 
 The `usr` script is licensed under the Unlicense.
 
-## home/.local/bin/opt
+## `home/.local/bin/opt`
 
 Some scripts I've made, which are all licensed under the Unlicense.
 
-## home/src/suk
+## `home/src/suk`
 
 [Suckless software](https://suckless.org/) forks.
 
@@ -40,15 +40,9 @@ From version 6.2, my `dwm` has:
 * movestack patch
 * Custom settings in `config.h` 
 * My own additions I programmed in (`togglelayout` and `focusmaster` functions, changing how the bar looks, etc.)
- 
-### dwmblocks
-
-Not from suckless but integrates with `dwm`.
-
-Upstream: [github.com/torrinfail/dwmblocks](https://github.com/torrinfail/dwmblocks/)
-
-I've added my own blocks in `blocks.h` which use some scripts I made.
 
 ## Gallery
+
+(Probably outdated)
 
 ![Screenshot of my desktop](https://raw.githubusercontent.com/tteeoo/usr/main/scrot.png)
