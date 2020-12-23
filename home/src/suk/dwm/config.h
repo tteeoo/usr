@@ -66,7 +66,7 @@ static Key keys[] = {
 	// mod + a/e: change gap size
 	{ MODKEY|ControlMask,           XK_k,      changegaps,     {.i = +6 } },
 	{ MODKEY|ControlMask,           XK_j,      changegaps,     {.i = -6 } },
-	{ MODKEY|ControlMask,           XK_g,      setgaps,        {.i = 12 } },
+	{ MODKEY|ControlMask,           XK_g,      setgaps,        {.i =  6 } },
 	// mod + shift + j/k: change position of the focused client up/down the stack of clients
 	{ MODKEY|ShiftMask,             XK_j,      movestack,      {.i = +1 } },
 	{ MODKEY|ShiftMask,             XK_k,      movestack,      {.i = -1 } },
