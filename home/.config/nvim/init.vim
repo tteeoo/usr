@@ -129,6 +129,20 @@ set signcolumn=yes
 let g:vimwiki_list = [{'path': '~/docs/vimwiki', 'syntax': 'markdown', 'ext': '.md'}]
 " }}}2
 
+" Git fugitive {{{2
+cnorea <expr> g getcmdpos() == 2 ? 'Git' : 'g'
+cnorea <expr> gch getcmdpos() == 4 ? 'Git checkout' : 'gch'
+cnorea <expr> gc getcmdpos() == 3 ? 'Git commit -S' : 'gc'
+cnorea <expr> gs getcmdpos() == 3 ? 'Git status' : 'gs'
+cnorea <expr> gd getcmdpos() == 3 ? 'Git diff' : 'gd'
+cnorea <expr> gb getcmdpos() == 3 ? 'Git branch' : 'gb'
+cnorea <expr> ga getcmdpos() == 3 ? 'Git add' : 'ga'
+cnorea <expr> gp getcmdpos() == 3 ? 'Git pull' : 'gp'
+cnorea <expr> gch getcmdpos() == 4 ? 'Git checkout' : 'gch'
+cnorea <expr> gpsh getcmdpos() == 5 ? 'Git push' : 'gpsh'
+cnorea <expr> gbpsh getcmdpos() == 6 ? 'Git push --set-upstream origin' : 'gbpsh'
+" }}}2
+
 " Status line {{{2
 set showcmd
 set noshowmode
