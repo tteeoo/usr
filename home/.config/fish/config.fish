@@ -27,7 +27,15 @@ abbr -ag sus sudo systemctl
 abbr -ag sdn sudo shutdown now
 abbr -ag spn sudo poweroff now
 
+abbr -ag goi go install
+abbr -ag goc go clean
+abbr -ag gom go mod
+abbr -ag gob go build
+abbr -ag goe go env
+abbr -ag gog go get
+abbr -ag gol golint ./...
 abbr -ag gof gofmt -s -w -e -l .
+
 abbr -ag vw nvim -c VimwikiIndex
 abbr -ag mi 'make && sudo make install'
 
