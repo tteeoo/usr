@@ -89,8 +89,6 @@ set ignorecase
 nnoremap n nzz
 nnoremap N Nzz
 nnoremap S :%s//g<Left><Left>
-nnoremap <C-o> <C-o>zz
-nnoremap <C-i> <C-i>zz
 " }}}2 
 
 " Make tags command {{{2
