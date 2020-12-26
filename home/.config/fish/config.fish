@@ -47,6 +47,7 @@ abbr -ag tls tmux list-sessions
 abbr -ag c fzfcmd
 
 # aliases
+alias bat='cat /sys/class/power_supply/BAT0/capacity'
 alias vimwiki='nvim -c VimwikiIndex'
 alias lynx='lynx -accept_all_cookies -vikeys'
 alias pcmn='pacman -Sl | cut -d" " -f2,3,4 | fzf -m  --preview "pacman -Si {1}" --preview-window=right:66%:wrap | xargs -ro -n 1 sudo pacman -S'
