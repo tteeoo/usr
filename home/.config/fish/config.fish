@@ -21,6 +21,7 @@ abbr -ag mv mv -iv
 abbr -ag rm rm -v
 abbr -ag ll ls -lAh
 
+abbr -ag s sudo
 abbr -ag a sudo apt
 abbr -ag p sudo pacman
 abbr -ag sus sudo systemctl
