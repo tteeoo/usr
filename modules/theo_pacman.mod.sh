@@ -6,6 +6,7 @@ theo_pacman_add() {
 }
 
 theo_pacman_remove() {
+	printf "Nothing to do"
 }
 
 theo_pacman_info() {
@@ -13,8 +14,10 @@ theo_pacman_info() {
 }
 
 theo_pacman_dirs() {
+	printf ""
 }
 
 
 theo_pacman_files() {
+	printf ""
 }
