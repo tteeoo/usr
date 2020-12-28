@@ -2,4 +2,5 @@ test
 theo_dirs
 theo_dotfiles
 theo_scripts
-theo_suk_arch
+theo_suk
+theo_pacman
