@@ -124,7 +124,7 @@ set signcolumn=yes
 " }}}2 
 
 " Vim wiki {{{2
-let g:vimwiki_list = [{'path': '~/docs/vimwiki', 'syntax': 'markdown', 'ext': '.md'}]
+let g:vimwiki_list = [{'path': $VIMWIKI, 'syntax': 'markdown', 'ext': '.md'}]
 " }}}2
 
 " Git fugitive {{{2

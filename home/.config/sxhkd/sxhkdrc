@@ -43,7 +43,7 @@ alt + shift + r
     $TERMINAL -e ranger
 # vimwiki
 alt + shift + w
-    $TERMINAL -e nvim -c VimwikiIndex
+    $TERMINAL -e nvim -c VimwikiIndex -c 'cd $VIMWIKI'
 # firefox
 alt + shift + c
     $BROWSER

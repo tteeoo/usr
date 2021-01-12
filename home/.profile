@@ -14,14 +14,14 @@ export XDG_TEMPLATES_DIR="/home/theo/docs/templates"
 export XDG_VIDEOS_DIR="/home/theo/av"
 
 # more envs
-export BIN="$HOME/.local/bin"
-export OPT_BIN="$BIN/opt"
+export LOCAL_BIN="$HOME/.local/bin"
 export GOPATH="$XDG_DATA_HOME/go"
+export VIMWIKI="$XDG_DOCUMENTS_DIR/vimwiki"
 
 # set some default programs
 export VISUAL=/usr/bin/nvim
 export EDITOR=/usr/bin/nvim
-export TERMINAL="$BIN/st"
+export TERMINAL="$LOCAL_BIN/st"
 export BROWSER=/usr/bin/firefox
 export READER=/usr/bin/zathura
 
@@ -60,4 +60,4 @@ export SUBS_FILE="$XDG_DOCUMENTS_DIR/subs.list"
 export SUBS_MENU_PROG="fzf --no-sort -e --color=16"
 
 # add directories to path
-export PATH="$OPT_BIN:$BIN:$GOPATH/bin:$CARGO_HOME/bin:$DENO_INSTALL_ROOT:$PATH"
+export PATH="$LOCAL_BIN:$GOPATH/bin:$CARGO_HOME/bin:$DENO_INSTALL_ROOT:$PATH"
