@@ -79,30 +79,15 @@ function fish_prompt
 
 	echo -n (set_color 83A598)(pwd)' '
 
-	echo -n (git_status_prompt)
+	if which git_status_prompt > /dev/null 2>&1
+		echo -n (git_status_prompt)
+	else
+		echo -e -n "\x1b[0m\$ "
+	end
 end
 
 # vi mode indicator
 function fish_mode_prompt
-	# switch $fish_bind_mode
-	# case default
-	# 	set_color --bold red
-	# 	echo 'N'
-	# case insert
-	# 	set_color --bold green
-	# 	echo 'I'
-	# case replace_one
-	# 	set_color --bold green
-	# 	echo 'R'
-	# case visual
-	# 	set_color --bold brmagenta
-	# 	echo 'V'
-	# case '*'
-	# 	set_color --bold red
-	# 	echo '?'
-	# end
-	# set_color normal
-	# echo ' '
 end
 
 # sudo !!

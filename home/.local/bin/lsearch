@@ -3,6 +3,6 @@
 
 url='lynx -vikeys -accept_all_cookies https://lite.duckduckgo.com/lite/?q='
 
-search=$(echo $@ | sed 's/ /+/g')
+search=$(echo "$@" | sed 's/ /+/g')
 
 eval "$url$search"

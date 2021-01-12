@@ -2,13 +2,13 @@
 # configure monitors (system dependent)
 
 runif() {
-	if which $1 > /dev/null 2>&1 ; then
+	if which "$1" > /dev/null 2>&1 ; then
 		$@ &
 	fi
 }
 
 # configure x
-if [ $(hostname) == "art" ] ; then
+if [ "$(hostname)" = "art" ] ; then
 	xrandr --output DP-3 --primary --mode 1920x1080 --pos 0x840 --rotate normal \
 		--output HDMI-1 --mode 1920x1080 --pos 1920x0 --rotate left --gamma 0.86
 fi

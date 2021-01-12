@@ -1,9 +1,13 @@
 # start fish if fish is not the parent process
-PARENT="$(ps --no-header --pid=$PPID --format=cmd)"
-[ "$PARENT" != "fish" ] && [ "$PARENT" != "-fish" ] && exec fish
+parent="$(ps --no-header --pid=$PPID --format=cmd)"
+[ "$parent" != "fish" ] && [ "$parent" != "-fish" ] && exec fish
 
 # prompt
-PS1="\[\033[96m\][bash] \[\033[94m\w\] \[\$(git_status_prompt)\]"
+if which git_status_prompt > /dev/null 2>&1 ; then
+	PS1="\[\033[96m\][bash] \[\033[94m\w\] \[\$(git_status_prompt)\]"
+else
+	PS1="\[\033[96m\][bash] \[\033[94m\w\] \033[0m$ "
+fi
 
 # aliases
 alias g="git"
