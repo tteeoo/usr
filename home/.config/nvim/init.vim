@@ -123,6 +123,14 @@ set shortmess+=c
 set signcolumn=yes
 " }}}2 
 
+" Spell check {{{2
+augroup markdownSpell
+    autocmd!
+    autocmd FileType markdown setlocal spell spelllang=en_us
+    autocmd BufRead,BufNewFile *.md setlocal spell spelllang=en_us
+augroup END
+" }}}2
+
 " Vim wiki {{{2
 let g:vimwiki_list = [{'path': $VIMWIKI, 'syntax': 'markdown', 'ext': '.md'}]
 " }}}2

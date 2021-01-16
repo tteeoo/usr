@@ -2,7 +2,7 @@
 # Prints volume information for dwmblocks
 
 vol=$(amixer -D pulse sget Master | grep 'Mono:' | awk -F'[][]' '{ print $2 }')
-if [ "$vol" -eq "" ] ; then
+if [ "$vol" = "" ] ; then
 	vol=$(amixer -D pulse sget Master | grep 'Left:' | awk -F'[][]' '{ print $2 }')
 fi
 echo "$vol"
