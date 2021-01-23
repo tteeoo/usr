@@ -18,10 +18,6 @@ alias mv="mv -iv"
 alias rm="rm -v"
 alias ls="ls --color=auto"
 
-# ensure ssh authentication via gpg
-export SSH_AUTH_SOCK="$(gpgconf --list-dirs agent-ssh-socket)"
-gpgconf --launch gpg-agent > /dev/null
-
 # start fish
 parent="$(ps --no-header --pid=$PPID --format=cmd)"
 [ "$parent" != "fish" ] && [ "$parent" != "-fish" ] && exec fish

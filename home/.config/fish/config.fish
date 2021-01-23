@@ -100,3 +100,7 @@ function sw
 	set TMPFILE (mktemp)
 	mv -f $argv[1] $TMPFILE && mv $argv[2] $argv[1] && mv $TMPFILE $argv[2]
 end
+
+# ensure ssh authentication via gpg
+set -x SSH_AUTH_SOCK (gpgconf --list-dirs agent-ssh-socket)
+gpgconf --launch gpg-agent

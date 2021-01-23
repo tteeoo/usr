@@ -113,9 +113,6 @@ noremap <C-r> :MakeTags<cr>
 " Set colors {{{
 syntax on
 colorscheme pablo
-if filereadable(expand('~/.vim/colors/gruvbox.vim'))
-	colorscheme gruvbox
-endif
 " }}}
 
 " Enable cursorline in insert mode {{{
