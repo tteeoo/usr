@@ -1,9 +1,18 @@
+# functions
+
+runif() {
+	if which "$1" > /dev/null 2>&1 ; then
+		$@ &
+	fi
+}
+
 # base directories
 export XDG_CONFIG_HOME="$HOME/.config"
 export XDG_DATA_HOME="$HOME/.local/share"
 export XDG_CACHE_HOME="$HOME/.cache"
 
-# these are used in ~/.config/user-dirs.dirs to set locations
+# these are the values used in ~/.config/user-dirs.dirs to set locations
+# put here for clarity
 export XDG_DESKTOP_DIR="/home/theo"
 export XDG_DOCUMENTS_DIR="/home/theo/docs"
 export XDG_DOWNLOAD_DIR="/home/theo"
@@ -19,11 +28,33 @@ export GOPATH="$XDG_DATA_HOME/go"
 export VIMWIKI="$XDG_DOCUMENTS_DIR/vimwiki"
 
 # set some default programs
-export VISUAL=/usr/bin/nvim
-export EDITOR=/usr/bin/nvim
-export TERMINAL="$LOCAL_BIN/st"
-export BROWSER=/usr/bin/firefox
-export READER=/usr/bin/zathura
+if which nvim > /dev/null 2>&1 ; then
+	export VISUAL="$(which nvim)"
+	export EDITOR="$(which nvim)"
+else
+	export VISUAL="$(which vim)"
+	export EDITOR="$(which vim)"
+fi
+
+export BROWSER="$(which firefox)"
+
+if which st > /dev/null 2>&1 ; then
+	export TERMINAL="$LOCAL_BIN/st"
+else
+	if which alacritty > /dev/null 2>&1 ; then
+		export TERMINAL="$(which alacritty)"
+	fi
+fi
+
+if which zathura > /dev/null 2>&1 ; then
+	export READER="$(which zathura)"
+fi
+
+if which ipython3 > /dev/null 2>&1 ; then
+	export INTPY="$(which ipython3)"
+else
+	export INTPY="$(which python3)"
+fi
 
 # clean up ~
 export SEST_DIR="$XDG_DATA_HOME/sest"

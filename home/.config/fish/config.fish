@@ -55,10 +55,6 @@ alias vimwiki='nvim -c VimwikiIndex -c \'cd $VIMWIKI\''
 alias pcmn='pacman -Sl | cut -d" " -f2,3,4 | fzf -m  --preview "pacman -Si {1}" --preview-window=right:66%:wrap | xargs -ro -n 1 sudo pacman -S'
 alias fzfcmd='set fzfcmd ( grep " cmd: " $XDG_DATA_HOME/fish/fish_history | sed "s/- cmd: //" | grep -v fzfcmd | tac | fzf -e --color=16 --no-sort ) && echo $fzfcmd && eval $fzfcmd'
 
-# ensure ssh authentication via gpg
-set -x SSH_AUTH_SOCK (gpgconf --list-dirs agent-ssh-socket)
-gpgconf --launch gpg-agent
-
 # make delete work in st
 switch $TERM
 	case 'st-*'
@@ -104,6 +100,3 @@ function sw
 	set TMPFILE (mktemp)
 	mv -f $argv[1] $TMPFILE && mv $argv[2] $argv[1] && mv $TMPFILE $argv[2]
 end
-
-# tmux
-[ "$TMUX" = "" ] && [ "$TERM" != "linux" ] && exec tmux
