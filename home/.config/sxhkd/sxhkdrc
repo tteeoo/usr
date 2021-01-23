@@ -34,7 +34,7 @@ control + Return
 # LAUNCH
 # python shell
 alt + shift + p 
-    "$TERMINAL" -e tmux attach -t py || "$TERMINAL" -e tmux new -s py "$INTPY"
+    "$TERMINAL" -e "$INTPY"
 # persistant terminal
 alt + Return
     "$TERMINAL" -e tmux attach -t subs || "$TERMINAL" -e tmux new -s subs
@@ -71,7 +71,7 @@ super + Return
     "$TERMINAL"
 # no tmux terminal
 control + super + Return
-    NOTMX=true "$TERMINAL"
+    "$TERMINAL"
 # dmenu
 super + r
     dmenu_run

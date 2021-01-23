@@ -1,13 +1,3 @@
-runif() {
-	if which "$1" > /dev/null 2>&1 ; then
-		$@ &
-	fi
-}
-
-# ensure ssh authentication via gpg
-export SSH_AUTH_SOCK="$(runif gpgconf --list-dirs agent-ssh-socket)"
-runif gpgconf --launch gpg-agent > /dev/null
-
 # prompt
 if which git_status_prompt > /dev/null 2>&1 ; then
 	PS1="\[\033[94m\w\] \[\$(git_status_prompt)\]"
@@ -28,10 +18,10 @@ alias mv="mv -iv"
 alias rm="rm -v"
 alias ls="ls --color=auto"
 
-# tmux
-cfile="$HOME/.tmux.conf"
-if [ -f "$XDG_CONFIG_HOME/tmux/tmux.conf" ] ; then
-	cfile="$XDG_CONFIG_HOME/tmux/tmux.conf"
-fi
+# ensure ssh authentication via gpg
+export SSH_AUTH_SOCK="$(gpgconf --list-dirs agent-ssh-socket)"
+gpgconf --launch gpg-agent > /dev/null
 
-[ "$NOTMX" = "" ] &&  [ "$TMUX" = "" ] && [ "$TERM" != "linux" ] && exec tmux -f -2 "$cfile"
+# start fish
+parent="$(ps --no-header --pid=$PPID --format=cmd)"
+[ "$parent" != "fish" ] && [ "$parent" != "-fish" ] && exec fish
