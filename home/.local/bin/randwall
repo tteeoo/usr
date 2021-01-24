@@ -3,7 +3,7 @@
 
 [ -d "$XDG_PICTURES_DIR/wall" ] || exit 1
 
-if [ $(ls -1A "$XDG_PICTURES_DIR/wall" | wc -l) -le 2 ] ; then
+if [ $(ls -1A "$XDG_PICTURES_DIR/wall" | wc -l) -le 1 ] ; then
 	exit 1
 fi
 
