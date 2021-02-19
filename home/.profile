@@ -36,7 +36,11 @@ else
 	export EDITOR="$(which vim)"
 fi
 
-export BROWSER="$(which firefox)"
+if which brave > /dev/null 2>&1 ; then
+	export BROWSER="$(which brave)"
+else
+	export BROWSER="$(which firefox)"
+fi
 
 if which st > /dev/null 2>&1 ; then
 	export TERMINAL="$LOCAL_BIN/st"
@@ -57,6 +61,7 @@ else
 fi
 
 # clean up ~
+export IPFS_PATH="$XDG_DATA_HOME/ipfs"
 export SEST_DIR="$XDG_DATA_HOME/sest"
 export LESSHISTFILE="-"
 export HISTFILE="$XDG_CACHE_HOME/bash_history"
