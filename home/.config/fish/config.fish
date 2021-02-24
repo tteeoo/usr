@@ -1,5 +1,9 @@
 # abbreviations set here as global vars for clarity's sake
-abbr -ag v nvim
+if which nvim > /dev/null 2>&1
+	abbr -ag v nvim
+else
+	abbr -ag v vim
+end
 abbr -ag r ranger
 abbr -ag z zathura
 abbr -ag n nnn -de
@@ -24,6 +28,7 @@ abbr -ag ll ls -lAh
 abbr -ag s sudo
 abbr -ag a sudo apt
 abbr -ag p sudo pacman
+abbr -ag paclean sudo pacman -R '(pacman -Qdtq)'
 abbr -ag sus sudo systemctl
 abbr -ag sdn sudo shutdown now
 abbr -ag spn sudo poweroff now
