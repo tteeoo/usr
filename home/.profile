@@ -36,11 +36,7 @@ else
 	export EDITOR="$(which vim)"
 fi
 
-if which brave > /dev/null 2>&1 ; then
-	export BROWSER="$(which brave)"
-else
-	export BROWSER="$(which firefox)"
-fi
+export BROWSER="$(which firefox)"
 
 if which st > /dev/null 2>&1 ; then
 	export TERMINAL="$LOCAL_BIN/st"
@@ -54,6 +50,10 @@ if which zathura > /dev/null 2>&1 ; then
 	export READER="$(which zathura)"
 fi
 
+if which pcmanfm > /dev/null 2>&1 ; then
+	export FILEM="$(which pcmanfm)"
+fi
+
 if which ipython3 > /dev/null 2>&1 ; then
 	export INTPY="$(which ipython3)"
 else
@@ -61,6 +61,7 @@ else
 fi
 
 # clean up ~
+export ICEAUTHORITY="$XDG_CACHE_HOME/ICEauthority"
 export IPFS_PATH="$XDG_DATA_HOME/ipfs"
 export SEST_DIR="$XDG_DATA_HOME/sest"
 export LESSHISTFILE="-"
@@ -85,11 +86,12 @@ export CCACHE_DIR="$XDG_CACHE_HOME/ccache"
 export PSQL_HISTORY="$XDG_CACHE_HOME/pg/psql_history"
 export XAUTHORITY="$XDG_RUNTIME_DIR/Xauthority"
 export GNUPGHOME="$XDG_DATA_HOME/gnupg"
-export IPYTHONDIR="$XDG_CONFIG_HOME"/ipython
-export JUPYTER_CONFIG_DIR="$XDG_CONFIG_HOME"/jupyter
-export TEXMFHOME=$XDG_DATA_HOME/texmf
-export TEXMFVAR=$XDG_CACHE_HOME/texlive/texmf-var
-export TEXMFCONFIG=$XDG_CONFIG_HOME/texlive/texmf-config
+export IPYTHONDIR="$XDG_CONFIG_HOME/ipython"
+export JUPYTER_CONFIG_DIR="$XDG_CONFIG_HOME/jupyter"
+export TEXMFHOME="$XDG_DATA_HOME/texmf"
+export TEXMFVAR="$XDG_CACHE_HOME/texlive/texmf-var"
+export TEXMFCONFIG="$XDG_CONFIG_HOME/texlive/texmf-config"
+export JULIA_DEPOT_PATH="$XDG_DATA_HOME/julia:$JULIA_DEPOT_PATH"
 
 # things for mitchweaver/subs
 export SUBS_FILE="$XDG_DOCUMENTS_DIR/subs.list"

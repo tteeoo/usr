@@ -106,8 +106,8 @@ set statusline+=\ %l:%c
 " }}}
 
 " Create MakeTags command for ctags {{{
-command! MakeTags !ctags -R .
-noremap <C-r> :MakeTags<cr>
+"command! MakeTags !ctags -R .
+"noremap <C-m> :MakeTags<cr>
 " }}}
 
 " Set colors {{{

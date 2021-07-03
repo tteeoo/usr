@@ -28,7 +28,7 @@ abbr -ag ll ls -lAh
 abbr -ag s sudo
 abbr -ag a sudo apt
 abbr -ag p sudo pacman
-abbr -ag paclean sudo pacman -R '(pacman -Qdtq)'
+abbr -ag paclean sudo pacman -Rns '(pacman -Qdtq)'
 abbr -ag sus sudo systemctl
 abbr -ag sdn sudo shutdown now
 abbr -ag spn sudo poweroff now

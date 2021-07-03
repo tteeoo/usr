@@ -53,24 +53,18 @@ alt + shift + d
 # spotify
 alt + shift + s
     "$TERMINAL" -e spt
-# thunar
-alt + shift + t
-    thunar
+# file manager
+alt + shift + f
+    "$FILEM"
 # htop
 alt + shift + h
    "$TERMINAL" -e htop 
-# nnn
-alt + shift + n
-    "$TERMINAL" -e nnn -de
 # zathura
 alt + shift + z
     "$READER"
 
 # terminal
 super + Return
-    "$TERMINAL"
-# no tmux terminal
-control + super + Return
     "$TERMINAL"
 # dmenu
 super + r

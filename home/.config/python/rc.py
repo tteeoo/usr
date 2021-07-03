@@ -65,3 +65,34 @@ def r(number, root):
 # distance formula
 def dis(a, b):
     return m.sqrt( ((b[0] - a[0]) ** 2) + ((b[1] - a[1]) ** 2) )
+
+# degree trig funcs
+def dsin(a):
+    return m.sin(m.radians(a))
+def dcos(a):
+    return m.cos(m.radians(a))
+def dtan(a):
+    return m.tan(m.radians(a))
+def dasin(a):
+    return m.degrees(m.asin(a))
+def dacos(a):
+    return m.degrees(m.acos(a))
+def datan(a):
+    return m.degrees(m.atan(a))
+
+# dot product
+def dot(a, b):
+    product = 0
+    for a, b in zip(a, b):
+        product += a * b
+    return product
+
+# hypotenuse
+def hyp(a, b):
+    return m.sqrt(a**2 + b**2)
+
+# vector angle
+def veca(a, b):
+    return dacos(
+        dot(a,b) / (hyp(a[0],a[1]) * hyp(b[0], b[1]))
+    )
