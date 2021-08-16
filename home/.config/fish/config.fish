@@ -53,6 +53,9 @@ abbr -ag tls tmux list-sessions
 
 abbr -ag c fzfcmd
 
+abbr -ag tes trans -t es 
+abbr -ag fes trans -s es 
+
 # aliases
 alias bat='cat /sys/class/power_supply/BAT0/capacity'
 alias lynx='lynx -accept_all_cookies -vikeys'
