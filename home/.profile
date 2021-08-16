@@ -22,43 +22,14 @@ export XDG_PUBLICSHARE_DIR="/home/theo/docs/pub"
 export XDG_TEMPLATES_DIR="/home/theo/docs/templates"
 export XDG_VIDEOS_DIR="/home/theo/av"
 
-# more envs
+# misc envs
 export LOCAL_BIN="$HOME/.local/bin"
 export GOPATH="$XDG_DATA_HOME/go"
 export VIMWIKI="$XDG_DOCUMENTS_DIR/vimwiki"
 
-# set some default programs
-if which nvim > /dev/null 2>&1 ; then
-	export VISUAL="$(which nvim)"
-	export EDITOR="$(which nvim)"
-else
-	export VISUAL="$(which vim)"
-	export EDITOR="$(which vim)"
-fi
-
-export BROWSER="$(which firefox)"
-
-if which st > /dev/null 2>&1 ; then
-	export TERMINAL="$LOCAL_BIN/st"
-else
-	if which alacritty > /dev/null 2>&1 ; then
-		export TERMINAL="$(which alacritty)"
-	fi
-fi
-
-if which zathura > /dev/null 2>&1 ; then
-	export READER="$(which zathura)"
-fi
-
-if which pcmanfm > /dev/null 2>&1 ; then
-	export FILEM="$(which pcmanfm)"
-fi
-
-if which ipython3 > /dev/null 2>&1 ; then
-	export INTPY="$(which ipython3)"
-else
-	export INTPY="$(which python3)"
-fi
+# things for mitchweaver/subs
+export SUBS_FILE="$XDG_DOCUMENTS_DIR/subs.list"
+export SUBS_MENU_PROG="fzf --no-sort -e --color=16"
 
 # clean up ~
 export ICEAUTHORITY="$XDG_CACHE_HOME/ICEauthority"
@@ -93,9 +64,38 @@ export TEXMFVAR="$XDG_CACHE_HOME/texlive/texmf-var"
 export TEXMFCONFIG="$XDG_CONFIG_HOME/texlive/texmf-config"
 export JULIA_DEPOT_PATH="$XDG_DATA_HOME/julia:$JULIA_DEPOT_PATH"
 
-# things for mitchweaver/subs
-export SUBS_FILE="$XDG_DOCUMENTS_DIR/subs.list"
-export SUBS_MENU_PROG="fzf --no-sort -e --color=16"
-
 # add directories to path
 export PATH="$LOCAL_BIN:$GOPATH/bin:$CARGO_HOME/bin:$DENO_INSTALL_ROOT:$PATH"
+
+# set some default programs
+if which nvim > /dev/null 2>&1 ; then
+	export VISUAL="$(which nvim)"
+	export EDITOR="$(which nvim)"
+else
+	export VISUAL="$(which vim)"
+	export EDITOR="$(which vim)"
+fi
+
+export BROWSER="$(which firefox)"
+
+if which st > /dev/null 2>&1 ; then
+	export TERMINAL="$LOCAL_BIN/st"
+else
+	if which alacritty > /dev/null 2>&1 ; then
+		export TERMINAL="$(which alacritty)"
+	fi
+fi
+
+if which zathura > /dev/null 2>&1 ; then
+	export READER="$(which zathura)"
+fi
+
+if which pcmanfm > /dev/null 2>&1 ; then
+	export FILEM="$(which pcmanfm)"
+fi
+
+if which ipython3 > /dev/null 2>&1 ; then
+	export INTPY="$(which ipython3)"
+else
+	export INTPY="$(which python3)"
+fi
