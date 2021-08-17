@@ -2,7 +2,8 @@ theo_pacman_add() {
 	printf "theo_pacman: installing packages\n"
 	sudo pacman -S --needed --noconfirm --quiet libxinerama libxft libx11 freetype2 make gcc \
 		neovim vim curl wget git dunst npm sxiv lxpolkit xorg fish xwallpaper picom sxhkd \
-		xorg-xinit fzf pcmanfm zathura zathura-pdf-mupdf
+		xorg-xinit fzf pcmanfm zathura zathura-pdf-mupdf tmux newsboat mpv pulsemixer \
+		alsa-utils papirus-icon-theme ipython3 maim firefox
 }
 
 theo_pacman_remove() {
