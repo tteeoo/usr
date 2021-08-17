@@ -1,22 +1,22 @@
 /* See LICENSE file for copyright and license details. */
 
 /* appearance */
-static const unsigned int gappx     = 6;       /* gap pixel */
-static const unsigned int borderpx  = 2;        /* border pixel of windows */
+static const unsigned int gappx     = 4;       /* gap pixel */
+static const unsigned int borderpx  = 1;        /* border pixel of windows */
 static const unsigned int snap      = 8;        /* snap pixel */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
 static const int resizehints        = 0;        /* 1 means respect size hints in tiled resizals */
 
-static const char *fonts[]          = { "Fira Mono:size=10" };
-static const char dmenufont[]       = "Fira Mono:size=10";
+static const char *fonts[]          = { "Fira Mono:size=9" };
+static const char dmenufont[]       = "Fira Mono:size=9";
 
 static const char bg_norm[]         = "#282828";
-static const char border_norm[]     = "#928374";
+static const char border_norm[]     = "#282828";
 static const char fg_norm[]         = "#ebdbb2";
 
 static const char fg_sel[]          = "#282828";
-static const char border_sel[]      = "#83a598";
+static const char border_sel[]      = "#ebdbb2";
 static const char bg_sel[]          = "#83a598";
 
 static const char *colors[][3]      = {
@@ -66,7 +66,7 @@ static Key keys[] = {
 	// mod + a/e: change gap size
 	{ MODKEY|ControlMask,           XK_k,      changegaps,     {.i = +6 } },
 	{ MODKEY|ControlMask,           XK_j,      changegaps,     {.i = -6 } },
-	{ MODKEY|ControlMask,           XK_g,      setgaps,        {.i =  6 } },
+	{ MODKEY|ControlMask,           XK_g,      setgaps,        {.i =  gappx } },
 	// mod + shift + j/k: change position of the focused client up/down the stack of clients
 	{ MODKEY|ShiftMask,             XK_j,      movestack,      {.i = +1 } },
 	{ MODKEY|ShiftMask,             XK_k,      movestack,      {.i = -1 } },

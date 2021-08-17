@@ -712,10 +712,12 @@ drawbar(Monitor *m)
 		drw_text(drw, x, 0, w, bh, lrpad / 2, tags[i], urg & 1 << i);
 		// Draw bar if any clients are tagged with client and isn't focused
 		if (occ & 1 << i && (m->tagset[m->seltags] & 1 << i) == 0)
-			drw_rect(drw, x + boxs - 1, drw->fonts->h, w, boxw - 1, 1, urg & 1 << i);
+			drw_rect(drw, x + boxs - 1, 0, w, boxw - 3, 1, urg & 1 << i);
+			/* drw_rect(drw, x + boxs - 1, drw->fonts->h, w, boxw - 1, 1, urg & 1 << i); */
 		else if (m->sel && m->sel->isfloating && (m->tagset[m->seltags] & 1 << i) != 0) {
 			drw_setscheme(drw, scheme[SchemeNorm]);
-			drw_rect(drw, x + boxs - 1, drw->fonts->h, w, boxw - 1, 1, urg & 1 << i);
+			/* drw_rect(drw, x + boxs - 1, drw->fonts->h, w, boxw - 1, 1, urg & 1 << i); */
+			drw_rect(drw, x + boxs - 1, 0, w, boxw - 3, 1, urg & 1 << i);
 		}
 		x += w;
 	}
@@ -1767,8 +1769,7 @@ void
 changegaps(const Arg *arg)
 {
 	int g = selmon->pertag->gappx[selmon->seltags];
-	if ((g== 0 && arg->i < 0) ||
-		(g>= 128 && arg->i > 0))
+	if ((g == 0 && arg->i < 0) || (g >= 128 && arg->i > 0))
 		return;
 	selmon->pertag->gappx[selmon->seltags] += arg->i;
 	arrange(selmon);
@@ -1785,6 +1786,7 @@ void
 tile(Monitor *m)
 {
 	unsigned int i, n, h, mw, my, ty, ns;
+	int gpx = m->pertag->gappx[m->seltags];
 	float mfacts = 0, sfacts = 0;
 	Client *c;
 
@@ -1804,8 +1806,7 @@ tile(Monitor *m)
 		mw = m->ww;
 		ns = 1;
 	}
-	int gpx = m->pertag->gappx[m->seltags];
-	for(i = 0, my = ty = gpx, c = nexttiled(m->clients); c; c = nexttiled(c->next), i++)
+	for(i = 0, my = ty = gpx, c = nexttiled(m->clients); c; c = nexttiled(c->next), i++) {
 		if (i < m->nmaster) {
 			h = (m->wh - my) * (c->cfact / mfacts) - gpx;
 			resize(c, m->wx + gpx, m->wy + my, mw - (2*c->bw) - gpx*(5-ns)/2, h - (2*c->bw), False);
@@ -1819,6 +1820,7 @@ tile(Monitor *m)
 				ty += HEIGHT(c) + gpx;
 			sfacts -= c->cfact;
 		}
+	}
 }
 
 void

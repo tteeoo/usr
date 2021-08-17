@@ -81,7 +81,7 @@ function fish_prompt
 		echo -n (set_color brred)"$USER"(set_color white)'@'(set_color yellow)(prompt_hostname)' '
 	end
 
-	echo -n (set_color 83A598)(pwd)' '
+	echo -n (set_color 83A598)(prompt_pwd)' '
 
 	if which git_status_prompt > /dev/null 2>&1
 		echo -n (git_status_prompt)
