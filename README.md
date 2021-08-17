@@ -1,24 +1,22 @@
 # usr
 
-Work in progress.
-
 My dotfiles + more, and some tools to manage them.
 
-The `usr` script is licensed under the Unlicense.
+The `usr` script is released under the Unlicense.
 
-## `home/.local/bin/opt`
+## In `home/.local/bin`:
 
-Some scripts I've made, which are all licensed under the Unlicense.
+Some scripts I've made, which are all released under the Unlicense.
 
-## `home/src/suk`
+## In `home/src/suk`:
 
 [Suckless software](https://suckless.org/) forks.
 
-Licenses are in their respective directories.
+Licenses for these programs are in their respective directories.
 
 ### st
 
-Upstream: [git.suckless.org/st](https://git.suckless.org/st/)
+Upstream: [git.suckless.org/st](https://git.suckless.org/st/).
 
 From version 0.8.2, my `st` has:
 * w3m patch
@@ -28,7 +26,7 @@ From version 0.8.2, my `st` has:
 
 ### dwm
 
-Upstream: [git.suckless.org/dwm](https://git.suckless.org/dwm/)
+Upstream: [git.suckless.org/dwm](https://git.suckless.org/dwm/).
 
 From version 6.2, my `dwm` has:
 
@@ -40,9 +38,3 @@ From version 6.2, my `dwm` has:
 * movestack patch
 * Custom settings in `config.h` 
 * My own additions I programmed in (`togglelayout` and `focusmaster` functions, changing how the bar looks, etc.)
-
-## Gallery
-
-(Probably outdated)
-
-![Screenshot of my desktop](https://raw.githubusercontent.com/tteeoo/usr/main/scrot.png)
