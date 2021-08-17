@@ -52,5 +52,5 @@ theo_dotfiles_files() {
 		$CONFIG_DIR/fish/fish_variables $CONFIG_DIR/gtk-3.0/settings.ini
 		$CONFIG_DIR/spotify-tui/config.yml $CONFIG_DIR/nvim/coc-settings.json
 		$CONFIG_DIR/discocss/custom.css $CONFIG_DIR/user-dirs.dirs $CONFIG_DIR/tmux/tmux.conf
-		$DATA_DIR/gnupg/sshcontrol $DATA_DIR/gnupg/gpg-agent.conf"
+		$DATA_DIR/gnupg/sshcontrol $DATA_DIR/gnupg/gpg-agent.conf $CONFIG_DIR/newsboat/urls"
 }

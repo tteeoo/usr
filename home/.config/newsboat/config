@@ -1,6 +1,6 @@
-browser lynx
-macro m set browser "mpv %u" ; open-in-browser ; set browser "lynx %u"
-macro c set browser "$BROWSER %u" ; open-in-browser ; set browser "lynx %u"
+browser "lynx -accept_all_cookies -vikeys %u"
+macro m set browser "mpv %u" ; open-in-browser ; set browser "lynx -accept_all_cookies -vikeys %u"
+macro f set browser "$BROWSER %u" ; open-in-browser ; set browser "lynx -accept_all_cookies -vikeys %u"
 
 bind-key j next
 bind-key k prev

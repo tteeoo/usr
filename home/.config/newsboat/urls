@@ -1,0 +1,55 @@
+------------
+blog/podcasts:
+------
+https://geohot.github.io/blog/feed.xml ~geohot
+https://lukesmith.xyz/rss.xml "~Luke Smith"
+https://youtube.com/feeds/videos.xml?channel_id=UCSHZKyawb77ixDdsGog4iWA "~Lex Fridman"
+https://rationallyspeakingpodcast.libsyn.com/rss "~Rationally Speaking"
+-------------
+news:
+------
+https://www.archlinux.org/feeds/news/ "~Arch Linux News"
+https://suckless.org/atom.xml "~Suckless Changelog"
+https://www.debian.org/News/news "~Debian News"
+https://www.fsf.org/static/fsforg/rss/news.xml "~FSF News"
+-------------
+youtube:
+------ linux
+https://youtube.com/feeds/videos.xml?channel_id=UCVls1GmFKf6WlTraIb_IaJg "~DistroTube"
+https://youtube.com/feeds/videos.xml?channel_id=UC7YOGHUfC1Tb6E4pudI9STA "~Mental Outlaw"
+https://youtube.com/feeds/videos.xml?channel_id=UCRE3NFNtdjR96-H4QG4U1Fg "~Hex DSL"
+--- science
+https://youtube.com/feeds/videos.xml?channel_id=UCYO_jab_esuFRV4b17AJtAw "~3Blue1Brown"
+https://youtube.com/feeds/videos.xml?channel_id=UCHnyfMqiRRG1u-2MsSQLbXA "~Veritasium"
+https://youtube.com/feeds/videos.xml?channel_id=UC6nSFpj9HTCZ5t-N3Rm3-HA "~Vsauce"
+https://youtube.com/feeds/videos.xml?channel_id=UC9-y-6csu5WGm29I7JiwpnA "~Computerphile"
+https://youtube.com/feeds/videos.xml?channel_id=UCoxcjq-8xIDTYp3uz647V5A "~Numberphile"
+https://youtube.com/feeds/videos.xml?channel_id=UCvBqzzvUBLCs8Y7Axb-jZew "~Sixty Symbols"
+--- computers
+https://youtube.com/feeds/videos.xml?channel_id=UC8uT9cgJorJPWu7ITLGo9Ww "~The 8-Bit Guy"
+https://youtube.com/feeds/videos.xml?channel_id=UClcE-kVhqyiHCcjYwcpfj9w "~LiveOverflow"
+https://youtube.com/feeds/videos.xml?channel_id=UC9z7EZAbkphEMg0SP7rw44A "~carykh"
+https://youtube.com/feeds/videos.xml?channel_id=UCLB7AzTwc6VFZrBsO2ucBMg "~Robert Miles"
+https://youtube.com/feeds/videos.xml?channel_id=UCmtyQOKKmrMVaKuRXz02jbQ "~Sebastian Lague"
+https://youtube.com/feeds/videos.xml?channel_id=UCtHaxi4GTYDpJgMSGy7AeSw "~Michael Reeves"
+https://youtube.com/feeds/videos.xml?channel_id=UCj1VqrHhDte54oLgPG4xpuQ "~Stuff Made Here"
+--- philosophy
+https://youtube.com/feeds/videos.xml?channel_id=UC7kIy8fZavEni8Gzl8NLjOQ "~CosmicSkeptic"
+https://youtube.com/feeds/videos.xml?channel_id=UCqZMgLgGlYAWvSU8lZ9xiVg "~Rationality Rules"
+https://youtube.com/feeds/videos.xml?channel_id=UCz-RZblnhjXK_krP1jDybeQ "~Julia Galef"
+https://youtube.com/feeds/videos.xml?channel_id=UCimiUgDLbi6P17BdaCZpVbg "~exurb1a"
+https://youtube.com/feeds/videos.xml?channel_id=UCcoO-8J0EYQHGPFQqwmAzVQ "~exurb2a"
+--- misc
+https://youtube.com/feeds/videos.xml?channel_id=UC8XjmAEDVZSCQjI150cb4QA "~Knowing Better"
+https://youtube.com/feeds/videos.xml?channel_id=UCBa659QWEk1AI4Tg--mrJ2A "~Tom Scott"
+https://youtube.com/feeds/videos.xml?channel_id=UCbbQalJ4OaC0oQ0AqRaOJ9g "~Jay Foreman"
+https://youtube.com/feeds/videos.xml?channel_id=UCyhOl6uRlxryALlT5yifldw "~J.J. McCullough"
+https://youtube.com/feeds/videos.xml?channel_id=UCl2mFZoRqjw_ELax4Yisf6w "~Louis Rossmann"
+https://youtube.com/feeds/videos.xml?channel_id=UC2C_jShtL725hvbm1arSV9w "~CGP Grey"
+https://youtube.com/feeds/videos.xml?channel_id=UCJOh5FKisc0hUlEeWFBlD-w "~jan Misali"
+--- less educational
+https://youtube.com/feeds/videos.xml?channel_id=UCwgKmJM4ZJQRJ-U5NjvR2dg "~george hotz archive"
+https://youtube.com/feeds/videos.xml?channel_id=UCV5rcu0zw_3gLEex_f1D_fg "~SNEAKO"
+https://youtube.com/feeds/videos.xml?channel_id=UC-AQKm7HUNMmxjdS371MSwg "~Channel 5 with Andrew Callaghan"
+https://youtube.com/feeds/videos.xml?channel_id=UCgBVkKoOAr3ajSdFFLp13_A "~KRAZAM"
+https://youtube.com/feeds/videos.xml?channel_id=UCq6aw03lNILzV96UvEAASfQ "~bill wurtz"
