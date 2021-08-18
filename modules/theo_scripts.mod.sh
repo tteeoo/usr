@@ -9,7 +9,7 @@ theo_scripts_add() {
 }
 
 theo_scripts_remove() {
-	printf "theo_scripts: removing scripts\n" "$HOME"
+	printf "theo_scripts: removing scripts\n"
 	for script in $(theo_scripts_files) ; do
 		rm "$HOME/$script"
 	done

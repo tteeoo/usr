@@ -19,6 +19,12 @@ theo_dotfiles_add() {
 		ln -sf "$USR_DIR/home/$FILE" "$HOME/$FILE" && \
 			printf "theo_dotfiles: linking %s/home/%s to %s/%s\n" "$USR_DIR" "$FILE" "$HOME" "$FILE"
 	done
+	printf "theo_dotfiles: extracting firefox profile\n"
+	cd "$HOME/.mozilla/firefox" || return
+	tar xf custom-profile.tar.gz
+	printf "theo_dotfiles: extracting theme\n"
+	cd "$HOME/$DATA_DIR/themes" || return
+	tar xf Mint-Y-Dark.tar.gz
 }
 
 theo_dotfiles_remove() {
@@ -28,6 +34,8 @@ theo_dotfiles_remove() {
 		[ -f "$HOME/$FILE".orig ] && mv "$HOME/$FILE".orig "$HOME/$FILE" && \
 			printf "theo_dotfiles: moving %s/%s.orig to %s/%s\n" "$HOME" "$FILE" "$HOME" "$FILE"
 	done
+	rm -rf "$HOME/.mozilla/firefox/custom-profile"
+	rm -rf "$HOME/$DATA_DIR/themes"
 }
 
 theo_dotfiles_info() {
@@ -40,7 +48,7 @@ theo_dotfiles_dirs() {
 		$CONFIG_DIR/gtk-2.0 $CONFIG_DIR/python $CONFIG_DIR/picom $CONFIG_DIR/sxhkd
 		$CONFIG_DIR/dunst $CONFIG_DIR/nvim $CONFIG_DIR/rco $CONFIG_DIR/git
 		$CONFIG_DIR/mpv $CONFIG_DIR/npm $CONFIG_DIR/X11 $CONFIG_DIR/tmux .vim
-		$DATA_DIR/gnupg"
+		$DATA_DIR/gnupg .mozilla/firefox $DATA_DIR/themes"
 }
 
 theo_dotfiles_files() {
@@ -52,6 +60,7 @@ theo_dotfiles_files() {
 		$CONFIG_DIR/picom/picom.conf $CONFIG_DIR/fish/config.fish $CONFIG_DIR/gtk-2.0/gtkrc-2.0
 		$CONFIG_DIR/fish/fish_variables $CONFIG_DIR/gtk-3.0/settings.ini
 		$CONFIG_DIR/nvim/coc-settings.json $CONFIG_DIR/discocss/custom.css
-		$CONFIG_DIR/user-dirs.dirs $CONFIG_DIR/tmux/tmux.conf
-		$DATA_DIR/gnupg/sshcontrol $DATA_DIR/gnupg/gpg-agent.conf $CONFIG_DIR/newsboat/urls"
+		$CONFIG_DIR/user-dirs.dirs $CONFIG_DIR/tmux/tmux.conf .mozilla/firefox/profiles.ini
+		$DATA_DIR/gnupg/sshcontrol $DATA_DIR/gnupg/gpg-agent.conf $CONFIG_DIR/newsboat/urls
+		.mozilla/firefox/custom-profile.tar.gz $DATA_DIR/themes/Mint-Y-Dark.tar.gz"
 }
