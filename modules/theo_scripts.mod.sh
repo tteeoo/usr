@@ -20,7 +20,7 @@ theo_scripts_info() {
 }
 
 theo_scripts_dirs() {
-	printf ".local/bin/opt"
+	printf ""
 }
 
 theo_scripts_files() {

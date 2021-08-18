@@ -11,6 +11,7 @@ theo_dotfiles_add() {
 			printf "theo_dotfiles: making directory %s/%s\n" "$HOME" "$DIR"
 		fi
 	done
+	chmod 700 "$DATA_DIR/gnupg"
 
 	for FILE in $(theo_dotfiles_files) ; do
 		[ -f "$HOME/$FILE" ] && mv "$HOME/$FILE" "$HOME/$FILE".orig && \

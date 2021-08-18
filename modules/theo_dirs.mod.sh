@@ -8,8 +8,6 @@ theo_dirs_add() {
 	mkdir -p "$HOME"/src/git/aur
 	mkdir -p "$HOME"/src/git/ghw
 	mkdir -p "$HOME"/src/git/ghf
-	mkdir -p "$HOME"/src/git/ghf
-	mkdir -p "$HOME"/.local/bin/opt
 	mkdir -p "$HOME"/.local/share
 	mkdir -p "$HOME"/.config
 	printf "theo_dirs: copying some wallpapers\n"
@@ -30,7 +28,6 @@ theo_dirs_remove() {
 	rmdir "$HOME"/src/git/ghf
 	rmdir "$HOME"/src/git
 	rmdir "$HOME"/src
-	rmdir "$HOME"/.local/bin/opt
 	rmdir "$HOME"/.local/bin
 	rmdir "$HOME"/.local/share
 	rmdir "$HOME/.local"
