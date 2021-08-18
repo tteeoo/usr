@@ -5,7 +5,7 @@ mint_y_dark_add() {
 	mkdir -p "$HOME/$DATA_DIR/themes"
 	cp "$USR_DIR/home/$DATA_DIR/themes/Mint-Y-Dark.tar.gz" "$HOME/$DATA_DIR/themes"
 	cd "$HOME/$DATA_DIR/themes"
-	printf "mint_y_dark: extracting theme"
+	printf "mint_y_dark: extracting theme\n"
 	tar xf Mint-Y-Dark.tar.gz
 	rm Mint-Y-Dark.tar.gz
 }
