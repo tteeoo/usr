@@ -7,9 +7,9 @@ runif() {
 }
 
 # configure x
-if [ "$(hostname)" = "art" ] ; then
-	xrandr --output HDMI-1 --primary --mode 1920x1080 --pos 0x840 --rotate normal \
-		--output DP-3 --mode 1920x1080 --pos 1920x0 --rotate left --gamma 0.75
+if [ "$(hostname)" = "talos" ] ; then
+	xrandr --output HDMI-A-0 --mode 1920x1080 --pos 0x840 --rotate normal \
+		--output DisplayPort-2 --primary --mode 1920x1080 --pos 1920x0 --rotate left --gamma 0.8:0.8:0.8
 fi
 xrdb -load "$XDG_CONFIG_HOME/X11/Xresources"
 setxkbmap -option caps:swapescape

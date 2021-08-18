@@ -23,7 +23,7 @@ Xcursor.size: 12
 *color14: #8ec07c
 *color15: #ebdbb2
 
-URxvt.font: xft:Fira Mono:size=10
+URxvt.font: xft:Fira Code:size=10
 URxvt.scrollBar: false
 URxvt.cursorColor: #83a598
 URxvt.internalBorder: 16
