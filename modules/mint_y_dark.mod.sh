@@ -2,15 +2,16 @@
 DATA_DIR="${XDG_DATA_HOME#$HOME/}"
 
 mint_y_dark_add() {
-	mkdir -p "$DATA_DIR/themes"
-	cd "$DATA_DIR/themes"
+	mkdir -p "$HOME/$DATA_DIR/themes"
+	cp "$USR_DIR/home/$DATA_DIR/themes/Mint-Y-Dark.tar.gz" "$HOME/$DATA_DIR/themes"
+	cd "$HOME/$DATA_DIR/themes"
 	printf "mint_y_dark: extracting theme"
 	tar xf Mint-Y-Dark.tar.gz
 	rm Mint-Y-Dark.tar.gz
 }
 
 mint_y_dark_remove() {
-	rm -rf "$DATA_DIR/themes/Mint-Y-Dark"
+	rm -rf "$HOME/$DATA_DIR/themes/Mint-Y-Dark"
 }
 
 mint_y_dark_info() {
