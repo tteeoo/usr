@@ -3,7 +3,7 @@ theo_pacman_add() {
 	sudo pacman -S --needed --noconfirm --quiet libxinerama libxft libx11 freetype2 make gcc \
 		neovim vim curl wget git dunst npm sxiv lxpolkit xorg fish xwallpaper picom sxhkd \
 		xorg-xinit fzf pcmanfm zathura zathura-pdf-mupdf tmux newsboat mpv pulsemixer \
-		alsa-utils papirus-icon-theme ipython3 maim firefox ttf-fira-code
+		alsa-utils papirus-icon-theme ipython3 maim firefox ttf-fira-code rust
 }
 
 theo_pacman_remove() {
