@@ -3,7 +3,7 @@ theo_apt_add() {
 	sudo apt install libxinerama-dev libxft-dev libfontconfig-dev make gcc \
 		neovim vim curl wget git dunst npm sxiv lxpolkit fish xwallpaper picom sxhkd maim \
 		xinit fzf pcmanfm zathura tmux newsboat mpv pulseaudio pulsemixer gpgconf gpg-agent \
-		alsa-utils papirus-icon-theme ipython3 firefox-esr fonts-firacode cargo
+		alsa-utils papirus-icon-theme ipython3 firefox-esr fonts-firacode cargo fonts-ubuntu
 }
 
 theo_apt_remove() {

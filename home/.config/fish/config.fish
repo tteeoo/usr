@@ -1,8 +1,10 @@
 # abbreviations set here as global vars for clarity's sake
 if which nvim > /dev/null 2>&1
 	abbr -ag v nvim
+	abbr -ag sv sudo nvim
 else
 	abbr -ag v vim
+	abbr -ag sv sudo vim
 end
 abbr -ag r ranger
 abbr -ag z zathura
@@ -32,6 +34,8 @@ abbr -ag paclean sudo pacman -Rns '(pacman -Qdtq)'
 abbr -ag sus sudo systemctl
 abbr -ag sdn sudo shutdown now
 abbr -ag spn sudo poweroff now
+abbr -ag sb sudo btrfs
+abbr -ag b btrfs
 
 abbr -ag goi go install
 abbr -ag goc go clean

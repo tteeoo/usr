@@ -3,6 +3,8 @@ blog/podcasts:
 ------
 https://geohot.github.io/blog/feed.xml ~geohot
 https://lukesmith.xyz/rss.xml "~Luke Smith"
+https://hexdsl.co.uk/rss.xml "~Hex DSL"
+https://share.tube/feeds/videos.xml?videoChannelId=656 "~Trendy Talk"
 https://youtube.com/feeds/videos.xml?channel_id=UCSHZKyawb77ixDdsGog4iWA "~Lex Fridman"
 https://rationallyspeakingpodcast.libsyn.com/rss "~Rationally Speaking"
 -------------

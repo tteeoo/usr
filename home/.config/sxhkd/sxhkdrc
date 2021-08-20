@@ -6,9 +6,9 @@ alt + f
     maim "$XDG_PICTURES_DIR/scrot/$(date +%s).png"
 # volume
 alt + j
-   amixer -D pulse sset Master 5%- && pkill -RTMIN+10 dwmblocks
+   pulsemixer --change-volume -5 && pkill -RTMIN+10 dwmblocks
 alt + k
-   amixer -D pulse sset Master 5%+ && pkill -RTMIN+10 dwmblocks
+   pulsemixer --change-volume +5 && pkill -RTMIN+10 dwmblocks
 control + alt + j
    spt-vol.sh -
 control + alt + k
