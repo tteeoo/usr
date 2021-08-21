@@ -48,7 +48,8 @@ theo_dotfiles_dirs() {
 		$CONFIG_DIR/gtk-2.0 $CONFIG_DIR/python $CONFIG_DIR/picom $CONFIG_DIR/sxhkd
 		$CONFIG_DIR/dunst $CONFIG_DIR/nvim $CONFIG_DIR/rco $CONFIG_DIR/git
 		$CONFIG_DIR/mpv $CONFIG_DIR/npm $CONFIG_DIR/X11 $CONFIG_DIR/tmux .vim
-		$DATA_DIR/gnupg .mozilla/firefox $DATA_DIR/themes"
+		$DATA_DIR/gnupg .mozilla/firefox $DATA_DIR/themes $CONFIG_DIR/irssi
+		$DATA_DIR/irssi $CONFIG_DIR/amfora"
 }
 
 theo_dotfiles_files() {
@@ -62,5 +63,6 @@ theo_dotfiles_files() {
 		$CONFIG_DIR/nvim/coc-settings.json $CONFIG_DIR/discocss/custom.css
 		$CONFIG_DIR/user-dirs.dirs $CONFIG_DIR/tmux/tmux.conf
 		$DATA_DIR/gnupg/sshcontrol $DATA_DIR/gnupg/gpg-agent.conf $CONFIG_DIR/newsboat/urls
-		.mozilla/firefox/custom-profile.tar.gz $DATA_DIR/themes/Mint-Y-Dark.tar.gz"
+		.mozilla/firefox/custom-profile.tar.gz $DATA_DIR/themes/Mint-Y-Dark.tar.gz
+		$DATA_DIR/irssi/default.theme $CONFIG_DIR/irssi/config $CONFIG_DIR/amfora/config.toml"
 }

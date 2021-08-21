@@ -28,5 +28,6 @@ theo_scripts_files() {
 		.local/bin/git_status_prompt .local/bin/lock .local/bin/lsearch
 		.local/bin/openup .local/bin/randwall .local/bin/runt
 		.local/bin/spt-mute.sh .local/bin/spt-vol.sh .local/bin/time_bar
-		.local/bin/volume_bar .local/bin/range .local/bin/tku"
+		.local/bin/volume_bar .local/bin/range .local/bin/tku
+		.local/bin/snap .local/bin/delsnap"
 }

@@ -25,3 +25,6 @@ gi,/home/theo/.config/git/config,git config
 py,/home/theo/.config/python/rc.py,python shell rc
 xr,/home/theo/.config/X11/Xresources,X resources
 tx,/home/theo/.config/tmux/tmux.conf,tmux config
+ir,/home/theo/.config/irssi/config,irssi config
+it,/home/theo/.local/share/irssi/default.theme,irssi theme
+am,/home/theo/.config/amfora/config.toml,amfora config

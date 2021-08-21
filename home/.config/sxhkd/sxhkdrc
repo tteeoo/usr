@@ -32,6 +32,12 @@ control + Return
     pkill -USR1 -x sxhkd
 
 # LAUNCH
+# gemini browser
+alt + shift + a
+    "$TERMINAL" -e amfora
+# irc
+alt + shift + i
+    "$TERMINAL" -e irssi --config="$XDG_CONFIG_HOME"/irssi/config --home="$XDG_DATA_HOME"/irssi
 # python shell
 alt + shift + p 
     "$TERMINAL" -e "$INTPY"

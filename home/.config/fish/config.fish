@@ -34,8 +34,10 @@ abbr -ag paclean sudo pacman -Rns '(pacman -Qdtq)'
 abbr -ag sus sudo systemctl
 abbr -ag sdn sudo shutdown now
 abbr -ag spn sudo poweroff now
-abbr -ag sb sudo btrfs
+
 abbr -ag b btrfs
+abbr -ag sb sudo btrfs
+abbr -ag sbl sudo btrfs subvolume list /
 
 abbr -ag goi go install
 abbr -ag goc go clean
@@ -66,6 +68,7 @@ alias lynx='lynx -accept_all_cookies -vikeys'
 alias vimwiki='nvim -c VimwikiIndex -c \'cd $VIMWIKI\''
 alias pcmn='pacman -Sl | cut -d" " -f2,3,4 | fzf -m  --preview "pacman -Si {1}" --preview-window=right:66%:wrap | xargs -ro -n 1 sudo pacman -S'
 alias fzfcmd='set fzfcmd ( grep " cmd: " $XDG_DATA_HOME/fish/fish_history | sed "s/- cmd: //" | grep -v fzfcmd | tac | fzf -e --color=16 --no-sort ) && echo $fzfcmd && eval $fzfcmd'
+alias irssi='irssi --config="$XDG_CONFIG_HOME"/irssi/config --home="$XDG_DATA_HOME"/irssi'
 
 # make delete work in st
 switch $TERM

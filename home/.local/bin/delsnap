@@ -1,0 +1,4 @@
+#!/bin/sh
+
+sudo btrfs subvolume delete /.snapshots/$1
+sudo btrfs subvolume delete /.snapshots/home_$1

@@ -1,0 +1,6 @@
+#!/bin/sh
+
+timestamp=$(date +%y-%m-%d_%H:%M:%S)
+
+sudo btrfs subvolume snapshot $@ / /.snapshots/$timestamp
+sudo btrfs subvolume snapshot $@ /home /.snapshots/home_$timestamp
