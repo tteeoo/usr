@@ -1,6 +1,6 @@
 # usr
 
-My dotfiles + more, and some tools to manage them.
+My user space (dotfiles, programs, scripts), and some tools to manage them.
 
 The `usr` script is released under the Unlicense.
 
