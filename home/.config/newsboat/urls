@@ -1,6 +1,8 @@
 ------------
 blog/podcasts:
 ------
+https://theohenson.com/rss.xml "~Me RSS"
+https://theohenson.com/atom.xml "~Me Atom"
 https://geohot.github.io/blog/feed.xml ~geohot
 https://lukesmith.xyz/rss.xml "~Luke Smith"
 https://hexdsl.co.uk/rss.xml "~Hex DSL"

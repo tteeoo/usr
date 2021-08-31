@@ -8,6 +8,8 @@ runif() {
 
 # configure x
 if [ "$(hostname)" = "talos" ] ; then
+	export DBUS_SESSION_BUS_ADDRESS="unix:path=$XDG_RUNTIME_DIR/bus"
+	dbus-update-activation-environment --verbose --systemd DBUS_SESSION_BUS_ADDRESS DISPLAY XAUTHORITY
 	xrandr --output HDMI-A-0 --mode 1920x1080 --pos 0x840 --rotate normal \
 		--output DisplayPort-2 --mode 1920x1080 --pos 1920x0 --rotate left --gamma 0.8:0.8:0.8
 fi
