@@ -74,6 +74,7 @@ emoji_favicons = false
 # "auto" means the scrollbar only appears when the page is longer than the window.
 scrollbar = "auto"
 
+warn_before_quitting = true
 
 [auth]
 # Authentication settings

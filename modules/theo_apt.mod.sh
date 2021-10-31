@@ -4,7 +4,7 @@ theo_apt_add() {
 		neovim vim curl wget git dunst npm sxiv lxpolkit fish xwallpaper picom sxhkd maim \
 		xinit fzf pcmanfm zathura tmux newsboat mpv pulseaudio pulsemixer gpgconf gpg-agent \
 		alsa-utils papirus-icon-theme ipython3 firefox-esr fonts-firacode cargo fonts-ubuntu \
-		bsdmainutils amfora lynx xclip debsecan irssi
+		bsdmainutils amfora lynx xclip debsecan irssi zathura-djvu
 }
 
 theo_apt_remove() {

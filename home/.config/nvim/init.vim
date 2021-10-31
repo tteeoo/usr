@@ -7,7 +7,7 @@ if empty(glob('~/.config/nvim/autoload/plug.vim'))
 		\ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 	autocmd VimEnter * PlugInstall
 endif
-" CocInstall coc-go coc-css coc-html coc-json coc-python
+" CocInstall coc-go coc-css coc-html coc-json coc-pyright
 
 call plug#begin('~/.vim/plugged')
 
