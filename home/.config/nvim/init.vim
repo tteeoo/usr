@@ -88,6 +88,7 @@ set nohlsearch
 set ignorecase
 nnoremap n nzz
 nnoremap N Nzz
+nnoremap zX zszH
 nnoremap S :%s//g<Left><Left>
 " }}}2 
 
