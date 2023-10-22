@@ -31,9 +31,6 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'itchyny/vim-cursorword'
 Plug 'dag/vim-fish'
 
-" Misc
-Plug 'vimwiki/vimwiki'
-
 call plug#end()
 
 " }}}
@@ -107,6 +104,7 @@ set autoindent
 set tabstop=8
 set list
 set listchars=tab:\|\ 
+autocmd FileType html setlocal expandtab shiftwidth=2 tabstop=2
 " }}}2 
 
 " Line behaviour {{{2
@@ -175,25 +173,21 @@ endif
 " Coc configuration {{{
 
 " Completion functionality 2{{{
-" Use tab for trigger completion with characters ahead and navigate.
+" Use tab for trigger completion with characters ahead and navigate
+" NOTE: There's always complete item selected by default, you may want to enable
+" no select by `"suggest.noselect": true` in your configuration file
 " NOTE: Use command ':verbose imap <tab>' to make sure tab is not mapped by
-" other plugin before putting this into your config.
+" other plugin before putting this into your config
 inoremap <silent><expr> <TAB>
-	\ pumvisible() ? "\<C-n>" :
-	\ <SID>check_back_space() ? "\<TAB>" :
-	\ coc#refresh()
-inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
-function! s:check_back_space() abort
-	let col = col('.') - 1
-	return !col || getline('.')[col - 1]  =~# '\s'
-endfunction
+      \ coc#pum#visible() ? coc#pum#next(1) :
+      \ CheckBackspace() ? "\<Tab>" :
+      \ coc#refresh()
+inoremap <expr><S-TAB> coc#pum#visible() ? coc#pum#prev(1) : "\<C-h>"
 
-" Use <c-space> to trigger completion.
-if has('nvim')
-	inoremap <silent><expr> <C-space> coc#refresh()
-else
-	inoremap <silent><expr> <C-@> coc#refresh()
-endif
+function! CheckBackspace() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~# '\s'
+endfunction
 
 " Make <CR> auto-select the first completion item and notify coc.nvim to
 " format on enter, <cr> could be remapped by other vim plugin
