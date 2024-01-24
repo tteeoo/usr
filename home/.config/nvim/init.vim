@@ -44,6 +44,10 @@ let mapleader = ' '
 filetype plugin indent on
 " }}}2
 
+" Close netrw after opening the file {{{2
+let g:netrw_fastbrowse = 0
+" }}}2
+
 " For when you type too quickly {{{2
 cnoremap Wq<CR> wq<CR>
 cnoremap W<CR> w<CR>
